@@ -11,6 +11,11 @@ require('apostrophe')({
     // have a minimal configuration here to turn them on: `moduleName: {}`
     // ***********************************************************************
     // `className` options set custom CSS classes for Apostrophe core widgets.
+    '@apostrophecms/db': {
+      options: {
+        uri: `mongodb://rise8:${process.env.DB_PASSWORD}@${process.env.DB_IP_ADDRESS}:27017/rise8-staging?authSource=admin`
+      }
+    },
     '@apostrophecms/rich-text-widget': {
       options: {
         className: 'bp-rich-text'
