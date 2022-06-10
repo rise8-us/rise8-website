@@ -10,7 +10,7 @@ assignees: ''
 # User story
 **AS A** 
 **I WANT TO**
-*SO I CAN**
+**SO I CAN**
 
 *Ideally, this is in the issue title, but if not, you can put it here. If so, delete this section.*
 
