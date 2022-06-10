@@ -1,3 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@400&family=DM+Sans&display=swap');
+
+@font-face {
+  font-family: Jagerlay;
+  // f off intellij
+  src: url('/fonts/Jagerlay-Regular.woff2');
+}
+
+@font-face {
+  font-family: Supply;
+  src: url('/fonts/Supply-Regular.woff2');
+}
+
 // Use flex to keep the footer at the bottom.
 body,
 [data-apos-refreshable],
@@ -12,6 +25,10 @@ main {
   flex-grow: 1;
 }
 
+.bp-main {
+  padding-top: 50px;
+}
+
 body {
   min-height: 100vh;
   // Nice system fonts.
@@ -20,36 +37,154 @@ body {
 
 .bp-header,
 main,
-.bp-footer {
+.bp-footer__wrapper {
   width: 100%;
-  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
+
+  &.fill {
+    background-color: #F2F2F2;
+  }
 }
 
 .bp-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
-  margin-bottom: 10px;
-  padding: 40px 0;
+  height: 40px;
+  box-shadow: 0 2px 4px #00000066;
+  position: fixed;
+
+  .logo {
+    height: 16px;
+    margin-left: 43px;
+  }
+
+  .nav {
+    ul {
+      list-style: none;
+
+      li {
+        display: inline-block;
+        font-family: 'Supply', serif;
+        text-align: center;
+        margin: 0 20px;
+        text-transform: uppercase;
+
+        a {
+          color: #000000;
+        }
+      }
+    }
+  }
 }
 
 .bp-footer {
-  padding: 40px 0; 
-}
+  padding: 0 0 40px 0;
+  max-width: 1000px;
+  margin: auto;
 
-.bp-footer__links {
-  padding-left: 0px;
-  list-style: none;
-  text-align: center;
+  .impact-wrapper {
+    height: 200px;
+    display: flex;
 
-  li {
-    display: inline-block;
-    margin-right: 20px;
+    .impact {
+      font-family: 'Jagerlay', serif;
+      font-size: 36px;
+      display: flex;
+      width: 750px;
+      margin: auto;
+      justify-content: space-around;
+
+      .button-wrapper {
+        display: grid;
+        font-family: 'Bitter', serif;
+        font-family: 'DM Sans', sans-serif;
+        font-size: 16px;
+        width: 250px;
+
+        button {
+          background-color: white;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 38px;
+
+          img {
+            height: 20px;
+            margin-left: 12px;
+          }
+        }
+
+        button:last-child {
+          margin-top: 15px;
+        }
+      }
+    }
   }
-  li:last-child { margin-right: 0; }
+
+  .info-wrapper {
+    display: flex;
+    justify-content: space-between;
+
+    .info {
+      font-family: 'Bitter', serif;
+      font-family: 'DM Sans', sans-serif;
+
+      div {
+        margin-bottom: 21px;
+      }
+
+      div:last-child {
+        margin-bottom: 0;
+      }
+
+      .logo {
+        width: 72px;
+        height: 16px;
+        margin-bottom: 24px;
+      }
+    }
+  }
+
+  .links-wrapper {
+    display: flex;
+
+    .links {
+      margin: 0;
+      list-style: none;
+      font-family: 'Jagerlay', serif;
+      font-size: 30px;
+      font-weight: 400;
+
+      li {
+        display: block;
+
+        a {
+          color: #000000;
+        }
+      }
+    }
+
+    .social {
+      list-style: none;
+      margin: 0;
+      padding-left: 15px;
+
+      li {
+        display: inline-block;
+        padding-right: 10px;
+
+        img {
+          width: 20px;
+        }
+      }
+
+      li:last-child {
+        padding-right: 0;
+      }
+    }
+  }
 }
 
 .bp-header__logo {
