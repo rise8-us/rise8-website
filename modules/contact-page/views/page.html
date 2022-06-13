@@ -1,5 +1,83 @@
 {% extends "layout.html" %}
 
 {% block main %}
-<div>Contact</div>
+<div class="hero">
+  <div class="left">
+    <div class="memo">
+      Together, we rise.
+    </div>
+    <div class="title">
+      Your Inquiries.<br>
+      Our Insights.
+    </div>
+    <div class="description">
+      Got an idea? Gnarly problem? Just saying hello?
+    </div>
+  </div>
+  <div class="slanted-div"></div>
+  <div class="right">
+    <div style="width: 600px"></div>
+  </div>
+</div>
+<div class="content-section">
+  <div class="content-wrapper">
+    <div class="section-header">
+      <div class="slanted-div"></div>
+      <div>
+        <div class="memo">Whatever it is, we'd love to help you succeed</div>
+        <div class="title">Contact Us</div>
+      </div>
+    </div>
+    <form class="contact-form" style="margin-left: 60px; margin-top: 20px" action="mailto:bkroger@rise8.us?cc=cviray@rise8.us,mnelson@rise8.us&subject=Contact from Rise8 Website" method="post" enctype="text/plain">
+      <div class="field">
+        <div class="title">
+          <label for="name">
+            Name
+          </label>
+          <div class="required">*</div>
+        </div>
+        <input class="input" type="text" id="name" name="name" required/>
+      </div>
+      <div class="field">
+        <div class="title">
+          <label for="email">
+            Email
+          </label>
+          <div class="required">*</div>
+        </div>
+        <input class="input" type="text" id="email" name="email" required/>
+      </div>
+      <div class="field">
+        <div class="title">
+          <label for="phone">
+            Phone
+          </label>
+          <div class="required">*</div>
+        </div>
+        <input class="input" type="text" id="phone" name="phone" required/>
+      </div>
+      <div class="field">
+        <div class="title">
+          <label for="message">
+            Message
+          </label>
+          <div class="required">*</div>
+        </div>
+        <textarea class="input" id="message" name="message" rows="8" style="resize: none" required></textarea>
+      </div>
+      <div style="margin-top: 32px">How would you prefer us to contact you?</div>
+      <div class="contact-options">
+        <div class="option">
+          <input type="radio" name="contact-preference" id="email-option" value="email" checked/>
+          <label for="email-option">Email</label>
+        </div>
+        <div class="option">
+          <input type="radio" name="contact-preference" id="phone-option" value="phone"/>
+          <label for="phone-option">Telephone</label>
+        </div>
+      </div>
+      <button class="submit-button" onclick="" type="submit">Submit ></button>
+    </form>
+  </div>
+</div>
 {% endblock %}
