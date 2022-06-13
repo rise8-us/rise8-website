@@ -107,91 +107,75 @@ main,
 
       .button-wrapper {
         display: grid;
-        font-family: 'Bitter', serif;
-        font-family: 'DM Sans', sans-serif;
-        font-size: 16px;
         width: 250px;
+      }
+    }
 
-        button {
-          background-color: white;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          height: 38px;
+    button:last-child {
+      margin-top: 15px;
+    }
+  }
+}
 
-          img {
-            height: 20px;
-            margin-left: 12px;
-          }
-        }
+.info-wrapper {
+  display: flex;
+  justify-content: space-between;
 
-        button:last-child {
-          margin-top: 15px;
-        }
+  .info {
+    font-family: 'Bitter', serif;
+    font-family: 'DM Sans', sans-serif;
+
+    div {
+      margin-bottom: 21px;
+    }
+
+    div:last-child {
+      margin-bottom: 0;
+    }
+
+    .logo {
+      width: 72px;
+      height: 16px;
+      margin-bottom: 24px;
+    }
+  }
+}
+
+.links-wrapper {
+  display: flex;
+
+  .links {
+    margin: 0;
+    list-style: none;
+    font-family: 'Jagerlay', serif;
+    font-size: 30px;
+    font-weight: 400;
+
+    li {
+      display: block;
+
+      a {
+        color: #000000;
       }
     }
   }
 
-  .info-wrapper {
-    display: flex;
-    justify-content: space-between;
+  .social {
+    list-style: none;
+    margin: 0;
+    padding-left: 15px;
 
-    .info {
-      font-family: 'Bitter', serif;
-      font-family: 'DM Sans', sans-serif;
+    li {
+      display: inline-block;
+      padding-right: 10px;
 
-      div {
-        margin-bottom: 21px;
-      }
-
-      div:last-child {
-        margin-bottom: 0;
-      }
-
-      .logo {
-        width: 72px;
-        height: 16px;
-        margin-bottom: 24px;
-      }
-    }
-  }
-
-  .links-wrapper {
-    display: flex;
-
-    .links {
-      margin: 0;
-      list-style: none;
-      font-family: 'Jagerlay', serif;
-      font-size: 30px;
-      font-weight: 400;
-
-      li {
-        display: block;
-
-        a {
-          color: #000000;
-        }
+      img {
+        width: 20px;
       }
     }
 
-    .social {
-      list-style: none;
-      margin: 0;
-      padding-left: 15px;
-
-      li {
-        display: inline-block;
-        padding-right: 10px;
-
-        img {
-          width: 20px;
-        }
-      }
-
-      li:last-child {
-        padding-right: 0;
-      }
+    li:last-child {
+      padding-right: 0;
     }
   }
 }

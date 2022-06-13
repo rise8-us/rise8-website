@@ -17,6 +17,12 @@
   }
 }
 
+.service-image {
+  height: 192px;
+  width: 430px;
+  background-color: black;
+}
+
 .service-body {
   .header {
     font-family: 'Jagerlay', serif;
@@ -36,5 +42,40 @@
     font-size: 16px;
     color: #3D3D3D;
     width: 360px;
+    margin-bottom: 25px;
   }
 }
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 38px;
+  width: 236px;
+  border: 0;
+  font-family: 'Bitter', serif;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+
+  img {
+    height: 20px;
+    margin-left: 12px;
+  }
+
+  &.dark {
+    background-color: black;
+    color: white;
+  }
+
+  &.light {
+    background-color: white;
+  }
+}
+//.button-dark {
+//  background-color: black;
+//  color: white;
+//}
+//
+//.button-light {
+//  background-color: white;
+//}
