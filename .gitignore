@@ -17,3 +17,6 @@ node_modules
 .jshintrc
 TODO.md
 **/.DS_Store
+
+dump
+.env.*

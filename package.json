@@ -5,7 +5,9 @@
   "main": "app.js",
   "scripts": {
     "start": "node app",
-    "dev": "nodemon",
+    "dev": "dotenv -c -- nodemon",
+    "docker:mongo": "dotenv -c -- docker-compose up -d mongo",
+    "mongo:sync": "dotenv -c -- ./scripts/sync-down",
     "build": "NODE_ENV=production node app @apostrophecms/asset:build",
     "serve": "NODE_ENV=production node app",
     "release": "npm install && npm run build && node app @apostrophecms/migration:migrate"
@@ -44,6 +46,7 @@
     "normalize.css": "^8.0.1"
   },
   "devDependencies": {
+    "dotenv-cli": "^5.1.0",
     "eslint": "^7.16.0",
     "eslint-config-apostrophe": "^3.4.0",
     "eslint-plugin-node": "^11.1.0",
