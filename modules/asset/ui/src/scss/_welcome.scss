@@ -1,8 +1,10 @@
 .bp-welcome {
-  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
+}
 
+.bp-homepage__header {
+  display: flex;
 }
 
 .bp-welcome__area {
@@ -10,7 +12,6 @@
 }
 
 .bp-welcome__headline {
-  position: relative;
   margin: 0 0 50px;
 }
 
@@ -20,7 +21,6 @@
 }
 
 .bp-welcome__version {
-  position: relative;
   background-color: #a992ff;
   padding: 4px 5px;
   border-radius: 2px;

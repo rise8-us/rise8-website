@@ -12,6 +12,38 @@ module.exports = {
         name: '@apostrophecms/home-page',
         label: 'Home'
       }
+    ],
+    park: [
+      {
+        slug: '/services',
+        parkedId: 'servicesId',
+        title: 'Services',
+        type: 'services-page'
+      },
+      {
+        slug: '/about',
+        parkedId: 'aboutUsId',
+        title: 'About Us',
+        type: 'about-page'
+      },
+      {
+        slug: '/blog',
+        parkedId: 'blogId',
+        title: 'Blog',
+        type: 'blog-page'
+      },
+      {
+        slug: '/careers',
+        parkedId: 'careersId',
+        title: 'Careers',
+        type: 'careers-page'
+      },
+      {
+        slug: '/contact',
+        parkedId: 'contactId',
+        title: 'Contact',
+        type: 'contact-page'
+      }
     ]
   }
 };

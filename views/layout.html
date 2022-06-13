@@ -3,43 +3,84 @@
 
 {% set title = data.piece.title or data.page.title %}
 {% block title %}
-  {{ title }}
-  {% if not title %}
-    {{ apos.log('Looks like you forgot to override the title block in a template that does not have access to an Apostrophe page or piece.') }}
-  {% endif %}
+{{ title }}
+{% if not title %}
+{{ apos.log('Looks like you forgot to override the title block in a template that does not have access to an Apostrophe page or piece.') }}
+{% endif %}
 {% endblock %}
 
 {% block beforeMain %}
 <div class="bp-wrapper">
-  <header class="bp-header">
-    <img class="bp-header__logo" src="/images/logo.png" alt="ApostropheCMS logo">
-    <nav class="bp-nav"></nav>
-    {% if not data.user %}
-      <a class="bp-button bp-header__login" href="/login">Login</a>
-    {% endif %}
+  <header class="bp-header fill">
+    <a href="/"><img class="logo" src="/images/logo.svg" alt="Rise8 logo"></a>
+    <nav class="nav">
+      <ul>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/careers">Careers</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><img src="/images/icon-search.svg" alt="Search"></li>
+      </ul>
+    </nav>
   </header>
   <main class="bp-main">
-{% endblock %}
+    {% endblock %}
 
-{% block main %}
-  {#
+    {% block main %}
+    {#
     Usually, your page templates in the @apostrophecms/pages module will override
     this block. It is safe to assume this is where your page-specific content
     should go.
-  #}
-{% endblock %}
+    #}
+    {% endblock %}
 
-{% block afterMain %}
+    {% block afterMain %}
   </main>
-  <footer class="bp-footer">
-    <h3>Essential Links</h3>
-    <ul class="bp-footer__links">
-      <li><a href="https://apostrophecms.com/" target="_blank">About ApostropheCMS</a></li>
-      <li><a href="https://chat.apostrophecms.com/" target="_blank">Discord</a></li>
-      <li><a href="https://github.com/apostrophecms/apostrophe/tree/3.0" target="_blank">Github (3.0 branch)</a></li>
-      <li><a href="https://twitter.com/apostrophecms" target="_blank">Twitter</a></li>
-      <li><a href="https://forum.apostrophecms.org" target="_blank">Forum</a></li>
-    </ul>
+  <footer class="bp-footer__wrapper fill">
+    <div class="bp-footer">
+      <div class="impact-wrapper">
+        <div class="impact">
+          <div>Together we create<br/>continuous impact.</div>
+          <div class="button-wrapper">
+            <button>
+              <div>Become a customer</div>
+              <img src="/images/icon-chevron-right.svg" alt="Chevron right"></button>
+            <button>
+              <div>Become a Riser</div>
+              <img src="/images/icon-chevron-right.svg" alt="Chevron right">
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="info-wrapper">
+        <div class="info">
+          <img class="logo" src="/images/logo.svg" alt="Rise8 logo">
+          <div>+1 (813) 575-4080</div>
+          <div>1646 W Snow Ave, Ste 71<br/>Tampa, FL 33606</div>
+          <div>info@rise8.us</div>
+        </div>
+        <div class="links-wrapper">
+          <ul class="links">
+            <li><a href="/services">Services</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/careers">Careers</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+          <ul class="social">
+            <li><a href="https://www.linkedin.com/company/rise8" target="_blank"><img
+                src="/images/linkedin-brands.svg" alt="LinkedIn logo"></a></li>
+            <li><a href="https://twitter.com/Rise8_Inc" target="_blank"><img
+                src="/images/twitter-brands.svg" alt="Twitter logo"></a></li>
+            <li><a href="https://www.facebook.com/rise8/" target="_blank"><img
+                src="/images/facebook-square-brands.svg" alt="Facebook logo"></a></li>
+            <li><a href="https://www.instagram.com/rise8_inc/" target="_blank"><img
+                src="/images/instagram-brands.svg" alt="Instagram logo"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </footer>
 </div>{# Close .bp-wrapper #}
 {% endblock %}
