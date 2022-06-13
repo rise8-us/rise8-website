@@ -39,8 +39,6 @@ body {
 main,
 .bp-footer__wrapper {
   width: 100%;
-  margin-left: auto;
-  margin-right: auto;
 
   &.fill {
     background-color: #F2F2F2;
@@ -60,33 +58,42 @@ main,
     margin-left: 43px;
   }
 
-  .nav {
-    ul {
-      list-style: none;
+  li {
+    display: inline-block;
+    font-family: 'Supply', serif;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    border-bottom: 3px solid transparent;
 
-      li {
-        display: inline-block;
-        font-family: 'Supply', serif;
-        text-align: center;
-        margin: 0 20px;
-        text-transform: uppercase;
-
-        a {
-          color: #000000;
-        }
-      }
+    a {
+      color: #000000;
     }
+
+    a:hover {
+      text-decoration: none;
+    }
+  }
+
+  .true, li:hover {
+    border-bottom: 3px solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(90deg, #800031 0%, #FC0000 100%);
   }
 }
 
 .bp-footer {
   padding: 0 0 40px 0;
-  max-width: 1000px;
+  max-width: 932px;
   margin: auto;
 
   .impact-wrapper {
     height: 200px;
     display: flex;
+    padding: 40px 0 64px;
+
+    .background-img {
+      position: absolute;
+    }
 
     .impact {
       font-family: 'Jagerlay', serif;
@@ -95,6 +102,7 @@ main,
       width: 750px;
       margin: auto;
       justify-content: space-around;
+      position: relative;
 
       .button-wrapper {
         display: grid;

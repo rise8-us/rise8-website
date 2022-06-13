@@ -13,13 +13,13 @@
 <div class="bp-wrapper">
   <header class="bp-header fill">
     <a href="/"><img class="logo" src="/images/logo.svg" alt="Rise8 logo"></a>
-    <nav class="nav">
+    <nav>
       <ul>
-        <li><a href="/services">Services</a></li>
-        <li><a href="/about">About Us</a></li>
-        <li><a href="/blog">Blog</a></li>
-        <li><a href="/careers">Careers</a></li>
-        <li><a href="/contact">Contact</a></li>
+        <li class="{{ data.page.title == 'Services' }}"><a href="/services">Services</a></li>
+        <li class="{{ data.page.title == 'About Us' }}"><a href="/about">About Us</a></li>
+        <li class="{{ data.page.title == 'Blog' }}"><a href="/blog">Blog</a></li>
+        <li class="{{ data.page.title == 'Careers' }}"><a href="/careers">Careers</a></li>
+        <li class="{{ data.page.title == 'Contact' }}"><a href="/contact">Contact</a></li>
         <li><img src="/images/icon-search.svg" alt="Search"></li>
       </ul>
     </nav>
@@ -40,6 +40,7 @@
   <footer class="bp-footer__wrapper fill">
     <div class="bp-footer">
       <div class="impact-wrapper">
+        <img class="background-img" src="/images/footer-frame.svg" alt="">
         <div class="impact">
           <div>Together we create<br/>continuous impact.</div>
           <div class="button-wrapper">
