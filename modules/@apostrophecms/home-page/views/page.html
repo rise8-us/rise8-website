@@ -7,47 +7,51 @@ that lives in the top-level views/ folder for convenience
 
 {% block main %}
 <section class="bp-welcome">
-  <div class="bp-welcome__verson-wrapper">
-    <span class="bp-welcome__version">alpha</span>
-  </div>
-  <h1 class="bp-welcome__headline">
-    Welcome to Apostrophe 3
-  </h1>
-  {% if not data.user %}
-  {# Message only for logged out users. #}
-  <h3 class="bp-welcome__help">First time spinning up the ApostropheCMS 3 demo?</h3>
-  <p>
-    Run this in your CLI to create your first user:
-  </p>
-  <pre class="bp-welcome__code">
-        <span class="bp-welcome__code__context">Command Line</span>
-        <code>
-          node app @apostrophecms/user:add myUsername admin
-        </code>
-      </pre>
-  <p class="bp-welcome__cta">
-    <a class="bp-button bp-button--cta" href="/login">Then log in here</a>
-  </p>
-  {% endif %}
-  <p>
-    For a guide on how to configure and customize this project, <a
-      href="https://a3.docs.apostrophecms.com/">please check out the Apostrophe 3 documentation</a>.
-  </p>
-  <div class="bp-welcome__area">
-    {% if data.user %}
-    {# Message only for logged in users. #}
-    {% if not data.query['apos-edit'] %}
-    <p>
-      Enter <span class="bp-mode">Edit</span> mode from the admin bar <span
-        style="display:inline-block; transform: rotate(45deg)">👆</span> to begin.
-    </p>
-    {% else %}
-    <p>
-      Add and edit content below in the content area. 👇
-    </p>
-    {% endif %}
-    {% endif %}
-    {% area data.page, 'main' %}
+  <div class="hero">
+    <div class="text-wrapper">
+      <div class="sub-text">Together, we create continuous impact.</div>
+      <div class="main-text">Your Audacity.<br/>Our Tenacity.</div>
+    </div>
+    <img class="slash" src="/images/red-slash.svg" alt="">
+    <img class="clouds" src="/images/clouds.jpg" alt="">
   </div>
 </section>
+<!--<section class="content-section">-->
+<!--  <img class="eight-mark" src="images/8-mark-light.svg" alt="">-->
+<!--  <div class="transform-text">We transform how organizations build and deliver software.</div>-->
+<!--  <div class="content">-->
+<!--    <div class="section-header-wrapper">-->
+<!--      <div class="section-subheader">Digital solutions that optimize outcomes</div>-->
+<!--      <div class="section-header">Services</div>-->
+<!--    </div>-->
+<!--    <div class="image-1">image placeholder</div>-->
+<!--    <div class="service-body body-1">-->
+<!--      <div class="header"><img class="icon" src="images/service-cloud-1.svg" alt="">Cloud +-->
+<!--        Platforms-->
+<!--      </div>-->
+<!--      <div class="body">We specialize in delivering a cloud-native platform and toolchain that is-->
+<!--        optimized for-->
+<!--        change so enterprises can move at start-up speeds and with greater mission agility.-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="service-body body-2">-->
+<!--      <div class="header"><img class="icon" src="images/service-cloud-2.svg" alt="">Pipelines +-->
+<!--        Pathways-->
+<!--      </div>-->
+<!--      <div class="body">We ensure that teams have a secure and compliant means to deploy quickly and-->
+<!--        continuously with high quality and reduced risk.-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="image-2">image placeholder</div>-->
+<!--    <div class="image-3">image placeholder</div>-->
+<!--    <div class="service-body body-3">-->
+<!--      <div class="header"><img class="icon" src="images/service-cloud-3.svg" alt="">Applications +-->
+<!--        Digital Products-->
+<!--      </div>-->
+<!--      <div class="body">Our teams use agile, lean, and user-centered approaches to continuously-->
+<!--        deliver impactful software that users love.-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
 {% endblock %}
