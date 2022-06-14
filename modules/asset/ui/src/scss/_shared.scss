@@ -1,3 +1,62 @@
+.hero {
+  display: flex;
+  background: #F2F2F2;
+  height: 370px;
+  z-index: -1;
+
+  & .slanted-div {
+    position: relative;
+    padding: 185px 60px;
+    background: #F2F2F2;
+    overflow: visible;
+  }
+
+  & .slanted-div:after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: inherit;
+    top: 0;
+    transform-origin: right bottom;
+    transform: skewX(-8deg);
+  }
+
+  & .left {
+    padding-left: 150px;
+
+    & .memo {
+      color: #FC0000;
+      font-family: "Supply", serif;
+      font-size: 12px;
+      text-transform: uppercase;
+      text-align: left;
+      padding-top: 50px;
+    }
+
+    & .title {
+      font-family: "Jagerlay", serif;
+      font-weight: bold;
+      font-size: 48px;
+      text-align: left;
+      padding-top: 20px;
+      min-width: max-content;
+    }
+
+    & .description {
+      font-family: "DM Sans", serif;
+      font-size: 14px;
+      text-align: left;
+      padding-top: 20px;
+    }
+  }
+
+  & .right {
+    flex-grow: 1;
+    background: #000000;
+  }
+}
+
 .section-header-wrapper {
   border-left: 12px solid #131414;
   padding-left: 52px;
