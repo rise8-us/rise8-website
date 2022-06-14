@@ -206,6 +206,7 @@ a:hover {
   list-style: none;
 
   & .list-option {
+    transition: .5s ease;
     font-family: 'Jagerlay', serif;
     margin-bottom: 40px;
     padding-top: 4px;
@@ -239,6 +240,10 @@ a:hover {
   font-family: "DM Sans", serif;
   line-height: 17px;
 
+  &.active {
+    display: inline-flex;
+  }
+
   & .frame {
     position: absolute;
     height: 100%;
@@ -255,6 +260,136 @@ a:hover {
   }
 }
 
-.belief-description.active {
-  display: inline-flex;
+.department-bios-container {
+  display: none;
+  flex-grow: 1;
+  flex-direction: column;
+
+  &.active {
+    display: flex;
+  }
+
+  & .department-photos-wrapper {
+    display: flex;
+    justify-content: space-between;
+
+    & .riser-photo-wrapper {
+      position: relative;
+      height: 322px;
+      width: 264px;
+      justify-content: end;
+      cursor: pointer;
+
+      & .riser-photo {
+        object-fit: cover;
+        height: 322px;
+        width: 264px;
+        filter: grayscale(100%);
+        transition: .5s ease;
+
+        &:hover, &.active {
+          filter: grayscale(100%) brightness(40%) sepia(100%) hue-rotate(-50deg) saturate(600%) contrast(0.8);
+        }
+      }
+
+      & .photo-hover {
+        transition: .5s ease;
+        pointer-events: none;
+        opacity: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: "DM Sans", serif;
+        font-weight: 800;
+      }
+
+      &:hover .photo-hover {
+        opacity: 1;
+      }
+
+      & .photo-info {
+        position: absolute;
+        bottom: 16px;
+        left: 16px;
+
+        & .photo-name {
+          font-family: "DM Sans", serif;
+          font-size: 14px;
+          font-weight: 800;
+        }
+
+        & .photo-role {
+          font-family: "DM Sans", serif;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  & .department-bios-wrapper {
+    display: flex;
+    margin-top: 32px;
+
+    & .riser-bio-wrapper {
+      display: none;
+      flex-grow: 1;
+      flex-direction: column;
+
+      &.active {
+        display: flex;
+      }
+
+      & .riser-bio-header {
+        flex-grow: 1;
+
+        & .bio-name {
+          font-family: "Jagerlay", serif;
+          font-weight: 500;
+          font-size: 24px;
+          line-height: 30px;
+        }
+
+        & .bio-role {
+          font-family: "DM Sans", serif;
+          font-size: 14px;
+          color: #F2F2F2;
+        }
+      }
+
+      & .riser-bio {
+        display: flex;
+        flex-grow: 1;
+        margin-top: 16px;
+
+        & .bio-bio {
+          width: 70%;
+          font-family: "DM Sans", serif;
+          font-size: 14px;
+        }
+
+        & .bio-quote {
+          display: flex;
+          flex-direction: column;
+          align-items: end;
+          width: 30%;
+
+          & .riser-quote-name {
+            padding: 4px 0 4px 8px;
+            border-top: 1px solid #F2F2F2;
+            color: #F2F2F2;
+            font-family: "DM Sans", serif;
+            font-size: 14px;
+            font-weight: 800;
+          }
+
+          & .riser-quote {
+            color: #F2F2F2;
+            font-family: "DM Sans", serif;
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
 }

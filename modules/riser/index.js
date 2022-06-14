@@ -22,6 +22,19 @@ module.exports = {
         textarea: true,
         max: 280,
       },
+      photo: {
+        label: 'Bio Photo',
+        type: 'area',
+        required: true,
+        options: {
+          max: 1,
+          widgets: {
+            '@apostrophecms/image': {
+              minSize: [ 528, 644 ],
+            },
+          },
+        },
+      },
       _departments: {
         type: 'relationshipReverse',
         label: 'Departments',
@@ -32,7 +45,7 @@ module.exports = {
     group: {
       basics: {
         label: 'Basics',
-        fields: [ 'title', 'role', 'bio', 'quote' ],
+        fields: [ 'title', 'role', 'bio', 'quote', 'photo' ],
       },
     },
   },
