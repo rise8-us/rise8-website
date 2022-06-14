@@ -86,6 +86,11 @@
   }
 }
 
+.section-body-wrapper {
+  margin: 40px 0 0 66px;
+  display: flex;
+}
+
 .section-body-text {
   padding-left: 78px;
   width: 356px;
@@ -182,4 +187,64 @@
 
 a:hover {
   text-decoration: none;
+}
+
+.list-wrapper {
+  padding: 0 120px 0 0;
+  width: 116px;
+  overflow: visible;
+  list-style: none;
+
+  & .list-option {
+    font-family: 'Jagerlay', serif;
+    margin-bottom: 40px;
+    padding-top: 4px;
+    font-size: 20px;
+    line-height: 25px;
+    color: #838484;
+    border-top: 2px solid transparent;
+    cursor: pointer;
+  }
+
+  & .list-option.active {
+    color: #FC0000;
+    border-top: 2px solid #FC0000;
+  }
+}
+
+.list-partner {
+  display: flex;
+  flex-grow: 1;
+}
+
+.belief-description {
+  display: none;
+  position: relative;
+  height: 280px;
+  width: calc(100% - 70px);
+  align-items: center;
+  justify-content: center;
+  background: #FFFFFF;
+  color: #3D3D3D;
+  font-family: "DM Sans", serif;
+  line-height: 17px;
+
+  & .frame {
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+  }
+
+  & .pixels {
+    position: absolute;
+    height: 100%;
+    left: 50px;
+    top: 50px;
+    z-index: -1;
+  }
+}
+
+.belief-description.active {
+  display: inline-flex;
 }
