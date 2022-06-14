@@ -8,5 +8,16 @@
 {% block title %}404 - Page not found{% endblock %}
 
 {% block main %}
-  We're sorry. We couldn't find the page you're looking for.
+<section class="content-section">
+  <div class="content-wrapper error">
+    <div class="section-header-wrapper error">
+      <div class="section-subheader">Error 404</div>
+      <div class="section-header">You've found a page that doesn't exist.</div>
+    </div>
+    <a href="/" class="button dark">
+      <div class="dark">Back Home</div>
+      <img src="/images/icon-chevron-right-light.svg" alt="Chevron right">
+    </a>
+  </div>
+</section>
 {% endblock %}

@@ -66,6 +66,11 @@
     border-left: 12px solid #FFFFFF;
   }
 
+  &.error {
+    border-left: none;
+    padding: 0;
+  }
+
   .section-subheader {
     font-family: 'Supply', serif;
     text-transform: uppercase;
