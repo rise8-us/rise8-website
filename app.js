@@ -39,6 +39,8 @@ require('apostrophe')({
     'blog-page': {},
     'about-page': {},
     'careers-page': {},
-    'contact-page': {}
+    'contact-page': {},
+    department: {},
+    riser: {}
   }
 });

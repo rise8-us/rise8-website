@@ -1,7 +1,24 @@
+const findAboutPagePieces = require('../../about-page/findPieces.js');
 // This configures the @apostrophecms/pages module to add a "home" page type to the
 // pages menu
 
 module.exports = {
+  handlers(self, options) {
+    return {
+      beforeSend: {
+        async handlerName(req) {
+          const data = {
+            ...await findAboutPagePieces(self, req)
+          };
+
+          req.data = {
+            ...req.data,
+            ...data
+          };
+        }
+      }
+    };
+  },
   options: {
     types: [
       {
