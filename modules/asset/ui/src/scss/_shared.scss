@@ -2,7 +2,10 @@
   border-left: 12px solid #131414;
   padding-left: 52px;
   grid-area: header;
-  margin-top: 32px;
+
+  &.dark {
+    border-left: 12px solid #FFFFFF;
+  }
 
   .section-subheader {
     font-family: 'Supply', serif;
@@ -15,13 +18,22 @@
     font-family: 'Jagerlay', serif;
     font-size: 40px;
     font-weight: 400;
+    margin-top: 8px;
   }
+}
+
+.section-body-text {
+  margin-top: 26px;
+  padding-left: 78px;
+  width: 356px;
+  font-size: 12px;
+  font-family: 'DM Sans', sans-serif;
 }
 
 .service-image {
   height: 192px;
   width: 430px;
-  background-color: black;
+  background-color: #131414;
 }
 
 .service-body {
@@ -53,22 +65,41 @@
   justify-content: center;
   height: 38px;
   width: 236px;
-  border: 0;
+  border: 1px solid #131414;
   font-family: 'Bitter', serif;
   font-family: 'DM Sans', sans-serif;
   font-size: 16px;
+
+  &.half {
+    width: 140px;
+  }
 
   img {
     height: 20px;
     margin-left: 12px;
   }
+}
 
-  &.dark {
-    background-color: black;
-    color: white;
-  }
+.dark {
+  background-color: #131414;
+  color: #FFFFFF;
+}
 
-  &.light {
-    background-color: white;
-  }
+.light {
+  background-color: #FFFFFF;
+  color: #131414;
+}
+
+.right-justify {
+  margin-right: 0;
+  margin-left: auto;
+}
+
+.standard-top {
+  margin-top: 24px;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
 }

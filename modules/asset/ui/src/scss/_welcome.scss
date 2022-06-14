@@ -39,18 +39,19 @@
     .clouds {
       position: relative;
     }
-  ;
   }
 }
 
 .content-section {
-  //position: relative;
-  //padding-top: 72px;
   width: 100%;
+  padding: 72px 0;
+
+  &.dark {
+    background-color: #131414;
+  }
 
   .eight-mark {
     position: absolute;
-    //position: relative;
     margin-top: -160px;
     z-index: -1;
   }
@@ -64,7 +65,7 @@
       font-size: 30px;
       font-weight: 500;
       text-align: center;
-      margin: 72px auto 40px;
+      margin: 0 auto 72px;
       position: relative;
     }
 
@@ -106,6 +107,10 @@
         grid-area: body3;
       }
     }
+  }
+
+  .secondary {
+    margin-top: 32px;
 
     .logo-wrapper {
       margin-top: 36px;
@@ -115,3 +120,8 @@
   }
 }
 
+.image-container {
+  .image {
+    height: 400px;
+  }
+}
