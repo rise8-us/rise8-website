@@ -78,7 +78,6 @@
       grid-template-rows: auto;
       row-gap: 48px;
       grid-template-areas:
-    "header header"
     "main1 body1"
     "body2 main2"
     "main3 body3";
@@ -113,7 +112,6 @@
     margin-top: 32px;
 
     .logo-wrapper {
-      margin-top: 36px;
       display: flex;
       justify-content: space-between;
     }
@@ -123,5 +121,28 @@
 .image-container {
   .image {
     height: 400px;
+  }
+}
+
+.background-wrapper {
+  position: relative;
+
+  .background {
+    position: absolute;
+    right: 0%;
+    top: 20%;
+    z-index: -1;
+  }
+}
+
+.blog-container {
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+
+  .post {
+    height: 277px;
+    width: 277px;
+    background-color: black;
   }
 }

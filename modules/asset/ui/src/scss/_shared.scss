@@ -60,7 +60,7 @@
 .section-header-wrapper {
   border-left: 12px solid #131414;
   padding-left: 52px;
-  grid-area: header;
+  margin-bottom: 36px;
 
   &.dark {
     border-left: 12px solid #FFFFFF;
@@ -82,7 +82,6 @@
 }
 
 .section-body-text {
-  margin-top: 26px;
   padding-left: 78px;
   width: 356px;
   font-size: 12px;
