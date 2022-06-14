@@ -39,5 +39,19 @@
   </div>
 </div>
 {% endif %}
+<div class="blog-grid">
+  {% for blog in data.pieces %}
+  <div class="card">
+    <div class="banner"><span class="title">{{ blog.title}}</span></div>
+    <div class="info">
+      <span class="topic">{{blog._topic[0].title}}</span>
+      <div class="time">
+        <img src="/images/clock-black.svg" alt="clock" style="fill: #000000">
+        <span>{{blog.minutes}} min</span>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
 <!--{{ data.pieces | json }}-->
 {% endblock %}

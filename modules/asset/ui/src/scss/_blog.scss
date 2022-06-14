@@ -76,3 +76,61 @@
     }
   }
 }
+.blog-grid {
+  width: 1128px;
+  margin: 40px auto;
+
+
+  .card {
+    display: inline-block;
+    margin-right: 19px;
+    margin-bottom: 19px;
+    width: 360px;
+    height: 379px;
+
+    .banner {
+      height: 305px;
+      padding: 10px;
+      width: 340px;
+      background: rgb(0,0,0);
+      background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(203,31,31,1) 100%);
+
+      span {
+        display: table-cell;
+        height: 305px;
+        vertical-align: bottom;
+        font-family: 'DM Sans', serif;
+        font-size: 20px;
+        color: #FFFFFF;
+      }
+    }
+    .info {
+      position: relative;
+      .topic {
+        text-transform: uppercase;
+        font-family: "Supply", serif;
+        font-size: 9px;
+        position: absolute;
+        top: 22px;
+        left: 0;
+        color: red;
+      }
+
+      .time {
+        position: absolute;
+        top: 22px;
+        right: 0;
+        font-size: 12px;
+
+        span {
+          vertical-align: top;
+          padding-right: 5px;
+        }
+      }
+    }
+  }
+  .card:nth-child(3n) {
+    margin-right: 0;
+  }
+
+}
