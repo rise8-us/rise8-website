@@ -1,5 +1,5 @@
 module.exports = async (self, req, count) => {
-  return await self.apos.modules.blog.find(req)
+  const blogs = await self.apos.modules.blog.find(req)
     .sort({ createdAt: -1 })
     .limit(count)
     .project({
@@ -11,4 +11,10 @@ module.exports = async (self, req, count) => {
       publishedAt: 1,
     })
     .toArray();
+
+  for (let i = blogs.length; i < 3; i++) {
+    blogs.push({});
+  }
+
+  return blogs;
 };
