@@ -8,59 +8,59 @@ module.exports = {
       beforeSend: {
         async handlerName(req) {
           const data = {
-            ...await findAboutPagePieces(self, req)
+            ...await findAboutPagePieces(self, req),
           };
 
           req.data = {
             ...req.data,
-            ...data
+            ...data,
           };
-        }
-      }
+        },
+      },
     };
   },
   options: {
     types: [
       {
         name: 'default-page',
-        label: 'Default'
+        label: 'Default',
       },
       {
         name: '@apostrophecms/home-page',
-        label: 'Home'
-      }
+        label: 'Home',
+      },
     ],
     park: [
       {
         slug: '/services',
         parkedId: 'servicesId',
         title: 'Services',
-        type: 'services-page'
+        type: 'services-page',
       },
       {
         slug: '/about',
         parkedId: 'aboutUsId',
         title: 'About Us',
-        type: 'about-page'
+        type: 'about-page',
       },
       {
         slug: '/blog',
         parkedId: 'blogId',
         title: 'Blog',
-        type: 'blog-page'
+        type: 'blog-page',
       },
       {
         slug: '/careers',
         parkedId: 'careersId',
         title: 'Careers',
-        type: 'careers-page'
+        type: 'careers-page',
       },
       {
         slug: '/contact',
         parkedId: 'contactId',
         title: 'Contact',
-        type: 'contact-page'
-      }
-    ]
-  }
+        type: 'contact-page',
+      },
+    ],
+  },
 };

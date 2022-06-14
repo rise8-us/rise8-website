@@ -13,23 +13,23 @@ require('apostrophe')({
     // `className` options set custom CSS classes for Apostrophe core widgets.
     '@apostrophecms/db': {
       options: {
-        uri: `mongodb://rise8:${process.env.DB_PASSWORD}@${process.env.DB_IP_ADDRESS}:27017/rise8-${process.env.DEPLOY_ENV}?authSource=admin`
-      }
+        uri: `mongodb://rise8:${process.env.DB_PASSWORD}@${process.env.DB_IP_ADDRESS}:27017/rise8-${process.env.DEPLOY_ENV}?authSource=admin`,
+      },
     },
     '@apostrophecms/rich-text-widget': {
       options: {
-        className: 'bp-rich-text'
-      }
+        className: 'bp-rich-text',
+      },
     },
     '@apostrophecms/image-widget': {
       options: {
-        className: 'bp-image-widget'
-      }
+        className: 'bp-image-widget',
+      },
     },
     '@apostrophecms/video-widget': {
       options: {
-        className: 'bp-video-widget'
-      }
+        className: 'bp-video-widget',
+      },
     },
     // `asset` supports the project's webpack build for client-side assets.
     asset: {},
@@ -41,6 +41,8 @@ require('apostrophe')({
     'careers-page': {},
     'contact-page': {},
     department: {},
-    riser: {}
-  }
+    riser: {},
+    topic: {},
+    blog: {},
+  },
 });

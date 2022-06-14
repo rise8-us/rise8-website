@@ -2,38 +2,38 @@ module.exports = {
   extend: '@apostrophecms/piece-type',
   options: {
     label: 'Riser',
-    pluralLabel: 'Risers'
+    pluralLabel: 'Risers',
   },
   fields: {
     add: {
       title: {
         label: 'Name',
-        type: 'string'
+        type: 'string',
       },
       role: {
-        type: 'string'
+        type: 'string',
       },
       bio: {
         type: 'string',
-        textarea: true
+        textarea: true,
       },
       quote: {
         type: 'string',
         textarea: true,
-        max: 280
+        max: 280,
       },
       _departments: {
         type: 'relationshipReverse',
         label: 'Departments',
         withType: 'department',
-        reverseOf: '_risers'
-      }
+        reverseOf: '_risers',
+      },
     },
     group: {
       basics: {
         label: 'Basics',
-        fields: [ 'title', 'role', 'bio', 'quote' ]
-      }
-    }
-  }
+        fields: [ 'title', 'role', 'bio', 'quote' ],
+      },
+    },
+  },
 };
