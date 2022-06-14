@@ -69,10 +69,6 @@ main,
     a {
       color: #000000;
     }
-
-    a:hover {
-      text-decoration: none;
-    }
   }
 
   .true, li:hover {
@@ -108,11 +104,11 @@ main,
       .button-wrapper {
         display: grid;
         width: 250px;
-      }
-    }
 
-    button:last-child {
-      margin-top: 15px;
+        a:last-child {
+          margin-top: 15px;
+        }
+      }
     }
   }
 }
