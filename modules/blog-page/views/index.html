@@ -41,7 +41,7 @@
 {% endif %}
 <div class="blog-grid">
   {% for blog in data.pieces %}
-  <div class="card">
+  <a href="/blog/{{blog.slug}}" class="card">
     <div class="banner"><span class="title">{{ blog.title}}</span></div>
     <div class="info">
       <span class="topic">{{blog._topic[0].title}}</span>
@@ -50,7 +50,7 @@
         <span>{{blog.minutes}} min</span>
       </div>
     </div>
-  </div>
+  </a>
   {% endfor %}
 </div>
 <!--{{ data.pieces | json }}-->
