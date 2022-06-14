@@ -133,10 +133,12 @@ that lives in the top-level views/ folder for convenience
               <img src="/images/clock.svg" alt="clock">
               <div>{{ blog.minutes }} min</div>
             </div>
+            {% if blog._url %}
             <a href="{{ blog._url }}" class="button dark mini">
               <div class="dark">Go To</div>
               <img src="/images/icon-chevron-right-light.svg" alt="Chevron right">
             </a>
+            {% endif %}
           </div>
         </div>
         {% endfor %}

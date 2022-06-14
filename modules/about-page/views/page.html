@@ -92,4 +92,45 @@
     </div>
   </div>
 </div>
+<section class="content-section">
+  <div class="content-wrapper">
+    <div class="section-header-wrapper">
+      <div class="section-subheader">A finger on the pulse. The finger to the status quo.</div>
+      <div class="section-header">Blog</div>
+    </div>
+    <div class="background-wrapper">
+      <img class="background" src="images/background-motherboard.svg" alt="">
+      <div class="blog-container">
+        {% for blog in data.blogs %}
+        <div class="post">
+          <div class="top">
+            <div class="title">
+              {{ blog.title }}
+            </div>
+            <div class="subtitle">
+              {{ blog.subtitle }}
+            </div>
+          </div>
+          <div class="bottom">
+            <div class="minutes">
+              <img src="/images/clock.svg" alt="clock">
+              <div>{{ blog.minutes }} min</div>
+            </div>
+            {% if blog._url %}
+            <a href="{{ blog._url }}" class="button dark mini">
+              <div class="dark">Go To</div>
+              <img src="/images/icon-chevron-right-light.svg" alt="Chevron right">
+            </a>
+            {% endif %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      <a href="/blog" class="button half light standard-top right-justify">
+        <div class="light">More Posts</div>
+        <img src="/images/icon-chevron-right.svg" alt="Chevron right">
+      </a>
+    </div>
+  </div>
+</section>
 {% endblock %}
