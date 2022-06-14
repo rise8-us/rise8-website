@@ -65,6 +65,12 @@ module.exports = {
         title: 'Contact',
         type: 'contact-page',
       },
+      {
+        slug: '/events/prodacity',
+        parkedId: 'prodacityId',
+        title: 'Prodacity',
+        type: 'prodacity-page',
+      }
     ],
   },
 };

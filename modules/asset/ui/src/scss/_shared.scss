@@ -25,6 +25,12 @@
   & .left {
     padding-left: 150px;
 
+    &.center {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+
     & .memo {
       color: #FC0000;
       font-family: "Supply", serif;
@@ -32,6 +38,10 @@
       text-transform: uppercase;
       text-align: left;
       padding-top: 50px;
+
+      &.center {
+        padding: 0;
+      }
     }
 
     & .title {
