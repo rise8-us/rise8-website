@@ -33,16 +33,16 @@ require('apostrophe')({
     },
     // `asset` supports the project's webpack build for client-side assets.
     asset: {},
-    // The project's first custom page type.
-    'default-page': {},
-    'services-page': {},
-    'blog-page': {},
-    'about-page': {},
-    'careers-page': {},
-    'contact-page': {},
     department: {},
     riser: {},
     topic: {},
     blog: {},
+    // The project's first custom page type.
+    'default-page': {},
+    'services-page': {},
+    'about-page': {},
+    'careers-page': {},
+    'contact-page': {},
+    'blog-page': {},
   },
 });

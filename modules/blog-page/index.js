@@ -1,5 +1,5 @@
 module.exports = {
-  extend: '@apostrophecms/page-type',
+  extend: '@apostrophecms/piece-page-type',
   options: {
     label: 'Blog Page',
   },
