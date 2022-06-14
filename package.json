@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node app",
     "dev": "dotenv -c -- nodemon",
+    "dev:ui": "APOS_DEV=1 dotenv -c -- nodemon",
     "docker:mongo": "dotenv -c -- docker-compose up -d mongo",
     "mongo:sync": "dotenv -c -- ./scripts/sync-down",
     "build": "NODE_ENV=production node app @apostrophecms/asset:build",

@@ -11,6 +11,10 @@
   src: url('/fonts/Supply-Regular.woff2');
 }
 
+.apos-admin-bar-spacer {
+  margin-bottom: 0 !important;
+}
+
 // Use flex to keep the footer at the bottom.
 body,
 [data-apos-refreshable],
@@ -26,7 +30,7 @@ main {
 }
 
 .bp-main {
-  padding-top: 36px;
+  padding-top: 40px;
 }
 
 body {
