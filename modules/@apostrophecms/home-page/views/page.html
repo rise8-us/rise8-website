@@ -118,9 +118,66 @@ that lives in the top-level views/ folder for convenience
     <div class="background-wrapper">
       <img class="background" src="images/background-motherboard.svg" alt="">
       <div class="blog-container">
-        <div class="post"></div>
-        <div class="post"></div>
-        <div class="post"></div>
+        <div class="post">
+          <div class="top">
+            <div class="title">
+              {{ data.blogs[0].title }}
+            </div>
+            <div class="subtitle">
+              {{ data.blogs[0].subtitle }}
+            </div>
+          </div>
+          <div class="bottom">
+            <div class="minutes">
+              <img src="/images/clock.svg" alt="clock">
+              <div>{{ data.blogs[0].minutes }} min</div>
+            </div>
+            <a href="{{ data.blogs[0]._url }}" class="button dark mini">
+              <div class="dark">Go To</div>
+              <img src="/images/icon-chevron-right-light.svg" alt="Chevron right">
+            </a>
+          </div>
+        </div>
+        <div class="post">
+          <div class="top">
+            <div class="title">
+              {{ data.blogs[1].title }}
+            </div>
+            <div class="subtitle">
+              {{ data.blogs[1].subtitle }}
+            </div>
+          </div>
+          <div class="bottom">
+            <div class="minutes">
+              <img src="/images/clock.svg" alt="clock">
+              <div>{{ data.blogs[1].minutes }} min</div>
+            </div>
+            <a href="{{ data.blogs[1]._url }}" class="button dark mini">
+              <div class="dark">Go To</div>
+              <img src="/images/icon-chevron-right-light.svg" alt="Chevron right">
+            </a>
+          </div>
+        </div>
+        <div class="post">
+          <div class="top">
+            <div class="title">
+              {{ data.blogs[2].title }}
+            </div>
+            <div class="subtitle">
+              {{ data.blogs[2].subtitle }}
+            </div>
+          </div>
+          <div class="bottom">
+            <div class="minutes">
+              <img src="/images/clock.svg" alt="clock">
+              <div>{{ data.blogs[2].minutes }} min</div>
+            </div>
+            <a href="{{ data.blogs[2]._url }}" class="button dark mini">
+              <div class="dark">Go To</div>
+              <img src="/images/icon-chevron-right-light.svg" alt="Chevron right">
+            </a>
+          </div>
+        </div>
       </div>
       <a href="/blog" class="button half light standard-top right-justify">
         <div class="light">More Posts</div>

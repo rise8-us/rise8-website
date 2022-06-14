@@ -1,4 +1,5 @@
 const findAboutPagePieces = require('../../about-page/findPieces.js');
+const findBlogs = require('../home-page/findPieces.js');
 // This configures the @apostrophecms/pages module to add a "home" page type to the
 // pages menu
 
@@ -7,8 +8,11 @@ module.exports = {
     return {
       beforeSend: {
         async handlerName(req) {
+          const aboutPagePieces = await findAboutPagePieces(self, req);
+          const blogPieces = await findBlogs(self, req, 3);
           const data = {
-            ...await findAboutPagePieces(self, req),
+            ...aboutPagePieces,
+            ...blogPieces,
           };
 
           req.data = {

@@ -132,6 +132,19 @@
     width: 140px;
   }
 
+  &.mini {
+    width: 94px;
+    height: 24px;
+    font-family: 'Supply', serif;
+    font-size: 14px;
+    border-bottom: 1px solid #FFFFFF;
+
+    img {
+      height: 12px;
+      margin-left: 12px;
+    }
+  }
+
   img {
     height: 20px;
     margin-left: 12px;
