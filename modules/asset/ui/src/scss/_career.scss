@@ -177,3 +177,41 @@
     }
   }
 }
+
+.tips-header {
+  font-family: 'Jagerlay';
+  font-size: 32px;
+  text-align: center;
+}
+
+.chevron {
+  width: 20px;
+  height: 50px;
+
+  &.left {
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.tip {
+  padding: 0 170px;
+
+  .quote {
+    font-family: 'DM Sans', serif;
+    font-size: 14px;
+    width: 552px;
+  }
+
+  .name {
+    margin-top: 24px;
+    font-size: 18px;
+  }
+
+  .role {
+    font-size: 14px
+  }
+}

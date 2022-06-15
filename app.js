@@ -37,6 +37,7 @@ require('apostrophe')({
     riser: {},
     topic: {},
     blog: {},
+    tip: {},
     // The project's first custom page type.
     'default-page': {},
     'services-page': {},
