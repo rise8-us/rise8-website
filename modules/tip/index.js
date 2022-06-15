@@ -10,6 +10,7 @@ module.exports = {
         required: true,
         label: 'Quote',
         type: 'string',
+        textarea: true,
       },
       _riser: {
         required: true,
