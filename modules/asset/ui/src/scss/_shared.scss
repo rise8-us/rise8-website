@@ -67,6 +67,33 @@
   }
 }
 
+.content-section {
+  width: 100%;
+  padding: 72px 0;
+
+  &.dark {
+    background-color: #131414;
+  }
+
+  &.grey {
+    background-color: #F2F2F2;
+  }
+
+  &.red {
+    background: linear-gradient(180deg, #800031 0%, #FC0000 100%);
+    color: #FFFFFF;
+  }
+
+  .content-wrapper {
+    margin: auto;
+    width: 1128px;
+
+    &.error {
+      width: max-content;
+    }
+  }
+}
+
 .section-header-wrapper {
   border-left: 12px solid #131414;
   padding-left: 52px;
