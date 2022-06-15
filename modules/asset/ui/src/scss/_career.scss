@@ -121,6 +121,59 @@
           background: #FC0000;
         }
       }
+
+      .career-list-wrapper {
+        display: flex;
+        flex-direction: column;
+        padding-left: 53px;
+        width: max-content;
+
+        .career-section-wrapper {
+          padding-bottom: 16px;
+          width: inherit;
+
+          .career-list-header {
+            font-family: Supply;
+            font-size: 24px;
+            line-height: 29px;
+            text-transform: uppercase;
+            padding-bottom: 16px;
+          }
+
+          .job-info{
+            padding-bottom: 16px;
+
+            .job-title {
+              font-family: 'DM Sans';
+              font-style: normal;
+              font-weight: 400;
+              font-size: 16px;
+              line-height: 21px;
+              text-transform: capitalize;
+              color: #FC0000;
+            }
+
+            .job-location {
+              font-family: 'DM Sans';
+              font-style: normal;
+              font-weight: 400;
+              font-size: 12px;
+              line-height: 16px;
+              color: #3D3D3D;
+            }
+          }
+        }
+      }
+
+      .career-list-partner {
+        display: flex;
+        flex-grow: 1;
+        margin-left: 163px;
+        width: 730px;
+        height: 575px;
+        align-self: center;
+        position: relative;
+      }
     }
   }
 }
