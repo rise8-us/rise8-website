@@ -4,7 +4,7 @@
   font-family: 'DM Sans', serif;
   font-size: 20px;
 
-  div:last-child {
+  .cloud-wrapper {
     display: flex;
     margin-top: 40px;
     align-items: center;
@@ -37,5 +37,9 @@
     li:last-child {
       margin: 0;
     }
+  }
+
+  .diagram-caption {
+    margin-top: 63px;
   }
 }
