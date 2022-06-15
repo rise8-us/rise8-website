@@ -106,6 +106,21 @@
         margin-right: 12px;
         background: #FC0000;
       }
+
+      & .section-grid {
+        display: grid;
+        gap: 33px 72px;
+        grid-template-columns: 176px 176px 176px 176px;
+        grid-template-rows: 93px 93px;
+        padding-top: 34px;
+        padding-left: 90px;
+
+        & .grid-icon {
+          width: 25px;
+          height: 25px;
+          background: #FC0000;
+        }
+      }
     }
   }
 }
