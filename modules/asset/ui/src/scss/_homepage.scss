@@ -154,11 +154,9 @@
     flex-direction: column;
     justify-content: space-between;
 
-    .top {}
-
     .title {
       width: 202px;
-      height: 26px;
+      height: fit-content;
       background-color: #131414;
       font-size: 16px;
       margin: 10px;
@@ -167,7 +165,7 @@
 
     .subtitle {
       width: 235px;
-      height: 40px;
+      height: fit-content;
       background-color: #131414;
       font-size: 13px;
       margin: 15px 10px;
