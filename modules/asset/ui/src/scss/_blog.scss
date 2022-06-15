@@ -20,12 +20,14 @@
     width: 1032px;
     position: absolute;
     top: 40px;
-    background: rgb(203,31,31);
-    background: linear-gradient(90deg, rgba(203,31,31,1) 0%, rgba(121,9,29,1) 51%, rgba(0,0,0,1) 100%);
+    background: rgb(203, 31, 31);
+    background: linear-gradient(90deg, rgba(203, 31, 31, 1) 0%, rgba(121, 9, 29, 1) 51%, rgba(0, 0, 0, 1) 100%);
+    background-position: center;
+    background-repeat: no-repeat;
 
     .title {
       max-width: 952px;
-      display:inline-block;
+      display: inline-block;
       overflow: hidden;
       min-height: 80px;
       white-space: nowrap;
@@ -76,6 +78,7 @@
     }
   }
 }
+
 .blog-grid {
   width: 1128px;
   margin: 40px auto;
@@ -92,8 +95,11 @@
       height: 305px;
       padding: 10px;
       width: 340px;
-      background: rgb(0,0,0);
-      background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(203,31,31,1) 100%);
+      background: rgb(0, 0, 0);
+      background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(203, 31, 31, 1) 100%);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: auto 325px;
 
       span {
         display: table-cell;
@@ -104,8 +110,10 @@
         color: #FFFFFF;
       }
     }
+
     .info {
       position: relative;
+
       .topic {
         text-transform: uppercase;
         font-family: "Supply", serif;
@@ -131,8 +139,137 @@
       }
     }
   }
+
   .card:nth-child(3n) {
     margin-right: 0;
   }
+}
 
+.blog {
+  font-family: 'DM Sans', serif;
+  width: 1063px;
+  margin: 48px auto 48px;
+
+  .header {
+    margin: 48px auto 22px;
+
+    .topic {
+      text-transform: uppercase;
+      font-family: "Supply", serif;
+      font-size: 9px;
+      color: red;
+    }
+
+    .title {
+      font-family: "Jagerlay", serif;
+      font-size: 36px;
+      text-align: left;
+      margin-top: 0;
+      padding: 10px 0 20px;
+
+      .time {
+        display: inline-block;
+        font-size: 12px;
+        font-family: 'DM Sans', serif;
+
+        span {
+          vertical-align: top;
+          text-decoration: none;
+          color: #000000;
+        }
+      }
+    }
+
+    .subtitle {
+      width: 551px;
+      margin-bottom: 40px;
+      font-size: 16px;
+      font-family: 'DM Sans', serif;
+      font-weight: 400;
+      text-align: left;
+    }
+    .banner {
+      height: auto;
+      width: 743px;
+    }
+
+    .author {
+      display: block;
+      padding-top: 22px;
+
+      a {
+        color: #FC0000
+      }
+
+    }
+
+  }
+
+  .body {
+    width: 742px;
+
+    .quote {
+      float: right;
+      width: 396px;
+      font-family: "Supply", serif;
+      font-size: 32px;
+
+      .open {
+        float: left;
+        font-size: 120px;
+        margin-top: -22px;
+      }
+
+      .text {
+        float: right;
+        width: 322px;
+      }
+
+    }
+  }
+
+  .social {
+    list-style: none;
+    margin: 10px 0 0;
+    padding-left: 0;
+
+    li {
+      display: inline-block;
+      padding-right: 10px;
+
+      img {
+        width: 20px;
+      }
+    }
+
+    li:last-child {
+      padding-right: 0;
+    }
+  }
+
+  .apos-area {
+    width: 100%;
+    font-family: "DM Sans", serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 32px;
+
+  }
+}
+
+.more-in-topic {
+  margin: 28px 0;
+
+  h1 {
+    font-family: "Jagerlay", serif;
+    font-size: 24px;
+    text-align: left;
+  }
+
+  a {
+    display: block;
+    margin-bottom: 5px;
+    text-decoration: none;
+    color: red;
+  }
 }

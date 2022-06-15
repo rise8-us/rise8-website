@@ -1,6 +1,83 @@
 {% extends "layout.html" %}
 
 {% block main %}
-<div>Show Blog</div>
-<!--{{ data | json }}-->
+<div class="blog">
+  <section class="header">
+    <span class="topic">{{data.piece._topic[0].title}}</span>
+    <div class="title">{{data.piece.title}}
+      <span class="time">
+        <img src="/images/clock-black.svg" alt="clock" style="fill: #000000">
+        <span>{{data.piece.minutes}} min</span>
+      </span>
+    </div>
+    <div class="subtitle">{{data.piece.subtitle}}</div>
+
+    {% if data.piece.blogType === 'read' %}
+    <div class="banner">
+    {% area data.piece, 'image' %}
+    </div>
+    {% endif %}
+
+    {% if data.piece.blogType === 'listen' %}
+    <!--suppress HtmlDeprecatedAttribute, HtmlUnknownTarget -->
+    <iframe style="border-radius:12px" src="{{ data.piece.embedUrl }}?utm_source=generator"
+            width="100%" height="232" frameBorder="0" allowfullscreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+    {% endif %}
+
+    {% if data.piece.blogType === 'watch' %}
+    <!--suppress HtmlDeprecatedAttribute, HtmlUnknownTarget -->
+    <iframe width="743" height="418" src="{{ data.piece.embedUrl }}" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+    {% endif %}
+    <span class="author">
+      By <a href="/about">{{ data.piece._author[0].title }}</a>
+    </span>
+  </section>
+
+  <ul class="social">
+    <li><a href="https://www.linkedin.com/company/rise8" target="_blank"><img
+        src="/images/logo-linkedin.svg" alt="LinkedIn logo"></a></li>
+    <li><a href="https://twitter.com/Rise8_Inc" target="_blank"><img
+        src="/images/logo-twitter.svg" alt="Twitter logo"></a></li>
+    <li><a href="https://www.facebook.com/rise8/" target="_blank"><img
+        src="/images/logo-facebook.svg" alt="Facebook logo"></a></li>
+    <li><a href="https://www.instagram.com/rise8_inc/" target="_blank"><img
+        src="/images/logo-instagram.svg" alt="Instagram logo"></a></li>
+  </ul>
+
+  <section class="body">
+    {% if data.piece.quote %}
+    <div class="quote">
+      <span class="open">“</span>
+      <span class="text">{{ data.piece.quote }}</span>
+    </div>
+    {% endif %}
+    <p>
+      {% area data.piece, 'bodyText' %}
+    </p>
+  </section>
+
+  <ul class="social" style="clear: both">
+    <li><a href="https://www.linkedin.com/company/rise8" target="_blank"><img
+        src="/images/logo-linkedin.svg" alt="LinkedIn logo"></a></li>
+    <li><a href="https://twitter.com/Rise8_Inc" target="_blank"><img
+        src="/images/logo-twitter.svg" alt="Twitter logo"></a></li>
+    <li><a href="https://www.facebook.com/rise8/" target="_blank"><img
+        src="/images/logo-facebook.svg" alt="Facebook logo"></a></li>
+    <li><a href="https://www.instagram.com/rise8_inc/" target="_blank"><img
+        src="/images/logo-instagram.svg" alt="Instagram logo"></a></li>
+  </ul>
+
+  {% if data.otherBlogsByTopic %}
+  <section class="more-in-topic">
+    <h1>More in {{data.piece._topic[0].title}}</h1>
+    {% for blog in data.otherBlogsByTopic %}
+    <a href="/blog/{{blog.slug}}">{{blog.title}}</a>
+    {% endfor %}
+  </section>
+  {% endif %}
+</div>
 {% endblock %}

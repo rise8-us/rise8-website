@@ -6,21 +6,75 @@ module.exports = {
   },
   fields: {
     add: {
+      blogType: {
+        type: 'select',
+        required: true,
+        choices: [
+          {
+            label: 'Read',
+            value: 'read',
+          },
+          {
+            label: 'Listen',
+            value: 'listen',
+          },
+          {
+            label: 'Watch',
+            value: 'watch',
+          },
+        ],
+      },
       slug: {
         required: true,
         type: 'slug',
       },
+      shortTitle: {
+        required: true,
+        type: 'string',
+      },
       subtitle: {
+        required: true,
         type: 'string',
       },
-      videoUrl: {
+      image: {
+        required: true,
+        type: 'area',
+        options: {
+          max: 1,
+          widgets: {
+            '@apostrophecms/image': {},
+          },
+        },
+      },
+      embedUrl: {
+        required: true,
         type: 'url',
+        if: {
+          $or: [
+            { blogType: 'watch' },
+            { blogType: 'listen' },
+          ],
+        },
       },
-      body: {
-        type: 'string',
-        textarea: true,
+      bodyText: {
+        required: true,
+        type: 'area',
+        options: {
+          widgets: {
+            '@apostrophecms/rich-text': {
+              toolbar: [ 'styles', 'italic' ],
+              styles: [
+                {
+                  tag: 'p',
+                  label: 'Paragraph (P)',
+                },
+              ],
+            },
+          },
+        },
       },
       minutes: {
+        required: true,
         type: 'integer',
       },
       quote: {
@@ -47,9 +101,12 @@ module.exports = {
         label: 'Basics',
         fields: [
           'title',
+          'image',
+          'shortTitle',
           'subtitle',
-          'videoUrl',
-          'body',
+          'blogType',
+          'embedUrl',
+          'bodyText',
           'minutes',
           'quote',
           '_topic',
