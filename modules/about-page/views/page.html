@@ -1,28 +1,12 @@
 {% extends "layout.html" %}
 
 {% block main %}
-<div class="hero">
-  <div class="left">
-    <div class="memo">
-      We are your digital transformation partner
-    </div>
-    <div class="title">
-      We Are<br>
-      Rise8
-    </div>
-    <div class="description">
-      We have strong opinions (loosely held) because<br>
+<hero-header title="We Are<br>Rise8" memo="We are your digital transformation partner"
+             description="We have strong opinions (loosely held) because<br>
       game-changing tech isn't possible without an<br>
       industry-changing mindset. We love what we do,<br>
       and we're not shy about sharing our unfiltered<br>
-      thoughts on all of it.
-    </div>
-  </div>
-  <div class="slanted-div"></div>
-  <div class="right">
-    <div style="width: 600px"></div>
-  </div>
-</div>
+      thoughts on all of it."></hero-header>
 <div class="content-section">
   <div class="content-wrapper">
     <div class="section-header-wrapper">
@@ -33,13 +17,13 @@
       <div class="list-wrapper">
         <script>
           function onClick(e) {
-            const beliefs = document.getElementsByClassName("belief");
+            const beliefs = document.getElementsByClassName('belief');
             for (let i = 0; i < beliefs.length; i++) {
-              beliefs[i].classList.remove('active')
+              beliefs[i].classList.remove('active');
             }
-            const descriptions = document.getElementsByClassName("belief-description")
+            const descriptions = document.getElementsByClassName('belief-description');
             for (let i = 0; i < descriptions.length; i++) {
-              descriptions[i].classList.remove('active')
+              descriptions[i].classList.remove('active');
             }
             e.target.classList.add('active');
             document.getElementById(`${e.target.id}-description`).classList.add('active');
@@ -94,43 +78,20 @@
 </div>
 <section class="content-section">
   <div class="content-wrapper">
-    <div class="section-header-wrapper">
-      <div class="section-subheader">A finger on the pulse. The finger to the status quo.</div>
-      <div class="section-header">Blog</div>
-    </div>
-    <div class="background-wrapper">
-      <img class="background" src="images/background-motherboard.svg" alt="">
-      <div class="blog-container">
-        {% for blog in data.blogs %}
-        <div class="post">
-          <div class="top">
-            <div class="title">
-              {{ blog.title }}
-            </div>
-            <div class="subtitle">
-              {{ blog.subtitle }}
-            </div>
-          </div>
-          <div class="bottom">
-            <div class="minutes">
-              <img src="/images/clock.svg" alt="clock">
-              <div>{{ blog.minutes }} min</div>
-            </div>
-            {% if blog._url %}
-            <a href="{{ blog._url }}" class="button dark mini">
-              <div class="dark">Go To</div>
-              <img src="/images/icon-chevron-right-light.svg" alt="Chevron right">
-            </a>
-            {% endif %}
-          </div>
-        </div>
-        {% endfor %}
-      </div>
-      <a href="/blog" class="button half light standard-top right-justify">
-        <div class="light">More Posts</div>
-        <img src="/images/icon-chevron-right.svg" alt="Chevron right">
-      </a>
-    </div>
+    <blog-preview
+        blog1='{ "title": "{{ data.blogs[0].title }}",
+        "subtitle": "{{ data.blogs[0].subtitle }}",
+        "minutes": "{{ data.blogs[0].minutes }}",
+        "url": "{{ data.blogs[0]._url }}" }'
+        blog2='{ "title": "{{ data.blogs[1].title }}",
+        "subtitle": "{{ data.blogs[1].subtitle }}",
+        "minutes": "{{ data.blogs[1].minutes }}",
+        "url": "{{ data.blogs[1]._url }}" }'
+        blog3='{ "title": "{{ data.blogs[2].title }}",
+        "subtitle": "{{ data.blogs[2].subtitle }}",
+        "minutes": "{{ data.blogs[2].minutes }}",
+        "url": "{{ data.blogs[2]._url }}" }'>>
+    </blog-preview>
   </div>
 </section>
 {% endblock %}

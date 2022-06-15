@@ -1,27 +1,12 @@
 {% extends "layout.html" %}
 
 {% block main %}
-<div class="hero">
-  <div class="left">
-    <div class="memo">
-      A finger on the pulse. The finger to the status quo.
-    </div>
-    <div class="title">
-      The Slant
-    </div>
-    <div class="description">
-      Game-changing tech isn’t possible without<br>
+<hero-header title="The Slant" memo="A finger on the pulse. The finger to the status quo."
+             description="Game-changing tech isn’t possible without<br>
       an industry-changing mindset. You gotta<br>
       walk the talk. We love what we do, and we’re<br>
       not shy about sharing our triumphs, our trip-<br>
-      ups, and our unfiltered thoughts on all of it.
-    </div>
-  </div>
-  <div class="slanted-div"></div>
-  <div class="right">
-    <div style="width: 600px"></div>
-  </div>
-</div>
+      ups, and our unfiltered thoughts on all of it."></hero-header>
 {% if data.page._featured[0] %}
 <div class='featured-blog-wrapper'>
   <div class='background'></div>
@@ -32,10 +17,7 @@
       <img src="/images/clock.svg" alt="clock">
       <span>{{data.page._featured[0].minutes}} min</span>
     </div>
-    <a href="/blog/{{data.page._featured[0].slug}}" class="button dark half">
-      <div class="dark">Read</div>
-      <img src="/images/icon-chevron-right-light.svg" alt="Chevron right">
-    </a>
+    <custom-button text="Read" link="/blog/{{data.page._featured[0].slug}}" half></custom-button>
   </div>
 </div>
 {% endif %}
@@ -53,5 +35,4 @@
   </a>
   {% endfor %}
 </div>
-<!--{{ data.pieces | json }}-->
 {% endblock %}

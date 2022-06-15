@@ -182,8 +182,8 @@
 }
 
 .right-justify {
-  margin-right: 0;
-  margin-left: auto;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .standard-top {

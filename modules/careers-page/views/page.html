@@ -1,25 +1,9 @@
 {% extends "layout.html" %}
 
 {% block main %}
-<div class="hero">
-  <div class="left">
-    <div class="memo">
-      Message from the CEO
-    </div>
-    <div class="title">
-      Welcome<br>
-      Future Risers
-    </div>
-    <div class="description">
-      Changing the culture of the largest<br>
+<hero-header title="Welcome<br>Future Risers" memo="Message from the CEO"
+             description="Changing the culture of the largest<br>
       bureaucracy on the planet is not a hero’s<br>
       task. It takes a dream team aligned on the<br>
-      biggest outcomes.
-    </div>
-  </div>
-  <div class="slanted-div"></div>
-  <div class="right">
-    <div style="width: 600px"></div>
-  </div>
-</div>
+      biggest outcomes."></hero-header>
 {% endblock %}

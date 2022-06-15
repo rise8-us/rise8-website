@@ -5,11 +5,9 @@ export class WhoWeServe extends HTMLElement {
 
   connectedCallback() {
     this.innerHTML = `
-      <div class="secondary">
-      <div class="section-header-wrapper">
-        <div class="section-subheader">Trusted guides with proven success</div>
-        <div class="section-header">Who We Serve</div>
-      </div>
+    <div class="secondary">
+      <section-header header="Who We Serve"
+                      subheader="Trusted guides with proven success"></section-header>
       <div class="logo-wrapper">
         <img src="images/logo-sf.svg" alt="">
         <img src="images/logo-af.svg" alt="">
