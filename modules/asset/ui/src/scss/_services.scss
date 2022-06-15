@@ -1,0 +1,40 @@
+.service-section-wrapper {
+  width: 965px;
+  margin: auto;
+  font-family: 'DM Sans', serif;
+  font-size: 20px;
+
+  div:last-child {
+    display: flex;
+    margin-top: 40px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cloud-image {
+    width: 92px;
+    height: 84px;
+    margin: 0 10%;
+  }
+
+  ul {
+    list-style: none;
+    margin-right: 20%;
+
+    li::before {
+      content: "\2022";
+      color: #FC0000;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+    }
+
+    li {
+      margin-bottom: 40px;
+    }
+
+    li:last-child {
+      margin: 0;
+    }
+  }
+}
