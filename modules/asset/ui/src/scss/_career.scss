@@ -15,17 +15,36 @@
   color: #FFFFFF;
 }
 
-.content-section {
+.career-content-section {
   width: 100%;
   padding: 72px 0;
 
   &.dark {
     background-color: #131414;
+    color: #FFFFFF;
   }
 
-  & .content-wrapper {
+  &.red {
+    background: linear-gradient(180deg, #800031 0%, #FC0000 100%);
+    color: #FFFFFF;
+  }
+
+  .content-wrapper {
     margin: auto;
     width: 1128px;
+
+    .header-description {
+      width: fit-content;
+      height: 42px;
+      padding-left: 64px;
+
+      font-family: 'Telegraf', Serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 14px;
+
+    }
 
     .section-header-wrapper {
       border-left: 12px solid #131414;
@@ -37,24 +56,6 @@
       }
     }
 
-    .description {
-      width: fit-content;
-      height: 42px;
-      padding-left: 64px;
-
-      font-family: 'Telegraf', Serif;
-      font-style: normal;
-      font-weight: 400;
-      font-size: 13px;
-      line-height: 14px;
-
-      color: #000000;
-
-      &.dark {
-        color: #FFFFFF;
-      }
-    }
-
     .section-body-wrapper {
       margin: 24px 0 0 0px;
       display: flex;
@@ -63,14 +64,14 @@
         color: #FFFFFF;
       }
 
-      & .img-description {
+      .img-description {
         color: white;
         width: 293px;
         height: 158px;
         position: absolute;
         top: 696px;
 
-        & .img-description-header {
+        .img-description-header {
           background: #131414;
           width: fit-content;
           text-align: center;
@@ -79,7 +80,7 @@
           padding: 0px 19px
         }
 
-        & .img-description-subheader {
+        .img-description-subheader {
           background: #131414;
           width: fit-content;
           margin-top: 22px;
@@ -89,7 +90,7 @@
           padding-right: 7px;
         }
 
-        & .img-description-content {
+        .img-description-content {
           background: #131414;
           margin-top: 4px;
           height: 80px;
@@ -99,15 +100,14 @@
         }
       }
 
-      & .values-img {
+      .values-img {
         width: 360px;
         height: 228px;
         margin-left: 12px;
         margin-right: 12px;
-        background: #FC0000;
       }
 
-      & .section-grid {
+      .section-grid {
         display: grid;
         gap: 33px 72px;
         grid-template-columns: 176px 176px 176px 176px;
@@ -115,7 +115,7 @@
         padding-top: 34px;
         padding-left: 90px;
 
-        & .grid-icon {
+        .grid-icon {
           width: 25px;
           height: 25px;
           background: #FC0000;
