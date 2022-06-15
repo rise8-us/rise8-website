@@ -34,7 +34,7 @@ export class BlogPreview extends HTMLElement {
               <img src="/images/clock.svg" alt="clock">
               <div>${this.blogs[i].minutes} min</div>
             </div>
-            <custom-button text="Go To" link="${this.blogs[i].url}" mini></custom-button>
+            <custom-button text="Go To" link="${this.blogs[i].url}" mode="dark" mini></custom-button>
           </div>
         </div>
       `;
@@ -43,7 +43,7 @@ export class BlogPreview extends HTMLElement {
     html += `
         </div>
         <div class="standard-top right-justify">
-          <custom-button text="More Posts" link="/blog" light-mode half></custom-button>
+          <custom-button text="More Posts" link="/blog" mode="light" half></custom-button>
         </div>
       </div>
     `;

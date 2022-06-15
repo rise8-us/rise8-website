@@ -1,0 +1,53 @@
+.prodacity-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.subsection-wrapper {
+  margin-top: 64px;
+}
+
+.center-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 54px;
+}
+
+.syllabus-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.agenda-header {
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+.no-bullet-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #b3b3b3;
+
+  li {
+    margin-bottom: 3px;
+  }
+
+  li:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.culture-header {
+  font-size: 24px;
+  font-family: 'Jagerlay', serif;
+}
+
+.culture-text {
+  color: #b3b3b3;
+
+  &.bold {
+    color: #FFFFFF;
+    margin: 20px 0;
+  }
+}
