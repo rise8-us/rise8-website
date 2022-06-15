@@ -63,48 +63,50 @@
     </div>
     <div class="section-body-wrapper">
       <div class="list-wrapper">
-        <div id="people" class="list-option belief active" onclick="onBeliefClick(event)">People</div>
-        <div id="practice" class="list-option belief" onclick="onBeliefClick(event)">Practice</div>
-        <div id="process" class="list-option belief" onclick="onBeliefClick(event)">Process</div>
-      </div>
-      <div class="list-partner">
-        <div id="people-description" class="belief-description active" style="">
-          <img class="frame" src="/images/frame-red-gradient.svg" alt="">
-          <img class="pixels" src="/images/background-pixels-grey.svg" alt="">
-          Digital transformation starts with people, the ones that you already have.<br>
-          Most organizations don’t need help bringing in additional talent, they really<br>
-          just need help getting out of its way.
-          <br><br>
-          We’re experts at coming in and helping your organization create learning<br>
-          environments where employees with growth mindsets can learn, grow,<br>
-          thrive and produce the products and platforms that are going to fuel your<br>
-          digital transformation.
+        <div class="list-options-wrapper">
+          <div id="people" class="list-option belief active" onclick="onBeliefClick(event)">People</div>
+          <div id="practice" class="list-option belief" onclick="onBeliefClick(event)">Practice</div>
+          <div id="process" class="list-option belief" onclick="onBeliefClick(event)">Process</div>
         </div>
-        <div id="practice-description" class="belief-description">
-          <img class="frame" src="/images/frame-red-gradient.svg" alt="">
-          <img class="pixels" src="/images/background-pixels-grey.svg" alt="">
-          At Rise8, we emphasize three main practices: lean product<br>
-          management, user-centered design, and extreme programming.<br>
-          When balanced properly, these contribute to an effective and<br>
-          healthy DevSecOps culture.
-          <br><br>
-          We also think about leadership as a meta practice of any discipline,<br>
-          and we incorporate it into our engagements from day one.
-        </div>
-        <div id="process-description" class="belief-description">
-          <img class="frame" src="/images/frame-red-gradient.svg" alt="">
-          <img class="pixels" src="/images/background-pixels-grey.svg" alt="">
-          From pre-kickoff to day two operations, we help you craft<br>
-          processes that create value and eliminate waste while taking<br>
-          into account your unique domain context.
-          <br><br>
-          The system of work has to have alignment and flow in order<br>
-          to achieve continuous delivery, where changes can be made<br>
-          quickly, safely, and in a sustainable way.
-          <br><br>
-          We’ll help you test your assumptions and measure what matters<br>
-          to ensure that you’re making measurable progress towards<br>
-          the outcomes you care about.
+        <div class="list-partner">
+          <div id="people-description" class="belief-description active">
+            <img class="frame" src="/images/frame-red-gradient.svg" alt="">
+            <img class="pixels" src="/images/background-pixels-grey.svg" alt="">
+            Digital transformation starts with people, the ones that you already have.
+            Most organizations don’t need help bringing in additional talent, they really
+            just need help getting out of its way.
+            <br><br>
+            We’re experts at coming in and helping your organization create learning
+            environments where employees with growth mindsets can learn, grow,
+            thrive and produce the products and platforms that are going to fuel your
+            digital transformation.
+          </div>
+          <div id="practice-description" class="belief-description">
+            <img class="frame" src="/images/frame-red-gradient.svg" alt="">
+            <img class="pixels" src="/images/background-pixels-grey.svg" alt="">
+            At Rise8, we emphasize three main practices: lean product
+            management, user-centered design, and extreme programming.
+            When balanced properly, these contribute to an effective and
+            healthy DevSecOps culture.
+            <br><br>
+            We also think about leadership as a meta practice of any discipline,
+            and we incorporate it into our engagements from day one.
+          </div>
+          <div id="process-description" class="belief-description">
+            <img class="frame" src="/images/frame-red-gradient.svg" alt="">
+            <img class="pixels" src="/images/background-pixels-grey.svg" alt="">
+            From pre-kickoff to day two operations, we help you craft
+            processes that create value and eliminate waste while taking
+            into account your unique domain context.
+            <br><br>
+            The system of work has to have alignment and flow in order
+            to achieve continuous delivery, where changes can be made
+            quickly, safely, and in a sustainable way.
+            <br><br>
+            We’ll help you test your assumptions and measure what matters
+            to ensure that you’re making measurable progress towards
+            the outcomes you care about.
+          </div>
         </div>
       </div>
     </div>
@@ -118,70 +120,72 @@
     </div>
     <div class="section-body-wrapper">
       <div class="list-wrapper">
-        {% for department in data.departments %}
-        {% set active = "" %}
-        {% if loop.first %}
-        {% set active = "active" %}
-        {% endif %}
-          <div id="{{ department.title }}" class="list-option department {{ active }}" onclick="onDepartmentClick(event)">{{ department.title }}</div>
-        {% endfor %}
-      </div>
-      <div class="list-partner">
-        {% for department in data.departments %}
-        {% set active = "" %}
-        {% set dept = loop.index0 %}
-        {% if loop.first %}
-        {% set active = "active" %}
-        {% endif %}
-          <div id="{{ department.title }}-bios-container" class="department-bios-container {{ active }}">
-            <div class="department-photos-wrapper">
-              {% for riser in department._risers %}
-              {% if loop.index < 4 %}
-              {% set active = "" %}
-              {% if loop.first %}
-              {% set active = "active" %}
-              {% endif %}
-              {% set imgObj = apos.image.first(riser.photo) %}
-                <div class="riser-photo-wrapper">
-                  <img src="{{ apos.attachment.url(imgObj) }}" alt="" onclick="onBioClick(event)" id="{{ department.title }}-photo-{{ loop.index0 }}" class="riser-photo {{ active }}">
-                  <div class="photo-hover">Read Bio</div>
-                  <div class="photo-info">
-                    <div class="photo-name">{{ riser.title }}</div>
-                    <div class="photo-role">{{ riser.role }}</div>
+        <div class="list-options-wrapper">
+          {% for department in data.departments %}
+          {% set active = "" %}
+          {% if loop.first %}
+          {% set active = "active" %}
+          {% endif %}
+            <div id="{{ department.title }}" class="list-option department {{ active }}" onclick="onDepartmentClick(event)">{{ department.title }}</div>
+          {% endfor %}
+        </div>
+        <div class="list-partner">
+          {% for department in data.departments %}
+          {% set active = "" %}
+          {% set dept = loop.index0 %}
+          {% if loop.first %}
+          {% set active = "active" %}
+          {% endif %}
+            <div id="{{ department.title }}-bios-container" class="department-bios-container {{ active }}">
+              <div class="department-photos-wrapper">
+                {% for riser in department._risers %}
+                {% if loop.index < 4 %}
+                {% set active = "" %}
+                {% if loop.first %}
+                {% set active = "active" %}
+                {% endif %}
+                {% set imgObj = apos.image.first(riser.photo) %}
+                  <div class="riser-photo-wrapper">
+                    <img src="{{ apos.attachment.url(imgObj) }}" alt="" onclick="onBioClick(event)" id="{{ department.title }}-photo-{{ loop.index0 }}" class="riser-photo {{ active }}">
+                    <div class="photo-hover">Read Bio</div>
+                    <div class="photo-info">
+                      <div class="photo-name">{{ riser.title }}</div>
+                      <div class="photo-role">{{ riser.role }}</div>
+                    </div>
                   </div>
-                </div>
-              {% endif %}
-              {% endfor %}
-            </div>
-            <div id="{{ department.title }}-bios" class="department-bios-wrapper {{ active }}">
-              {% for riser in department._risers %}
-              {% if loop.index < 4 %}
-              {% set active = "" %}
-              {% if loop.first %}
-              {% set active = "active" %}
-              {% endif %}
-                <div id="{{ department.title }}-bio-{{ loop.index0 }}" class="riser-bio-wrapper {{ active }}">
-                  <div class="riser-bio-header">
-                    <div class="bio-name">{{ riser.title }}</div>
-                    <div class="bio-role">{{ riser.role }}</div>
-                  </div>
-                  <div id="bio" class="riser-bio">
-                    <div class="bio-bio">{{ riser.bio }}</div>
-                    <div class="bio-quote">
-                      <div class="riser-quote-name">
-                        {{ riser.title.split(' ')[0] }}'s View
-                      </div>
-                      <div id="quote" class="riser-quote">
-                        "{{ riser.quote }}"
+                {% endif %}
+                {% endfor %}
+              </div>
+              <div id="{{ department.title }}-bios" class="department-bios-wrapper {{ active }}">
+                {% for riser in department._risers %}
+                {% if loop.index < 4 %}
+                {% set active = "" %}
+                {% if loop.first %}
+                {% set active = "active" %}
+                {% endif %}
+                  <div id="{{ department.title }}-bio-{{ loop.index0 }}" class="riser-bio-wrapper {{ active }}">
+                    <div class="riser-bio-header">
+                      <div class="bio-name">{{ riser.title }}</div>
+                      <div class="bio-role">{{ riser.role }}</div>
+                    </div>
+                    <div id="bio" class="riser-bio">
+                      <div class="bio-bio">{{ riser.bio }}</div>
+                      <div class="bio-quote">
+                        <div class="riser-quote-name">
+                          {{ riser.title.split(' ')[0] }}'s View
+                        </div>
+                        <div id="quote" class="riser-quote">
+                          "{{ riser.quote }}"
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              {% endif %}
-              {% endfor %}
+                {% endif %}
+                {% endfor %}
+              </div>
             </div>
-          </div>
-        {% endfor %}
+          {% endfor %}
+        </div>
       </div>
     </div>
   </div>

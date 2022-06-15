@@ -57,7 +57,7 @@
 
   .eight-mark {
     position: absolute;
-    margin-top: -160px;
+    margin-top: -88px;
     z-index: -1;
   }
 
@@ -80,12 +80,13 @@
 
     .content {
       position: relative;
-      margin: auto;
+      margin: auto auto 90px auto;
 
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: auto;
       row-gap: 48px;
+      column-gap: 24px;
       grid-template-areas:
     "main1 body1"
     "body2 main2"
@@ -129,8 +130,8 @@
 
   .background {
     position: absolute;
-    right: 0%;
-    top: 20%;
+    right: 2%;
+    top: 15%;
     z-index: -1;
   }
 }

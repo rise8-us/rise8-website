@@ -63,22 +63,26 @@ main,
     margin-left: 43px;
   }
 
-  li {
-    display: inline-block;
-    font-family: 'Supply', serif;
-    padding: 10px 20px;
-    text-transform: uppercase;
-    border-bottom: 3px solid transparent;
+  ul {
+    display: flex;
 
-    a {
-      color: #000000;
+    li {
+      display: inline-block;
+      font-family: 'Supply', serif;
+      padding: 10px 20px;
+      text-transform: uppercase;
+      border-bottom: 3px solid transparent;
+
+      a {
+        color: #000000;
+      }
     }
-  }
 
-  .true, li:hover {
-    border-bottom: 3px solid;
-    border-image-slice: 1;
-    border-image-source: linear-gradient(90deg, #800031 0%, #FC0000 100%);
+    .true, li:hover {
+      border-bottom: 3px solid;
+      border-image-slice: 1;
+      border-image-source: linear-gradient(90deg, #800031 0%, #FC0000 100%);
+    }
   }
 }
 

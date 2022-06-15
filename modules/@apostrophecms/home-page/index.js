@@ -40,6 +40,39 @@ module.exports = {
           },
         },
       },
+      cloudPlatformsImage: {
+        label: 'Cloud + Platforms',
+        type: 'area',
+        required: true,
+        options: {
+          max: 1,
+          widgets: {
+            '@apostrophecms/image': {},
+          },
+        },
+      },
+      pipelinesPathwaysImage: {
+        label: 'Pipelines + Pathways',
+        type: 'area',
+        required: true,
+        options: {
+          max: 1,
+          widgets: {
+            '@apostrophecms/image': {},
+          },
+        },
+      },
+      appsDigitalProductsImage: {
+        label: 'Applications + Digital Products',
+        type: 'area',
+        required: true,
+        options: {
+          max: 1,
+          widgets: {
+            '@apostrophecms/image': {},
+          },
+        },
+      },
     },
     group: {
       basics: {
@@ -47,6 +80,14 @@ module.exports = {
         fields: [
           'title',
           'main',
+        ],
+      },
+      images: {
+        label: 'Images',
+        fields: [
+          'cloudPlatformsImage',
+          'pipelinesPathwaysImage',
+          'appsDigitalProductsImage',
         ],
       },
     },

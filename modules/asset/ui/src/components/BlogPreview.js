@@ -14,9 +14,10 @@ export class BlogPreview extends HTMLElement {
     let html = `
     <section-header header="Blog"
                     subheader="A finger on the pulse. The finger to the status quo."></section-header>
-    <div class="background-wrapper">
-      <img class="background" src="images/background-motherboard.svg" alt="">
-      <div class="blog-container">`;
+    <div class="section-body-wrapper">
+      <div class="background-wrapper">
+        <img class="background" src="images/background-motherboard.svg" alt="">
+        <div class="blog-container">`;
 
     for (let i = 0; i < this.blogs.length; i++) {
       html += `
@@ -41,9 +42,10 @@ export class BlogPreview extends HTMLElement {
     }
 
     html += `
-        </div>
-        <div class="standard-top right-justify">
-          <custom-button text="More Posts" link="/blog" mode="light" half></custom-button>
+          </div>
+          <div class="standard-top right-justify">
+            <custom-button text="More Posts" link="/blog" mode="light" half></custom-button>
+          </div>
         </div>
       </div>
     `;

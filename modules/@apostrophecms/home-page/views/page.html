@@ -23,7 +23,8 @@ that lives in the top-level views/ folder for convenience
     <section-header header="Services"
                     subheader="Digital solutions that optimize outcomes"></section-header>
     <div class="content">
-      <div class="service-image image-1">image placeholder</div>
+      {% set imgObj1 = apos.image.first(data.page.cloudPlatformsImage) %}
+      <img src="{{ apos.attachment.url(imgObj1) }}" alt="" class="service-image image-1">
       <div class="service-body body-1">
         <div class="header"><img class="icon" src="images/icon-service-cloud-1.svg" alt="">Cloud +
           Platforms
@@ -44,8 +45,10 @@ that lives in the top-level views/ folder for convenience
         </div>
         <custom-button text="Learn more" link="/services" mode="dark"></custom-button>
       </div>
-      <div class="service-image image-2">image placeholder</div>
-      <div class="service-image image-3">image placeholder</div>
+      {% set imgObj2 = apos.image.first(data.page.pipelinesPathwaysImage) %}
+      <img src="{{ apos.attachment.url(imgObj2) }}" alt="" class="service-image image-2">
+      {% set imgObj3 = apos.image.first(data.page.appsDigitalProductsImage) %}
+      <img src="{{ apos.attachment.url(imgObj3) }}" alt="" class="service-image image-3">
       <div class="service-body body-3">
         <div class="header"><img class="icon" src="images/icon-service-cloud-3.svg" alt="">Applications
           +
