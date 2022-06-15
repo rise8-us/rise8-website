@@ -45,5 +45,6 @@ require('apostrophe')({
     'contact-page': {},
     'blog-page': {},
     'prodacity-page': {},
+    'privacy-page': {},
   },
 });

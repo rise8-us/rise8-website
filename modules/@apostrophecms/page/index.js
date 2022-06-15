@@ -70,7 +70,13 @@ module.exports = {
         parkedId: 'prodacityId',
         title: 'Prodacity',
         type: 'prodacity-page',
-      }
+      },
+      {
+        slug: '/privacy-policy',
+        parkedId: 'privacyPolicyId',
+        title: 'Privacy Policy',
+        type: 'privacy-page',
+      },
     ],
   },
 };
