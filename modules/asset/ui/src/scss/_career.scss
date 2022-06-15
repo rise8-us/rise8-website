@@ -1,0 +1,126 @@
+.signature {
+  position: absolute;
+  width: 101px;
+  height: 32px;
+  left: 1116px;
+  top: 313px;
+
+  font-family: 'Telegraf';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 16px;
+  /* or 114% */
+
+  color: #FFFFFF;
+}
+
+.career-content-section {
+  width: 100%;
+  padding: 72px 0;
+
+  &.dark {
+    background-color: #131414;
+    color: #FFFFFF;
+  }
+
+  &.red {
+    background: linear-gradient(180deg, #800031 0%, #FC0000 100%);
+    color: #FFFFFF;
+  }
+
+  .content-wrapper {
+    margin: auto;
+    width: 1128px;
+
+    .header-description {
+      width: fit-content;
+      height: 42px;
+      padding-left: 64px;
+
+      font-family: 'Telegraf', Serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 14px;
+
+    }
+
+    .section-header-wrapper {
+      border-left: 12px solid #131414;
+      padding-left: 52px;
+      margin-bottom: 8px;
+
+      &.dark {
+        border-left: 12px solid #FFFFFF;
+      }
+    }
+
+    .section-body-wrapper {
+      margin: 24px 0 0 0px;
+      display: flex;
+
+      &.dark {
+        color: #FFFFFF;
+      }
+
+      .img-description {
+        color: white;
+        width: 293px;
+        height: 158px;
+        position: absolute;
+        top: 696px;
+
+        .img-description-header {
+          background: #131414;
+          width: fit-content;
+          text-align: center;
+          height: 30px;
+          font-size: 24px;
+          padding: 0px 19px
+        }
+
+        .img-description-subheader {
+          background: #131414;
+          width: fit-content;
+          margin-top: 22px;
+          height: 11px;
+          font-size: 9px;
+          padding-left: 8px;
+          padding-right: 7px;
+        }
+
+        .img-description-content {
+          background: #131414;
+          margin-top: 4px;
+          height: 80px;
+          font-size: 13px;
+          padding-left: 8px;
+          font-family: 'DM Sans', Serif;
+        }
+      }
+
+      .values-img {
+        width: 360px;
+        height: 228px;
+        margin-left: 12px;
+        margin-right: 12px;
+      }
+
+      .section-grid {
+        display: grid;
+        gap: 33px 72px;
+        grid-template-columns: 176px 176px 176px 176px;
+        grid-template-rows: 93px 93px;
+        padding-top: 34px;
+        padding-left: 90px;
+
+        .grid-icon {
+          width: 25px;
+          height: 25px;
+          background: #FC0000;
+        }
+      }
+    }
+  }
+}
