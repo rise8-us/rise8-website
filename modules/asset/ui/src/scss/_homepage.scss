@@ -55,6 +55,11 @@
     background-color: #F2F2F2;
   }
 
+  &.red {
+    background: linear-gradient(180deg, #800031 0%, #FC0000 100%);
+    color: #FFFFFF;
+  }
+
   .eight-mark {
     position: absolute;
     margin-top: -88px;

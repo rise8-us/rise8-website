@@ -112,6 +112,10 @@
   padding-left: 66px;
   width: 416px;
   font-family: 'DM Sans', sans-serif;
+
+  &.large {
+    width: 600px;
+  }
 }
 
 .service-image {
