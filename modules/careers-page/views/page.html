@@ -50,7 +50,7 @@
     </div>
     <div class="values-body-wrapper">
       <img class="values-img"/>
-      <div class="img-description" style="left: 330px;">
+      <div class="img-description" style="left: 24px;">
         <div class="img-description-header">Duty</div>
         <div class="img-description-subheader">DRIVEN WE RISE</div>
         <div class="img-description-content">
@@ -62,7 +62,7 @@
         </div>
       </div>
       <img class="values-img"/>
-      <div class="img-description" style="left: 714px;">
+      <div class="img-description" style="left: 400px;">
         <div class="img-description-header">Unity</div>
         <div class="img-description-subheader">TOGETHER WE RISE</div>
         <div class="img-description-content">
@@ -74,7 +74,7 @@
         </div>
       </div>
       <img class="values-img"/>
-      <div class="img-description" style="left: 1086px;">
+      <div class="img-description" style="left: 776px;">
         <div class="img-description-header">Tenacity</div>
         <div class="img-description-subheader">FOREVER, WE RISE</div>
         <div class="img-description-content">
@@ -235,11 +235,11 @@
     </div>
   </div>
 </div>
+{% if data.jobs %}
 <div class="content-section">
   <div class="content-wrapper">
     <section-header header="Rise to the Opportunity"
                     subheader="Find Your Next Role"></section-header>
-    {% if data.jobs %}
     <div class="values-body-wrapper">
       <div class="career-list-wrapper">
 
@@ -309,9 +309,9 @@
         <img style="position:absolute;width: 199px;height: 199px;left: 524px;top: 376px;">
       </div>
     </div>
-    {% endif %}
   </div>
 </div>
+{% endif %}
 <div class="content-section red">
   <div class="content-wrapper">
     <div class="tips-header">
