@@ -3,12 +3,38 @@
 @font-face {
   font-family: Jagerlay;
   // f off intellij
+  font-weight: 400;
   src: url('/fonts/Jagerlay-Regular.woff2');
 }
 
 @font-face {
+  font-family: Jagerlay;
+  font-weight: 500;
+  src: url('/fonts/Jagerlay-Medium.otf') format('opentype');
+}
+
+@font-face {
   font-family: Supply;
+  font-weight: 400;
   src: url('/fonts/Supply-Regular.woff2');
+}
+
+@font-face {
+  font-family: Supply;
+  font-weight: 700;
+  src: url('/fonts/Supply-Medium.otf') format('opentype');
+}
+
+@font-face {
+  font-family: Telegraf;
+  font-weight: normal;
+  src: url('/fonts/Telegraf-Regular.ttf') format("truetype");
+}
+
+@font-face {
+  font-family: Telegraf;
+  font-weight: 800;
+  src: url('/fonts/Telegraf-Bold.otf') format('opentype');
 }
 
 .apos-admin-bar-spacer {

@@ -404,7 +404,8 @@ a:hover {
         }
 
         .bio-role {
-          font-family: "DM Sans", serif;
+          font-family: Telegraf, serif;
+          font-weight: 400;
           font-size: 14px;
           color: #F2F2F2;
 
@@ -435,7 +436,7 @@ a:hover {
             padding: 4px 0 4px 8px;
             border-top: 1px solid #F2F2F2;
             color: #F2F2F2;
-            font-family: "DM Sans", serif;
+            font-family: Telegraf, serif;
             font-size: 14px;
             font-weight: 800;
 
@@ -459,3 +460,13 @@ a:hover {
     }
   }
 }
+
+.telegraf {
+  font-family: Telegraf, serif;
+  font-weight: 400;
+
+  &.bold {
+    font-weight: 800;
+  }
+}
+
