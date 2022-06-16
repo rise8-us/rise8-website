@@ -10,8 +10,9 @@
 {% endblock %}
 
 {% block beforeMain %}
-<div class="bp-wrapper">
-  <header class="bp-header fill">
+<eight-loader></eight-loader>
+<div id="website-content" class="bp-wrapper display-after-loading-screen">
+  <header id="nav-header" class="bp-header fill">
     <a href="/" class="logo"><img src="/images/logo-rise8.svg" alt="Rise8 logo"></a>
     <nav>
       <ul class="nav-list">
@@ -33,7 +34,8 @@
     <img src="/images/logo-prodacity-light.svg" alt="" class="prodacity-banner-logo">
     <img src="/images/logo-prodacity-mobile.svg" alt="" class="prodacity-banner-logo-mobile">
     <div class="date-text-mobile">september 7-8<br/>washington dc</div>
-    <custom-button text="Learn More" link="/events/prodacity" mode="light" mini no-chevron text-style="color: red"></custom-button>
+    <custom-button text="Learn More" link="/events/prodacity" mode="light" mini no-chevron
+                   text-style="color: red"></custom-button>
   </header>
   <main>
     {% endblock %}

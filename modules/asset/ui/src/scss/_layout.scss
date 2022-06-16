@@ -21,6 +21,10 @@ body,
 .bp-wrapper {
   display: flex;
   flex-direction: column;
+
+  &.display-after-loading-screen {
+    display: none;
+  }
 }
 
 [data-apos-refreshable],
