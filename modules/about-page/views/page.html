@@ -57,10 +57,8 @@
 </script>
 <div class="content-section">
   <div class="content-wrapper">
-    <div class="section-header-wrapper">
-      <div class="section-subheader">We talk the talk and walk the walk</div>
-      <div class="section-header">Beliefs in Action</div>
-    </div>
+    <section-header header="Beliefs in Action"
+                    subheader="We talk the talk and walk the walk"></section-header>
     <div class="section-body-wrapper">
       <div class="list-wrapper">
         <div class="list-options-wrapper">
@@ -114,10 +112,9 @@
 </div>
 <div class="content-section dark">
   <div class="content-wrapper">
-    <div class="section-header-wrapper dark">
-      <div class="section-subheader">Your future teammates</div>
-      <div class="section-header">Let's Make Some Intros</div>
-    </div>
+    <section-header header="Let's Make Some Intros"
+                    subheader="Your future teammates"
+                    dark-mode></section-header>
     <div class="section-body-wrapper">
       <div class="list-wrapper">
         <div class="list-options-wrapper">
@@ -149,8 +146,8 @@
                     <img src="{{ apos.attachment.url(imgObj) }}" alt="" onclick="onBioClick(event)" id="{{ department.title }}-photo-{{ loop.index0 }}" class="riser-photo {{ active }}">
                     <div class="photo-hover">Read Bio</div>
                     <div class="photo-info">
-                      <div class="photo-name">{{ riser.title }}</div>
-                      <div class="photo-role">{{ riser.role }}</div>
+                      <div>{{ riser.title }}</div>
+                      <div>{{ riser.role }}</div>
                     </div>
                   </div>
                 {% endif %}

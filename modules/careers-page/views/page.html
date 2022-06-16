@@ -27,6 +27,40 @@
       }
     }
   }
+  function onDepartmentClick(e) {
+    const departments = document.getElementsByClassName("department");
+    for (let i = 0; i < departments.length; i++) {
+      departments[i].classList.remove('active');
+    }
+    const departmentBiosContainers = document.getElementsByClassName("department-bios-container")
+    for (let i = 0; i < departmentBiosContainers.length; i++) {
+      departmentBiosContainers[i].classList.remove('active');
+    }
+    const bioPhotos = document.getElementsByClassName("riser-photo");
+    for (let i = 0; i < bioPhotos.length; i++) {
+      bioPhotos[i].classList.remove('active');
+    }
+    const bios = document.getElementsByClassName("riser-bio-wrapper");
+    for (let i = 0; i < bios.length; i++) {
+      bios[i].classList.remove('active');
+    }
+    e.target.classList.add('active');
+    document.getElementById(`${e.target.id}-bios-container`).classList.add('active');
+    document.getElementById(`${e.target.id}-photo-0`).classList.add('active');
+    document.getElementById(`${e.target.id}-bio-0`).classList.add('active');
+  }
+  function onBioClick(e) {
+    const bioPhotos = document.getElementsByClassName("riser-photo");
+    for (let i = 0; i < bioPhotos.length; i++) {
+      bioPhotos[i].classList.remove('active');
+    }
+    const bios = document.getElementsByClassName("riser-bio-wrapper");
+    for (let i = 0; i < bios.length; i++) {
+      bios[i].classList.remove('active');
+    }
+    e.target.classList.add('active');
+    document.getElementById(`${e.target.id.replace('photo', 'bio')}`).classList.add('active');
+  }
 </script>
 
 <hero-header memo="Message from the CEO" title="Welcome Future Risers" description="      Thanks for stopping by to find out more<br>
@@ -43,10 +77,7 @@
 </div>
 <div class="content-section">
   <div class="content-wrapper">
-    <div class="section-header-wrapper">
-      <div class="section-subheader">Tagline</div>
-      <div class="section-header">Core Values</div>
-    </div>
+    <section-header header="Core Values" subheader="Tagline"></section-header>
     <div class="section-body-text large">
       Our core values are tied to the specific behaviors and skills we care about most. The more
       these values sound like you, and describe people you want to work with, the more likely
@@ -92,15 +123,91 @@
     </div>
   </div>
 </div>
+<div class="content-section">
+  <div class="content-wrapper">
+    <section-header header="Let's Make Some Intros"
+                    subheader="Your future teammates"></section-header>
+    <div class="section-body-wrapper">
+      <div class="list-wrapper">
+        <div class="list-options-wrapper">
+          {% for department in data.departments %}
+          {% set active = "" %}
+          {% if loop.first %}
+          {% set active = "active" %}
+          {% endif %}
+          <div id="{{ department.title }}" class="list-option department {{ active }}" onclick="onDepartmentClick(event)">{{ department.title }}</div>
+          {% endfor %}
+        </div>
+        <div class="list-partner">
+          {% for department in data.departments %}
+          {% set active = "" %}
+          {% set dept = loop.index0 %}
+          {% if loop.first %}
+          {% set active = "active" %}
+          {% endif %}
+          <div id="{{ department.title }}-bios-container" class="department-bios-container {{ active }}">
+            <div class="department-photos-wrapper">
+              {% for riser in department._risers %}
+              {% if loop.index < 4 %}
+              {% set active = "" %}
+              {% if loop.first %}
+              {% set active = "active" %}
+              {% endif %}
+              {% set imgObj = apos.image.first(riser.photo) %}
+              <div class="riser-photo-wrapper">
+                <img src="{{ apos.attachment.url(imgObj) }}" alt="" onclick="onBioClick(event)" id="{{ department.title }}-photo-{{ loop.index0 }}" class="riser-photo {{ active }}">
+                <div class="photo-hover">Read Bio</div>
+                <div class="photo-info">
+                  <div>{{ riser.title }}</div>
+                  <div>{{ riser.role }}</div>
+                </div>
+              </div>
+              {% endif %}
+              {% endfor %}
+            </div>
+            <div id="{{ department.title }}-bios" class="department-bios-wrapper {{ active }}">
+              {% for riser in department._risers %}
+              {% if loop.index < 4 %}
+              {% set active = "" %}
+              {% if loop.first %}
+              {% set active = "active" %}
+              {% endif %}
+              <div id="{{ department.title }}-bio-{{ loop.index0 }}" class="riser-bio-wrapper {{ active }}">
+                <div class="riser-bio-header">
+                  <div class="bio-name">{{ riser.title }}</div>
+                  <div class="bio-role light">{{ riser.role }}</div>
+                </div>
+                <div id="bio" class="riser-bio">
+                  <div class="bio-bio">{{ riser.bio }}</div>
+                  <div class="bio-quote">
+                    <div class="riser-quote-name light">
+                      {{ riser.title.split(' ')[0] }}'s View
+                    </div>
+                    <div id="quote" class="riser-quote light">
+                      "{{ riser.quote }}"
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="content-section dark">
   <div class="content-wrapper">
-    <div class="section-header-wrapper dark">
-      <div class="section-subheader">Tagline</div>
-      <div class="section-header">Meaningful Work Goes Rewarded</div>
-    </div>
+    <section-header header="Meaningful Work Goes Rewarded"
+                    subheader="Tagline"
+                    dark-mode></section-header>
     <div class="section-body-text large">
       Rise8 is going to transform the way our customers build software and we know that takes a
-      dream team! The customer experience starts with the employee experience, so we take care of our
+      dream team! The customer experience starts with the employee experience, so we take care of
+      our
       employees. We offer competitive pay and benefits, invest in employee growth, and offer a
       culture you can’t find anywhere else.
     </div>
@@ -162,10 +269,8 @@
 </div>
 <div class="content-section">
   <div class="content-wrapper">
-    <div class="section-header-wrapper">
-      <div class="section-subheader">Find Your Next Role</div>
-      <div class="section-header">Rise to the Opportunity</div>
-    </div>
+    <section-header header="Rise to the Opportunity"
+                    subheader="Find Your Next Role"></section-header>
     <div class="values-body-wrapper">
       <div class="career-list-wrapper">
         <div class="career-section-wrapper">

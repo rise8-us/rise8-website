@@ -332,18 +332,18 @@ a:hover {
     display: flex;
   }
 
-  & .department-photos-wrapper {
+  .department-photos-wrapper {
     display: flex;
     justify-content: space-between;
 
-    & .riser-photo-wrapper {
+    .riser-photo-wrapper {
       position: relative;
       height: 322px;
       width: 264px;
       justify-content: end;
       cursor: pointer;
 
-      & .riser-photo {
+      .riser-photo {
         object-fit: cover;
         height: 322px;
         width: 264px;
@@ -355,7 +355,7 @@ a:hover {
         }
       }
 
-      & .photo-hover {
+      .photo-hover {
         transition: .5s ease;
         pointer-events: none;
         opacity: 0;
@@ -371,30 +371,22 @@ a:hover {
         opacity: 1;
       }
 
-      & .photo-info {
+      .photo-info {
         position: absolute;
         bottom: 16px;
         left: 16px;
-
-        & .photo-name {
-          font-family: "DM Sans", serif;
-          font-size: 14px;
-          font-weight: 800;
-        }
-
-        & .photo-role {
-          font-family: "DM Sans", serif;
-          font-size: 14px;
-        }
+        color: #F2F2F2;
+        font-family: "DM Sans", serif;
+        font-size: 14px;
       }
     }
   }
 
-  & .department-bios-wrapper {
+  .department-bios-wrapper {
     display: flex;
     margin-top: 32px;
 
-    & .riser-bio-wrapper {
+    .riser-bio-wrapper {
       display: none;
       flex-grow: 1;
       flex-direction: column;
@@ -403,53 +395,65 @@ a:hover {
         display: flex;
       }
 
-      & .riser-bio-header {
+      .riser-bio-header {
         flex-grow: 1;
 
-        & .bio-name {
+        .bio-name {
           font-family: "Jagerlay", serif;
-          font-weight: 500;
           font-size: 24px;
           line-height: 30px;
         }
 
-        & .bio-role {
+        .bio-role {
           font-family: "DM Sans", serif;
           font-size: 14px;
           color: #F2F2F2;
+
+          &.light {
+            color: #000000;
+          }
         }
       }
 
-      & .riser-bio {
+      .riser-bio {
         display: flex;
         flex-grow: 1;
         margin-top: 16px;
 
-        & .bio-bio {
+        .bio-bio {
           width: 70%;
           font-family: "DM Sans", serif;
           font-size: 14px;
         }
 
-        & .bio-quote {
+        .bio-quote {
           display: flex;
           flex-direction: column;
           align-items: end;
           width: 30%;
 
-          & .riser-quote-name {
+          .riser-quote-name {
             padding: 4px 0 4px 8px;
             border-top: 1px solid #F2F2F2;
             color: #F2F2F2;
             font-family: "DM Sans", serif;
             font-size: 14px;
             font-weight: 800;
+
+            &.light {
+              border-top: 1px solid #000000;
+              color: #000000;
+            }
           }
 
-          & .riser-quote {
+          .riser-quote {
             color: #F2F2F2;
             font-family: "DM Sans", serif;
             font-size: 12px;
+
+            &.light {
+              color: #000000;
+            }
           }
         }
       }
