@@ -15,8 +15,8 @@ export class BlogPreview extends HTMLElement {
     <section-header header="Blog"
                     subheader="A finger on the pulse. The finger to the status quo."></section-header>
     <div class="section-body-wrapper">
-      <div class="background-wrapper">
-        <img class="background" src="images/background-motherboard.svg" alt="">
+      <div class="blog-background-wrapper">
+        <img class="blog-background" src="/images/background-motherboard.svg" alt="">
         <div class="blog-container">`;
 
     for (let i = 0; i < this.blogs.length; i++) {
@@ -43,7 +43,7 @@ export class BlogPreview extends HTMLElement {
 
     html += `
           </div>
-          <div class="standard-top right-justify">
+          <div class="standard-button">
             <custom-button text="More Posts" link="/blog" mode="light" half></custom-button>
           </div>
         </div>

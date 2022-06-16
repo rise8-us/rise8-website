@@ -5,24 +5,6 @@ export class WhoWeServe extends HTMLElement {
 
   connectedCallback() {
     this.innerHTML = `
-    <style>
-    .who-we-serve-wrapper {
-      margin-top: 32px;
-    }
-
-    .service-logo-wrapper {
-      display: flex;
-      justify-content: space-between;
-    }
-    
-    .image-grayscale {
-      filter: grayscale(1);
-    }
-    
-    .image-grayscale:hover {
-      filter: none;
-    }
-    </style>
     <div class="who-we-serve-wrapper">
       <section-header header="Who We Serve"
                       subheader="Trusted guides with proven success"></section-header>
