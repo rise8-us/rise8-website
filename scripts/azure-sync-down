@@ -1,0 +1,3 @@
+#!/bin/bash
+az storage file download-batch --account-name rise8webstorage  --source rise8-staging-uploads --destination ./public/uploads
+az storage file download-batch --account-name rise8webstorage  --source rise8-staging-data --destination ./data

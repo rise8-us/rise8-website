@@ -22,6 +22,12 @@ See additional documentation [here](https://imagemagick.org/script/index.php).
 ```shell
 brew install imagemagick
 ```
+#### Install Azure CLI & Login
+See additional documentation [here](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli).
+```shell
+brew install azure-cli
+az login
+```
 ### Create local dotenv
 ```shell
 cp .env .env.local
@@ -34,5 +40,6 @@ nvm use
 npm install
 npm run docker:mongo
 npm run mongo:sync
+npm run azure:sync
 npm run dev
 ```
