@@ -1,6 +1,6 @@
 export class Button extends HTMLElement {
   static get observedAttributes() {
-    return [ 'text', 'link', 'mode', 'half', 'mini', 'no-chevron' ];
+    return [ 'text', 'link', 'mode', 'half', 'mini', 'no-chevron', 'text-style' ];
   }
 
   constructor() {
@@ -10,7 +10,8 @@ export class Button extends HTMLElement {
     this.mode = this.getAttribute('mode'); // light, dark, gradient
     this.half = this.getAttribute('half');
     this.mini = this.getAttribute('mini');
-    this.chevron = this.getAttribute('no-chevron') === null;
+    this.hideChevron = this.getAttribute('no-chevron') !== null;
+    this.textStyles = this.getAttribute('text-style');
   }
 
   connectedCallback() {
@@ -20,8 +21,8 @@ export class Button extends HTMLElement {
 
     this.innerHTML = `
       <a href="${this.link}" class="button ${this.mode} ${halfSize} ${mini}">
-        <div class="${this.mode}-text">${this.text}</div>
-        <img src="/images/icon-chevron-right${imageExt}.svg" alt="Chevron right">
+        <div class="button-text" style="${this.textStyles}">${this.text}</div>
+        <img src="/images/icon-chevron-right${imageExt}.svg" alt="Chevron right" ${this.hideChevron ? 'hidden' : ''}>
       </a>
     `;
   }

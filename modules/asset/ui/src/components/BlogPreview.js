@@ -35,7 +35,7 @@ export class BlogPreview extends HTMLElement {
               <img src="/images/clock.svg" alt="clock">
               <div>${this.blogs[i].minutes} min</div>
             </div>
-            <custom-button text="Go To" link="${this.blogs[i].url}" mode="dark" mini></custom-button>
+            <custom-button text="Go To" link="${this.blogs[i].url}" mode="dark" mini text-style="font-family: 'Supply', serif;"></custom-button>
           </div>
         </div>
       `;

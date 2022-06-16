@@ -11,7 +11,7 @@
 
 {% block beforeMain %}
 <div class="bp-wrapper">
-  <header class="bp-header fill">
+  <header id="nav-header" class="bp-header fill">
     <a href="/"><img class="logo" src="/images/logo-rise8.svg" alt="Rise8 logo"></a>
     <nav>
       <ul>
@@ -24,7 +24,12 @@
       </ul>
     </nav>
   </header>
-  <main class="bp-main">
+  <header id="prodacity-banner" class="prodacity-banner">
+    <div class="date-text">sep 7-8 2022<br/>washington dc</div>
+    <img src="images/logo-prodacity-light.svg" alt="">
+    <custom-button text="Learn More" link="/events/prodacity" mode="light" mini no-chevron text-style="color: red"></custom-button>
+  </header>
+  <main>
     {% endblock %}
 
     {% block main %}

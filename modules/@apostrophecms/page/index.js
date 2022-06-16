@@ -1,7 +1,7 @@
-const findAboutPagePieces = require('../../about-page/findPieces.js');
-const findHomePagePieces = require('../home-page/findPieces.js');
+const findAboutPagePieces = require('../../about-page/findPieces');
+const findHomePagePieces = require('../home-page/findPieces');
 const findBlogPagePieces = require('../../blog-page/findPieces');
-const findTipPagePieces = require('../../careers-page/findPieces.js');
+const findTipPagePieces = require('../../careers-page/findPieces');
 
 // This configures the @apostrophecms/pages module to add a "home" page type to the
 // pages menu

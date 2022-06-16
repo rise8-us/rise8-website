@@ -1,7 +1,12 @@
 {% extends "layout.html" %}
 
 {% block main %}
-<div class="hero">
+<script type="text/javascript">
+  (function () {
+    document.getElementById('prodacity-banner').classList.add('hidden');
+  })();
+</script>
+<div class="hero" style="padding-top: 40px">
   <div class="left center">
     <div></div>
     <div>
@@ -12,7 +17,7 @@
         sep 7-8 2022<br/>washington dc
       </div>
       <custom-button text="Register Now" link="/registration-link" mode="gradient"
-                     half></custom-button>
+                     half no-chevron></custom-button>
     </div>
     <div>
       <img src="../images/logo-wework.svg">
@@ -50,7 +55,7 @@
       </div>
       <div class="center-button">
         <custom-button text="Register Now" link="/registration-link" mode="gradient"
-                       half></custom-button>
+                       half no-chevron></custom-button>
       </div>
       <div class="subsection-wrapper">
         <section-header header="Syllabus" subheader="Why, what, and how"
@@ -117,7 +122,7 @@
     </div>
     <div class="center-button">
       <custom-button text="Register Now" link="/registration-link" mode="gradient"
-                     half></custom-button>
+                     half no-chevron></custom-button>
     </div>
   </div>
 </section>
