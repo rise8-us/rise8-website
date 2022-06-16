@@ -178,6 +178,10 @@ main,
   justify-content: center;
   align-items: center;
 
+  .prodacity-banner-logo-mobile {
+    display: none;
+  }
+
   .date-text {
     font-family: Supply, serif;
     font-size: 12px;
@@ -185,8 +189,38 @@ main,
     text-transform: uppercase;
   }
 
+  .date-text-mobile {
+    display: none;
+  }
+
   img {
     margin: 0 32px;
+  }
+
+  @media only screen and (max-width: 600px) {
+    height: 226px;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    .prodacity-banner-logo {
+      display: none;
+    }
+
+    .prodacity-banner-logo-mobile {
+      display: unset;
+    }
+
+    .date-text {
+      display: none;
+    }
+
+    .date-text-mobile {
+      display: unset;
+      font-family: Supply, serif;
+      font-size: 12px;
+      color: #F2F2F2;
+      text-transform: uppercase;
+    }
   }
 }
 
