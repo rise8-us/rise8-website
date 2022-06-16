@@ -2,11 +2,9 @@
 
 {% block main %}
 <hero-header title="We Are<br>Rise8" memo="We are your digital transformation partner"
-             description="We have strong opinions (loosely held) because<br>
-      game-changing tech isn't possible without an<br>
-      industry-changing mindset. We love what we do,<br>
-      and we're not shy about sharing our unfiltered<br>
-      thoughts on all of it."></hero-header>
+             description="We have strong opinions (loosely held) because game-changing tech isn't
+                         possible without an industry-changing mindset. We love what we do, and
+                         we're not shy about sharing our unfiltered thoughts on all of it."></hero-header>
 <div class="content-section">
   <div class="content-wrapper">
     <section-header header="Beliefs in Action"
@@ -29,7 +27,8 @@
           {% if loop.first %}
           {% set active = "active" %}
           {% endif %}
-          <department-switch active="{{ active }}" department="{{ department.title }}"></department-switch>
+          <department-switch active="{{ active }}"
+                             department="{{ department.title }}"></department-switch>
           {% endfor %}
         </div>
         <div class="list-partner">
@@ -39,57 +38,59 @@
           {% if loop.first %}
           {% set active = "active" %}
           {% endif %}
-            <div id="{{ department.title }}-bios-container" class="department-bios-container {{ active }}">
-              <div class="department-photos-wrapper">
-                {% for riser in department._risers %}
-                {% if loop.index < 4 %}
-                {% set active = "" %}
-                {% if loop.first %}
-                {% set active = "active" %}
-                {% endif %}
-                {% set imgObj = apos.image.first(riser.photo) %}
-                  <div class="riser-photo-wrapper">
-                    <bio-switch image-url="{{ apos.attachment.url(imgObj) }}"
-                                department="{{ department.title }}"
-                                index="{{ loop.index0 }}"
-                                active="{{ active }}"></bio-switch>
-                    <div class="photo-hover">Read Bio</div>
-                    <div class="photo-info">
-                      <div>{{ riser.title }}</div>
-                      <div>{{ riser.role }}</div>
-                    </div>
-                  </div>
-                {% endif %}
-                {% endfor %}
+          <div id="{{ department.title }}-bios-container"
+               class="department-bios-container {{ active }}">
+            <div class="department-photos-wrapper">
+              {% for riser in department._risers %}
+              {% if loop.index < 4 %}
+              {% set active = "" %}
+              {% if loop.first %}
+              {% set active = "active" %}
+              {% endif %}
+              {% set imgObj = apos.image.first(riser.photo) %}
+              <div class="riser-photo-wrapper">
+                <bio-switch image-url="{{ apos.attachment.url(imgObj) }}"
+                            department="{{ department.title }}"
+                            index="{{ loop.index0 }}"
+                            active="{{ active }}"></bio-switch>
+                <div class="photo-hover">Read Bio</div>
+                <div class="photo-info">
+                  <div>{{ riser.title }}</div>
+                  <div>{{ riser.role }}</div>
+                </div>
               </div>
-              <div id="{{ department.title }}-bios" class="department-bios-wrapper {{ active }}">
-                {% for riser in department._risers %}
-                {% if loop.index < 4 %}
-                {% set active = "" %}
-                {% if loop.first %}
-                {% set active = "active" %}
-                {% endif %}
-                  <div id="{{ department.title }}-bio-{{ loop.index0 }}" class="riser-bio-wrapper {{ active }}">
-                    <div class="riser-bio-header">
-                      <div class="bio-name">{{ riser.title }}</div>
-                      <div class="bio-role">{{ riser.role }}</div>
-                    </div>
-                    <div id="bio" class="riser-bio">
-                      <div class="bio-bio">{{ riser.bio }}</div>
-                      <div class="bio-quote">
-                        <div class="riser-quote-name">
-                          {{ riser.title.split(' ')[0] }}'s View
-                        </div>
-                        <div id="quote" class="riser-quote">
-                          "{{ riser.quote }}"
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                {% endif %}
-                {% endfor %}
-              </div>
+              {% endif %}
+              {% endfor %}
             </div>
+            <div id="{{ department.title }}-bios" class="department-bios-wrapper {{ active }}">
+              {% for riser in department._risers %}
+              {% if loop.index < 4 %}
+              {% set active = "" %}
+              {% if loop.first %}
+              {% set active = "active" %}
+              {% endif %}
+              <div id="{{ department.title }}-bio-{{ loop.index0 }}"
+                   class="riser-bio-wrapper {{ active }}">
+                <div class="riser-bio-header">
+                  <div class="bio-name">{{ riser.title }}</div>
+                  <div class="bio-role">{{ riser.role }}</div>
+                </div>
+                <div id="bio" class="riser-bio">
+                  <div class="bio-bio">{{ riser.bio }}</div>
+                  <div class="bio-quote">
+                    <div class="riser-quote-name">
+                      {{ riser.title.split(' ')[0] }}'s View
+                    </div>
+                    <div id="quote" class="riser-quote">
+                      "{{ riser.quote }}"
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {% endif %}
+              {% endfor %}
+            </div>
+          </div>
           {% endfor %}
         </div>
       </div>
