@@ -27,40 +27,6 @@
       }
     }
   }
-  function onDepartmentClick(e) {
-    const departments = document.getElementsByClassName("department");
-    for (let i = 0; i < departments.length; i++) {
-      departments[i].classList.remove('active');
-    }
-    const departmentBiosContainers = document.getElementsByClassName("department-bios-container")
-    for (let i = 0; i < departmentBiosContainers.length; i++) {
-      departmentBiosContainers[i].classList.remove('active');
-    }
-    const bioPhotos = document.getElementsByClassName("riser-photo");
-    for (let i = 0; i < bioPhotos.length; i++) {
-      bioPhotos[i].classList.remove('active');
-    }
-    const bios = document.getElementsByClassName("riser-bio-wrapper");
-    for (let i = 0; i < bios.length; i++) {
-      bios[i].classList.remove('active');
-    }
-    e.target.classList.add('active');
-    document.getElementById(`${e.target.id}-bios-container`).classList.add('active');
-    document.getElementById(`${e.target.id}-photo-0`).classList.add('active');
-    document.getElementById(`${e.target.id}-bio-0`).classList.add('active');
-  }
-  function onBioClick(e) {
-    const bioPhotos = document.getElementsByClassName("riser-photo");
-    for (let i = 0; i < bioPhotos.length; i++) {
-      bioPhotos[i].classList.remove('active');
-    }
-    const bios = document.getElementsByClassName("riser-bio-wrapper");
-    for (let i = 0; i < bios.length; i++) {
-      bios[i].classList.remove('active');
-    }
-    e.target.classList.add('active');
-    document.getElementById(`${e.target.id.replace('photo', 'bio')}`).classList.add('active');
-  }
 </script>
 
 <hero-header memo="Message from the CEO" title="Welcome Future Risers" description="      Thanks for stopping by to find out more<br>
@@ -135,7 +101,7 @@
           {% if loop.first %}
           {% set active = "active" %}
           {% endif %}
-          <div id="{{ department.title }}" class="list-option department {{ active }}" onclick="onDepartmentClick(event)">{{ department.title }}</div>
+          <department-switch active="{{ active }}" department="{{ department.title }}"></department-switch>
           {% endfor %}
         </div>
         <div class="list-partner">
@@ -155,7 +121,10 @@
               {% endif %}
               {% set imgObj = apos.image.first(riser.photo) %}
               <div class="riser-photo-wrapper">
-                <img src="{{ apos.attachment.url(imgObj) }}" alt="" onclick="onBioClick(event)" id="{{ department.title }}-photo-{{ loop.index0 }}" class="riser-photo {{ active }}">
+                <bio-switch image-url="{{ apos.attachment.url(imgObj) }}"
+                            department="{{ department.title }}"
+                            index="{{ loop.index0 }}"
+                            active="{{ active }}"></bio-switch>
                 <div class="photo-hover">Read Bio</div>
                 <div class="photo-info">
                   <div>{{ riser.title }}</div>

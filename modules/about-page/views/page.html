@@ -7,106 +7,12 @@
       industry-changing mindset. We love what we do,<br>
       and we're not shy about sharing our unfiltered<br>
       thoughts on all of it."></hero-header>
-<script>
-  function onBeliefClick(e) {
-    const beliefs = document.getElementsByClassName("belief");
-    for (let i = 0; i < beliefs.length; i++) {
-      beliefs[i].classList.remove('active')
-    }
-    const descriptions = document.getElementsByClassName("belief-description")
-    for (let i = 0; i < descriptions.length; i++) {
-      descriptions[i].classList.remove('active')
-    }
-    e.target.classList.add('active');
-    document.getElementById(`${e.target.id}-description`).classList.add('active');
-  }
-  function onDepartmentClick(e) {
-    const departments = document.getElementsByClassName("department");
-    for (let i = 0; i < departments.length; i++) {
-      departments[i].classList.remove('active');
-    }
-    const departmentBiosContainers = document.getElementsByClassName("department-bios-container")
-    for (let i = 0; i < departmentBiosContainers.length; i++) {
-      departmentBiosContainers[i].classList.remove('active');
-    }
-    const bioPhotos = document.getElementsByClassName("riser-photo");
-    for (let i = 0; i < bioPhotos.length; i++) {
-      bioPhotos[i].classList.remove('active');
-    }
-    const bios = document.getElementsByClassName("riser-bio-wrapper");
-    for (let i = 0; i < bios.length; i++) {
-      bios[i].classList.remove('active');
-    }
-    e.target.classList.add('active');
-    document.getElementById(`${e.target.id}-bios-container`).classList.add('active');
-    document.getElementById(`${e.target.id}-photo-0`).classList.add('active');
-    document.getElementById(`${e.target.id}-bio-0`).classList.add('active');
-  }
-  function onBioClick(e) {
-    const bioPhotos = document.getElementsByClassName("riser-photo");
-    for (let i = 0; i < bioPhotos.length; i++) {
-      bioPhotos[i].classList.remove('active');
-    }
-    const bios = document.getElementsByClassName("riser-bio-wrapper");
-    for (let i = 0; i < bios.length; i++) {
-      bios[i].classList.remove('active');
-    }
-    e.target.classList.add('active');
-    document.getElementById(`${e.target.id.replace('photo', 'bio')}`).classList.add('active');
-  }
-</script>
 <div class="content-section">
   <div class="content-wrapper">
     <section-header header="Beliefs in Action"
                     subheader="We talk the talk and walk the walk"></section-header>
     <div class="section-body-wrapper">
-      <div class="list-wrapper">
-        <div class="list-options-wrapper">
-          <div id="people" class="list-option belief active" onclick="onBeliefClick(event)">People</div>
-          <div id="practice" class="list-option belief" onclick="onBeliefClick(event)">Practice</div>
-          <div id="process" class="list-option belief" onclick="onBeliefClick(event)">Process</div>
-        </div>
-        <div class="list-partner">
-          <div id="people-description" class="belief-description active">
-            <img class="frame" src="/images/frame-red-gradient.svg" alt="">
-            <img class="pixels" src="/images/background-pixels-grey.svg" alt="">
-            Digital transformation starts with people, the ones that you already have.
-            Most organizations don’t need help bringing in additional talent, they really
-            just need help getting out of its way.
-            <br><br>
-            We’re experts at coming in and helping your organization create learning
-            environments where employees with growth mindsets can learn, grow,
-            thrive and produce the products and platforms that are going to fuel your
-            digital transformation.
-          </div>
-          <div id="practice-description" class="belief-description">
-            <img class="frame" src="/images/frame-red-gradient.svg" alt="">
-            <img class="pixels" src="/images/background-pixels-grey.svg" alt="">
-            At Rise8, we emphasize three main practices: lean product
-            management, user-centered design, and extreme programming.
-            When balanced properly, these contribute to an effective and
-            healthy DevSecOps culture.
-            <br><br>
-            We also think about leadership as a meta practice of any discipline,
-            and we incorporate it into our engagements from day one.
-          </div>
-          <div id="process-description" class="belief-description">
-            <img class="frame" src="/images/frame-red-gradient.svg" alt="">
-            <img class="pixels" src="/images/background-pixels-grey.svg" alt="">
-            From pre-kickoff to day two operations, we help you craft
-            processes that create value and eliminate waste while taking
-            into account your unique domain context.
-            <br><br>
-            The system of work has to have alignment and flow in order
-            to achieve continuous delivery, where changes can be made
-            quickly, safely, and in a sustainable way.
-            <br><br>
-            We’ll help you test your assumptions and measure what matters
-            to ensure that you’re making measurable progress towards
-            the outcomes you care about.
-          </div>
-        </div>
-      </div>
+      <belief-switch></belief-switch>
     </div>
   </div>
 </div>
@@ -123,7 +29,7 @@
           {% if loop.first %}
           {% set active = "active" %}
           {% endif %}
-            <div id="{{ department.title }}" class="list-option department {{ active }}" onclick="onDepartmentClick(event)">{{ department.title }}</div>
+          <department-switch active="{{ active }}" department="{{ department.title }}"></department-switch>
           {% endfor %}
         </div>
         <div class="list-partner">
@@ -143,7 +49,10 @@
                 {% endif %}
                 {% set imgObj = apos.image.first(riser.photo) %}
                   <div class="riser-photo-wrapper">
-                    <img src="{{ apos.attachment.url(imgObj) }}" alt="" onclick="onBioClick(event)" id="{{ department.title }}-photo-{{ loop.index0 }}" class="riser-photo {{ active }}">
+                    <bio-switch image-url="{{ apos.attachment.url(imgObj) }}"
+                                department="{{ department.title }}"
+                                index="{{ loop.index0 }}"
+                                active="{{ active }}"></bio-switch>
                     <div class="photo-hover">Read Bio</div>
                     <div class="photo-info">
                       <div>{{ riser.title }}</div>

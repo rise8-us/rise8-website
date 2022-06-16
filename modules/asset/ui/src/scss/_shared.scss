@@ -94,43 +94,6 @@
   }
 }
 
-.section-header-wrapper {
-  border-left: 12px solid #131414;
-  padding-left: 52px;
-  margin-bottom: 36px;
-
-  &.dark {
-    border-left: 12px solid #FFFFFF;
-  }
-
-  &.error {
-    border-left: none;
-    padding: 0;
-  }
-
-  .section-subheader {
-    font-family: 'Supply', serif;
-    text-transform: uppercase;
-    font-size: 12px;
-    color: #FC0000;
-
-    &.secondary {
-      color: #FFFFFF;
-    }
-  }
-
-  .section-header {
-    font-family: 'Jagerlay', serif;
-    font-size: 40px;
-    font-weight: 400;
-    margin: 8px 0;
-
-    &.secondary {
-      color: #FC0000;
-    }
-  }
-}
-
 .section-body-wrapper {
   margin: 40px 0 0 66px;
 }
@@ -364,7 +327,7 @@ a:hover {
         left: 50%;
         transform: translate(-50%, -50%);
         font-family: "DM Sans", serif;
-        font-weight: 800;
+        color: #F2F2F2
       }
 
       &:hover .photo-hover {
