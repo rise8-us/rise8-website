@@ -1,12 +1,7 @@
 const findTips = require('../tip/find');
 
 const getJobs = async (self) => {
-  console.log('here');
-  const response1 = self.apos.http.get('https://rise8.breezy.hr/json', { headers: { 'Request-Timeout': 5 } });
-
-  console.log('Also Here');
-
-  return response1;
+  return self.apos.http.get('https://rise8.breezy.hr/json');
 };
 
 module.exports = async (self, req) => {
@@ -36,8 +31,6 @@ const mapJobsByDepartment = (jobs) => {
       jobMap[department] = [ job ];
     }
   });
-
-  console.log(jobMap);
 
   return jobMap;
 };
