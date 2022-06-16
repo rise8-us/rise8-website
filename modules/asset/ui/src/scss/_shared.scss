@@ -106,6 +106,21 @@
   }
 }
 
+.link {
+  display: flex;
+  height: 100%;
+  width: max-content;
+
+  .link-text {
+    margin: auto;
+    font-family: 'Supply', serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #000000;
+  }
+}
+
 .eight-mark-background {
   background-image: url('/images/background-8-mark-light.svg');
   background-repeat: no-repeat;

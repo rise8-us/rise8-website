@@ -6,6 +6,7 @@ import { SectionHeader } from './components/SectionHeader';
 import { DepartmentSwitch } from './components/DepartmentSwitch';
 import { BioSwitch } from './components/BioSwitch';
 import { BeliefSwitch } from './components/BeliefSwitch';
+import { HamburgerMenu } from './components/HamburgerMenu';
 
 export default () => {
   customElements.define('hero-header', Hero);
@@ -16,4 +17,5 @@ export default () => {
   customElements.define('department-switch', DepartmentSwitch);
   customElements.define('bio-switch', BioSwitch);
   customElements.define('belief-switch', BeliefSwitch);
+  customElements.define('hamburger-menu', HamburgerMenu);
 };

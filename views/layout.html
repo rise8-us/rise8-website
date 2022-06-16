@@ -11,17 +11,21 @@
 
 {% block beforeMain %}
 <div class="bp-wrapper">
-  <header id="nav-header" class="bp-header fill">
-    <a href="/"><img class="logo" src="/images/logo-rise8.svg" alt="Rise8 logo"></a>
+  <header class="bp-header fill">
+    <a href="/" class="logo"><img src="/images/logo-rise8.svg" alt="Rise8 logo"></a>
     <nav>
-      <ul>
-        <li class="{{ data.page.title == 'Services' }}"><a href="/services">Services</a></li>
-        <li class="{{ data.page.title == 'About Us' }}"><a href="/about">About Us</a></li>
-        <li class="{{ data.page.title == 'Blog' }}"><a href="/blog">Blog</a></li>
-        <li class="{{ data.page.title == 'Careers' }}"><a href="/careers">Careers</a></li>
-        <li class="{{ data.page.title == 'Contact' }}"><a href="/contact">Contact</a></li>
+      <ul class="nav-list">
+        <li class="{{ data.page.title == 'Services' }}"><a href="/services" class="link"><div class="link-text">Services</div></a></li>
+        <li class="{{ data.page.title == 'About Us' }}"><a href="/about" class="link"><div class="link-text">About Us</div></a></li>
+        <li class="{{ data.page.title == 'Blog' }}"><a href="/blog" class="link"><div class="link-text">Blog</div></a></li>
+        <li class="{{ data.page.title == 'Careers' }}"><a href="/careers" class="link"><div class="link-text">Careers</div></a></li>
+        <li class="{{ data.page.title == 'Contact' }}"><a href="/contact" class="link"><div class="link-text">Contact</div></a></li>
         <li><img src="/images/icon-search.svg" alt="Search"></li>
       </ul>
+      <div class="mobile-nav-bar">
+        <div class="nav-link"><a href="/contact" class="link"><div class="link-text" style="font-size: 20px">Contact</div></a></div>
+        <hamburger-menu mode="light"></hamburger-menu>
+      </div>
     </nav>
   </header>
   <header id="prodacity-banner" class="prodacity-banner">
@@ -44,14 +48,15 @@
   </main>
   <footer class="bp-footer__wrapper fill">
     <div class="bp-footer">
-      <div class="impact-wrapper">
-        <img class="background-img" src="/images/background-footer.svg" alt="">
-        <div class="impact">
-          <div>Together we create<br/>continuous impact.</div>
-          <div class="button-wrapper">
-            <custom-button text="Become a customer" link="/contact" mode="light"></custom-button>
-            <custom-button text="Become a Riser" link="/careers" mode="light"></custom-button>
-          </div>
+        <div class="impact-wrapper">
+          <img class="background-img" src="/images/background-footer.svg" alt="">
+          <img class="background-img-mobile" src="/images/background-footer-mobile.svg" alt="">
+          <div class="impact">
+            <div class="footer-text">Together we create continuous impact.</div>
+            <div class="button-wrapper">
+              <custom-button text="Become a customer" link="/contact" mode="light"></custom-button>
+              <custom-button text="Become a Riser" link="/careers" mode="light"></custom-button>
+            </div>
         </div>
       </div>
       <div class="info-wrapper">
