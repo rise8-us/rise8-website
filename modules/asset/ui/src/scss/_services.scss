@@ -22,6 +22,7 @@
     list-style: none;
     margin-right: 18%;
     width: 50%;
+    font-family: 'DM Sans', serif;
 
     li::before {
       content: "\2022";
@@ -43,4 +44,8 @@
   .diagram-caption {
     margin-top: 63px;
   }
+}
+
+.medium {
+  font-weight: 700;
 }
