@@ -16,51 +16,53 @@ that lives in the top-level views/ folder for convenience
     <img class="clouds" src="/images/image-clouds.jpg" alt="">
   </div>
 </section>
-<section class="content-section">
-  <img class="eight-mark" src="images/background-8-mark-light.svg" alt="">
-  <div class="content-wrapper">
-    <div class="transform-text">We transform how organizations build and deliver software.</div>
-    <section-header header="Services"
-                    subheader="Digital solutions that optimize outcomes"></section-header>
-    <div class="content">
-      {% set imgObj1 = apos.image.first(data.page.cloudPlatformsImage) %}
-      <img src="{{ apos.attachment.url(imgObj1) }}" alt="" class="service-image image-1">
-      <div class="service-body body-1">
-        <div class="header"><img class="icon" src="images/icon-service-cloud-1.svg" alt="">Cloud +
-          Platforms
+<section class="content-section with-8-mark">
+  <div class="eight-mark-background">
+    <div class="content-wrapper with-8-mark">
+      <div class="transform-text">We transform how organizations build and deliver software.</div>
+      <section-header header="Services"
+                      subheader="Digital solutions that optimize outcomes"></section-header>
+      <div class="content">
+        {% set imgObj1 = apos.image.first(data.page.cloudPlatformsImage) %}
+        <img src="{{ apos.attachment.url(imgObj1) }}" alt="" class="service-image image-1">
+        <div class="service-body body-1">
+          <div class="header"><img class="icon" src="images/icon-service-cloud-1.svg" alt="">Cloud +
+            Platforms
+          </div>
+          <div class="body">We specialize in delivering a cloud-native platform and toolchain that
+            is
+            optimized for change so enterprises can move at start-up speeds and with greater mission
+            agility.
+          </div>
+          <custom-button text="Learn more" link="/services" mode="dark"></custom-button>
         </div>
-        <div class="body">We specialize in delivering a cloud-native platform and toolchain that is
-          optimized for change so enterprises can move at start-up speeds and with greater mission
-          agility.
+        <div class="service-body body-2">
+          <div class="header"><img class="icon" src="images/icon-service-cloud-2.svg" alt="">Pipelines
+            +
+            Pathways
+          </div>
+          <div class="body">We ensure that teams have a secure and compliant means to deploy quickly
+            and continuously with high quality and reduced risk.
+          </div>
+          <custom-button text="Learn more" link="/services" mode="dark"></custom-button>
         </div>
-        <custom-button text="Learn more" link="/services" mode="dark"></custom-button>
+        {% set imgObj2 = apos.image.first(data.page.pipelinesPathwaysImage) %}
+        <img src="{{ apos.attachment.url(imgObj2) }}" alt="" class="service-image image-2">
+        {% set imgObj3 = apos.image.first(data.page.appsDigitalProductsImage) %}
+        <img src="{{ apos.attachment.url(imgObj3) }}" alt="" class="service-image image-3">
+        <div class="service-body body-3">
+          <div class="header"><img class="icon" src="images/icon-service-cloud-3.svg" alt="">Applications
+            +
+            Digital Products
+          </div>
+          <div class="body">Our teams use agile, lean, and user-centered approaches to continuously
+            deliver impactful software that users love.
+          </div>
+          <custom-button text="Learn more" link="/services" mode="dark"></custom-button>
+        </div>
       </div>
-      <div class="service-body body-2">
-        <div class="header"><img class="icon" src="images/icon-service-cloud-2.svg" alt="">Pipelines
-          +
-          Pathways
-        </div>
-        <div class="body">We ensure that teams have a secure and compliant means to deploy quickly
-          and continuously with high quality and reduced risk.
-        </div>
-        <custom-button text="Learn more" link="/services" mode="dark"></custom-button>
-      </div>
-      {% set imgObj2 = apos.image.first(data.page.pipelinesPathwaysImage) %}
-      <img src="{{ apos.attachment.url(imgObj2) }}" alt="" class="service-image image-2">
-      {% set imgObj3 = apos.image.first(data.page.appsDigitalProductsImage) %}
-      <img src="{{ apos.attachment.url(imgObj3) }}" alt="" class="service-image image-3">
-      <div class="service-body body-3">
-        <div class="header"><img class="icon" src="images/icon-service-cloud-3.svg" alt="">Applications
-          +
-          Digital Products
-        </div>
-        <div class="body">Our teams use agile, lean, and user-centered approaches to continuously
-          deliver impactful software that users love.
-        </div>
-        <custom-button text="Learn more" link="/services" mode="dark"></custom-button>
-      </div>
+      <who-we-serve></who-we-serve>
     </div>
-    <who-we-serve></who-we-serve>
   </div>
 </section>
 <section class="content-section dark">

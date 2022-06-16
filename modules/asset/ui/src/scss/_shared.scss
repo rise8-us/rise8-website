@@ -84,6 +84,10 @@
     color: #FFFFFF;
   }
 
+  &.with-8-mark {
+    padding-top: 0;
+  }
+
   .content-wrapper {
     margin: auto;
     width: 1128px;
@@ -91,6 +95,19 @@
     &.error {
       width: max-content;
     }
+
+    &.with-8-mark {
+      padding-top: 72px;
+    }
+  }
+}
+
+.eight-mark-background {
+  background-image: url('/images/background-8-mark-light.svg');
+  background-repeat: no-repeat;
+
+  &.dark {
+    background-image: url('/images/background-8-mark-dark.svg');
   }
 }
 
