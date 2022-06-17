@@ -1,4 +1,6 @@
 {% extends "layout.html" %}
+{% import '@apostrophecms/pager:macros.html' as pager with context %}
+
 
 {% block main %}
 {% set imgObj = apos.image.first(data.page.heroImage) %}
@@ -41,6 +43,11 @@
         </div>
       </a>
       {% endfor %}
+      {{ pager.render({
+      page: data.currentPage,
+      total: data.totalPages,
+      class: 'blog-pager'
+      }, data.url) }}
     </div>
   </div>
 </div>

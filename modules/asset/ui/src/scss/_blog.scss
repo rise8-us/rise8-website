@@ -1,3 +1,16 @@
+.blog-pager {
+  text-align: right;
+  font-family: DM Sans, sans-serif;
+
+  .blog-pager__item {
+    padding: 5px;
+
+    a {
+      color: red;
+    }
+  }
+}
+
 .blog-page-container {
   width: 1128px;
   margin: 0 auto;
