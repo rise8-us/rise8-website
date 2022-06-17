@@ -9,6 +9,13 @@
 {% endif %}
 {% endblock %}
 
+{% block extraHead %}
+<meta name="msapplication-TileImage" content="/images/favicons/cropped-rise8-favicon-270x270.png">
+<link rel="icon" href="/images/favicons/cropped-rise8-favicon-192x192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="/images/favicons/cropped-rise8-favicon-180x180.png">
+<link rel="icon" href="/images/favicons/cropped-rise8-favicon-32x32.png" sizes="32x32">
+{% endblock %}
+
 {% block beforeMain %}
 <eight-loader></eight-loader>
 <div id="website-content" class="bp-wrapper display-after-loading-screen">
