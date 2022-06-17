@@ -22,23 +22,26 @@
     </div>
   </div>
   {% endif %}
-  <div class="blog-grid">
-    {% for blog in data.pieces %}
-    <a href="/blog/{{blog.slug}}" class="card">
-      {% if blog.image %}
-      <div class="banner" style="background-image: url({{blog.image.items[0]._image[0].attachment._urls['two-thirds']}})"><span class="title">{{ blog.title}}</span></div>
-      {% else %}
-      <div class="banner"><span class="title">{{ blog.title}}</span></div>
-      {% endif %}
-      <div class="info">
-        <span class="topic">{{blog._topic[0].title}}</span>
-        <div class="time">
-          <img src="/images/clock-black.svg" alt="clock" style="fill: #000000">
-          <span>{{blog.minutes}} min</span>
+  <div class="other-posts-title">Other Posts</div>
+  <div class="blog-grid-container">
+    <div class="blog-grid">
+      {% for blog in data.pieces %}
+      <a href="/blog/{{blog.slug}}" class="card">
+        {% if blog.image %}
+        <div class="banner" style="background-image: url({{blog.image.items[0]._image[0].attachment._urls['two-thirds']}})"><span class="title">{{ blog.title}}</span></div>
+        {% else %}
+        <div class="banner"><span class="title">{{ blog.title}}</span></div>
+        {% endif %}
+        <div class="info">
+          <span class="topic">{{blog._topic[0].title}}</span>
+          <div class="time">
+            <img src="/images/clock-black.svg" alt="clock" style="fill: #000000">
+            <span>{{blog.minutes}} min</span>
+          </div>
         </div>
-      </div>
-    </a>
-    {% endfor %}
+      </a>
+      {% endfor %}
+    </div>
   </div>
 </div>
 {% endblock %}
