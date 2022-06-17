@@ -239,11 +239,12 @@
     @media only screen and (max-width: 600px) {
       position: inherit;
       max-width: fit-content;
-      margin-left: 0px;
-      max-height: fit-content;
+      margin-left: 0;
+      min-width: 238px;
+      max-height: 260px;
     }
 
-    .image-1 {
+    .opportunity-image-1 {
       position: absolute;
       width: 192px;
       height: 406px;
@@ -251,6 +252,8 @@
       @media only screen and (max-width: 600px) {
         position: inherit;
         max-width: fit-content;
+        min-width: 250px;
+        max-height: 260px;
       }
     }
 
@@ -278,7 +281,8 @@
   padding: 0 170px;
 
   @media only screen and (max-width: 600px) {
-    padding: 0px;
+    padding-left: 13px;
+    padding-right: 13px;
   }
 
   .quote {
@@ -287,8 +291,8 @@
     width: 552px;
 
     @media only screen and (max-width: 600px) {
-      max-width: fit-content;
       padding: 0px;
+      width: 100%;
     }
   }
 
@@ -299,5 +303,29 @@
 
   .role {
     font-size: 14px
+  }
+}
+
+.mobile-only {
+  display: none;
+
+  @media only screen and (max-width: 600px) {
+    display: unset;
+  }
+}
+
+.mobile-tip {
+  @media only screen and (max-width: 600px) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+}
+
+.mobile-chevron {
+  @media only screen and (max-width: 600px) {
+    padding-bottom: 50px;
   }
 }

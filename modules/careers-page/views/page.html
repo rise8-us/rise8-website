@@ -2,30 +2,89 @@
 
 {% block main %}
 <script>
-  function onArrowClick(e, left) {
-    const tips = document.getElementsByClassName('tip');
+  function onDepartmentArrowClick(e, left) {
+    const departments = document.getElementsByClassName('department');
+    const switches = document.getElementsByClassName('department-switch');
     let index = 0;
-    for (let i = 0; i < tips.length; i++) {
-      if (!tips[i].classList.contains('hidden')) {
-        tips[i].classList.add('hidden');
+    for (let i = 0; i < departments.length; i++) {
+      if (departments[i].classList.contains('active')) {
+        departments[i].classList.remove('active');
+        switches[i].classList.remove('active');
         index = i;
         break;
       }
     }
 
+    const departmentBiosContainers = document.getElementsByClassName('department-bios-container');
+    for (let i = 0; i < departmentBiosContainers.length; i++) {
+      departmentBiosContainers[i].classList.remove('active');
+    }
+    const bios = document.getElementsByClassName('riser-bio-wrapper');
+    for (let i = 0; i < bios.length; i++) {
+      bios[i].classList.remove('active');
+    }
+
+    let element;
     if (left) {
       if (index === 0) {
-        tips[tips.length - 1].classList.remove('hidden');
+        element = departments[departments.length - 1];
+        switches[departments.length - 1].classList.add('active');
       } else {
-        tips[index - 1].classList.remove('hidden');
+        element = departments[index - 1];
+        switches[index - 1].classList.add('active');
       }
     } else {
-      if (index === tips.length - 1) {
-        tips[0].classList.remove('hidden');
+      if (index === departments.length - 1) {
+        element = departments[0];
+        switches[0].classList.add('active');
       } else {
-        tips[index + 1].classList.remove('hidden');
+        element = departments[index + 1];
+        switches[index + 1].classList.add('active');
       }
     }
+
+    element.classList.add('active');
+    document.getElementById(`${element.id}-bios-container`).classList.add('active');
+    document.getElementById(`${element.id}-photo-0`).classList.add('active');
+    document.getElementById(`${element.id}-bio-0`).classList.add('active');
+  }
+
+  function onPhotoArrowClick(e, left, department) {
+    const photoWrappers = document.getElementsByClassName(`${department}-photo`);
+    const bioPhotos = document.getElementsByClassName(`${department}-riser`);
+    const bios = document.getElementsByClassName(`${department}-bio`);
+    let index;
+    for (let i = 0; i < photoWrappers.length; i++) {
+      if (photoWrappers[i].classList.contains('active')) {
+        photoWrappers[i].classList.remove('active');
+        bioPhotos[i].classList.remove('active');
+        bios[i].classList.remove('active');
+        index = i;
+        break;
+      }
+    }
+
+    let element;
+    if (left) {
+      if (index === 0) {
+        element = bioPhotos[bioPhotos.length - 1];
+        photoWrappers[photoWrappers.length - 1].classList.add('active');
+      } else {
+        element = bioPhotos[index - 1];
+        photoWrappers[index - 1].classList.add('active');
+      }
+    } else {
+      if (index === bioPhotos.length - 1) {
+        element = bioPhotos[0];
+        photoWrappers[0].classList.add('active');
+      } else {
+        element = bioPhotos[index + 1];
+        photoWrappers[index + 1].classList.add('active');
+      }
+    }
+
+    element.classList.add('active');
+    document.getElementById(`${element.id.replace('photo', 'bio')}`).classList.add('active');
   }
 </script>
 {% set imgObj = apos.image.first(data.page.heroImage) %}
@@ -38,7 +97,10 @@
              image="{{ apos.attachment.url(imgObj) }}"></hero-header>
 <div class="content-section">
   <div class="content-wrapper">
-    <section-header header="Core Values" subheader="Tagline"></section-header>
+    <div class="mobile-only">
+      <img src="{{ apos.attachment.url(imgObj) }}" style="height: 440px">
+    </div>
+    <section-header header="Our Core Values" subheader="Tagline"></section-header>
     <div class="section-body-text large telegraf">
       Our core values are tied to the specific behaviors and skills we care about most. The more
       these values sound like you, and describe people you want to work with, the more likely
@@ -84,7 +146,7 @@
     </div>
   </div>
 </div>
-<div class="content-section dark">
+<div class="content-section light">
   <div class="content-wrapper">
     <section-header header="Let's Make Some Intros"
                     subheader="Your future teammates"
@@ -317,7 +379,7 @@
       {% endif %}
 
       <div class="career-list-partner">
-        <img style="position: absolute;width: 192px;height: 406px;">
+        <img class="opportunity-image-1">
         <img style="position: absolute;width: 399px;height: 199px;left: 25px;top: 42px;" class="non-mobile">
         <img style="position: absolute;width: 399px;height: 199px;left: 230px;top: 260px;" class="non-mobile">
         <img style="position: absolute;width: 199px;height: 199px;left: 77px;top: 336px;" class="non-mobile">
@@ -333,9 +395,9 @@
     <div class="tips-header">
       Tips for Rise8 Candidates
     </div>
-    <div class="values-body-wrapper" style="justify-content: center;">
+    <div class="values-body-wrapper mobile-tip" style="align-self: center">
       <img src="images/icon-chevron-right-light.svg"
-           class="chevron left"
+           class="chevron left mobile-chevron"
            onclick="onArrowClick(event, true)">
       {% for tip in data.tips %}
       {% set hidden = "hidden" %}
@@ -348,7 +410,7 @@
         <div class="role telegraf">{{tip._riser[0].role}}</div>
       </div>
       {% endfor %}
-      <img src="images/icon-chevron-right-light.svg" class="chevron"
+      <img src="images/icon-chevron-right-light.svg" class="chevron mobile-chevron"
            onclick="onArrowClick(event, false)">
     </div>
   </div>
