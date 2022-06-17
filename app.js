@@ -1,5 +1,6 @@
 require('apostrophe')({
   shortName: 'rise8-website',
+  baseUrl: process.env.BASE_URL,
   modules: {
     '@apostrophecms/db': {
       options: {
@@ -7,6 +8,14 @@ require('apostrophe')({
       },
     },
     '@apostrophecms/search': {},
+    '@apostrophecms/seo': {},
+    '@apostrophecms/sitemap': {},
+    '@apostrophecms/global': {
+      options: {
+        seoGoogleAnalytics: process.env.ENABLE_SEO,
+        seoGoogleTagManager: process.env.ENABLE_SEO,
+      },
+    },
     '@apostrophecms/rich-text-widget': {
       options: {
         className: 'bp-rich-text',

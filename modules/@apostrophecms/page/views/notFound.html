@@ -16,3 +16,8 @@
   </div>
 </section>
 {% endblock %}
+
+{% block extraBody %}
+{{ super() }}
+{% include "@apostrophecms/seo:404.html" %}
+{% endblock %}
