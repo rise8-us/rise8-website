@@ -4,6 +4,10 @@
   width: 550px;
   font-family: "DM Sans", serif;
 
+  @media only screen and (max-width: 850px) {
+    width: fit-content;
+  }
+
   & .field {
     margin-top: 14px;
 
