@@ -84,20 +84,28 @@
     </div>
   </div>
 </div>
-<div class="content-section" style="display: none">
+<div class="content-section dark">
   <div class="content-wrapper">
     <section-header header="Let's Make Some Intros"
-                    subheader="Your future teammates"></section-header>
+                    subheader="Your future teammates"
+                    dark-mode light-on-mobile></section-header>
     <div class="section-body-wrapper">
       <div class="list-wrapper">
         <div class="list-options-wrapper">
+          <img src="images/icon-chevron-right-red.svg"
+               class="chevron left show-on-mobile active"
+               onclick="onDepartmentArrowClick(event, true)">
           {% for department in data.departments %}
           {% set active = "" %}
           {% if loop.first %}
           {% set active = "active" %}
           {% endif %}
-          <department-switch active="{{ active }}" department="{{ department.title }}"></department-switch>
+          <department-switch class="department-switch {{ active }}" active="{{ active }}"
+                             department="{{ department.title }}"></department-switch>
           {% endfor %}
+          <img src="images/icon-chevron-right-red.svg"
+               class="chevron show-on-mobile active"
+               onclick="onDepartmentArrowClick(event, false)">
         </div>
         <div class="list-partner">
           {% for department in data.departments %}
@@ -106,7 +114,8 @@
           {% if loop.first %}
           {% set active = "active" %}
           {% endif %}
-          <div id="{{ department.title }}-bios-container" class="department-bios-container {{ active }}">
+          <div id="{{ department.title }}-bios-container"
+               class="department-bios-container {{ active }}">
             <div class="department-photos-wrapper">
               {% for riser in department._risers %}
               {% if loop.index < 4 %}
@@ -115,14 +124,24 @@
               {% set active = "active" %}
               {% endif %}
               {% set imgObj = apos.image.first(riser.photo) %}
-              <div class="riser-photo-wrapper">
+              <div class="riser-photo-wrapper {{ active }} {{ department.title }}-photo">
                 <bio-switch image-url="{{ apos.attachment.url(imgObj) }}"
                             department="{{ department.title }}"
                             index="{{ loop.index0 }}"
                             active="{{ active }}"></bio-switch>
+                <div class="chevron-wrapper">
+                  <div class="photo-chevrons">
+                    <img src="images/icon-chevron-right-light.svg"
+                         class="chevron left show-on-mobile active"
+                         onclick="onPhotoArrowClick(event, true, '{{department.title}}')">
+                    <img src="images/icon-chevron-right-light.svg"
+                         class="chevron show-on-mobile active"
+                         onclick="onPhotoArrowClick(event, false, '{{department.title}}')">
+                  </div>
+                </div>
                 <div class="photo-hover">Read Bio</div>
                 <div class="photo-info">
-                  <div>{{ riser.title }}</div>
+                  <div style="font-weight: 800">{{ riser.title }}</div>
                   <div>{{ riser.role }}</div>
                 </div>
               </div>
@@ -136,18 +155,19 @@
               {% if loop.first %}
               {% set active = "active" %}
               {% endif %}
-              <div id="{{ department.title }}-bio-{{ loop.index0 }}" class="riser-bio-wrapper {{ active }}">
+              <div id="{{ department.title }}-bio-{{ loop.index0 }}"
+                   class="riser-bio-wrapper {{ department.title }}-bio {{ active }}">
                 <div class="riser-bio-header">
                   <div class="bio-name">{{ riser.title }}</div>
-                  <div class="bio-role light">{{ riser.role }}</div>
+                  <div class="bio-role">{{ riser.role }}</div>
                 </div>
                 <div id="bio" class="riser-bio">
                   <div class="bio-bio">{{ riser.bio }}</div>
                   <div class="bio-quote">
-                    <div class="riser-quote-name light">
+                    <div class="riser-quote-name">
                       {{ riser.title.split(' ')[0] }}'s View
                     </div>
-                    <div id="quote" class="riser-quote light">
+                    <div id="quote" class="riser-quote">
                       "{{ riser.quote }}"
                     </div>
                   </div>
@@ -179,8 +199,8 @@
       <div class="section-grid telegraf">
         <div class="item-1">
           <img class="grid-icon" src="images/icon-umbrella.svg" alt="">
-          <Div>Insurance | up to<br>
-            100% Coverage for<br>
+          <Div>Insurance | up to
+            100% Coverage for
             Riser & dependents
           </Div>
         </div>
@@ -191,14 +211,14 @@
         <div class="item-3">
           <img class="grid-icon" src="images/icon-reverse-arrows.svg" alt="">
           <Div>
-            401k Matching at<br>
+            401k Matching at
             10%
           </Div>
         </div>
         <div class="item-4">
           <img class="grid-icon" src="images/icon-calendar.svg" alt="">
           <Div>
-            4 Weeks PTO<br>
+            4 Weeks PTO
             Plus federal holidays
           </Div>
         </div>
@@ -209,21 +229,21 @@
         <div class="item-6">
           <img class="grid-icon" src="images/icon-grad-cap.svg" alt="">
           <Div>
-            Education &<br>
+            Education &
             Training Budget
           </Div>
         </div>
         <div class="item-7">
           <img class="grid-icon" src="images/icon-bike.svg" alt="">
           <Div>
-            Wellness Activities<br>
+            Wellness Activities
             Budget
           </Div>
         </div>
         <div class="item-8">
           <img class="grid-icon" src="images/icon-apple.svg" alt="">
           <Div>
-            Awesome<br>
+            Awesome
             Equipment
           </Div>
         </div>

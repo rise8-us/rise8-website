@@ -105,8 +105,10 @@
 
     @media only screen and (max-width: 600px){
       gap: 16px 16px;
-      grid-template-columns: 140px 156px;
+      grid-template-columns: 50% 50%;
       grid-template-rows: 105px 105px 105px 105px;
+      padding-top: 0px;
+      padding-left: 16px;
     }
 
     &.item-1 {
