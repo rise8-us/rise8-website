@@ -37,6 +37,12 @@
   src: url('/fonts/Telegraf-Bold.otf') format('opentype');
 }
 
+@font-face {
+  font-family: 'DM Sans';
+  font-weight: 400;
+  src: url('/fonts/DMSans-Regular.ttf') format('truetype');
+}
+
 .apos-admin-bar-spacer {
   margin-bottom: 0 !important;
 }
