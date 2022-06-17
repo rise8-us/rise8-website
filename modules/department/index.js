@@ -3,6 +3,7 @@ module.exports = {
   options: {
     label: 'Department',
     pluralLabel: 'Departments',
+    searchable: false,
   },
   fields: {
     add: {

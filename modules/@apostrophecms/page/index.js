@@ -35,9 +35,18 @@ module.exports = {
       {
         name: '@apostrophecms/home-page',
         label: 'Home',
+        searchable: false,
       },
     ],
     park: [
+      {
+        title: 'Search',
+        slug: '/search',
+        parkedId: 'search',
+        type: '@apostrophecms/search',
+        label: 'Search',
+        published: true,
+      },
       {
         slug: '/services',
         parkedId: 'servicesId',

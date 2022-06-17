@@ -1,0 +1,6 @@
+<!-- Use header `X-Requested-With: XMLHttpRequest` to request this page-->
+{% block main %}
+{% for doc in data.docs %}
+{% if doc._url %}<a class='async-search-{{doc.type}}' href="{{ doc._url }}">{% endif %}{{ doc.title }}{% if doc._url %}</a>{% endif %}
+{% endfor %}
+{% endblock %}
