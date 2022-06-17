@@ -2,6 +2,7 @@ const findAboutPagePieces = require('../../about-page/findPieces');
 const findHomePagePieces = require('../home-page/findPieces');
 const findBlogPagePieces = require('../../blog-page/findPieces');
 const findTipPagePieces = require('../../careers-page/findPieces');
+const { shouldRedirectToBlog, redirectToBlog } = require('../../blog-page/redirectToBlog');
 
 // This configures the @apostrophecms/pages module to add a "home" page type to the
 // pages menu
@@ -22,6 +23,13 @@ module.exports = {
             ...req.data,
             ...data,
           };
+        },
+      },
+      notFound: {
+        async handlerName(req) {
+          if (shouldRedirectToBlog(req.url)) {
+            redirectToBlog(req);
+          }
         },
       },
     };

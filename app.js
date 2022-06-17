@@ -1,16 +1,6 @@
 require('apostrophe')({
   shortName: 'rise8-website',
   modules: {
-    // Apostrophe module configuration
-    // *******************************
-    //
-    // NOTE: most configuration occurs in the respective modules' directories.
-    // See modules/@apostrophecms/page/index.js for an example.
-    //
-    // Any modules that are not present by default in Apostrophe must at least
-    // have a minimal configuration here to turn them on: `moduleName: {}`
-    // ***********************************************************************
-    // `className` options set custom CSS classes for Apostrophe core widgets.
     '@apostrophecms/db': {
       options: {
         uri: `mongodb://rise8:${process.env.DB_PASSWORD}@${process.env.DB_IP_ADDRESS}:27017/rise8-${process.env.DEPLOY_ENV}?authSource=admin`,
@@ -34,19 +24,18 @@ require('apostrophe')({
     },
     // `asset` supports the project's webpack build for client-side assets.
     asset: {},
+    blog: {},
     department: {},
     riser: {},
-    topic: {},
-    blog: {},
     tip: {},
-    // The project's first custom page type.
-    'default-page': {},
-    'services-page': {},
+    topic: {},
     'about-page': {},
+    'blog-page': {},
     'careers-page': {},
     'contact-page': {},
-    'blog-page': {},
+    'default-page': {},
     'prodacity-page': {},
     'privacy-page': {},
+    'services-page': {},
   },
 });
