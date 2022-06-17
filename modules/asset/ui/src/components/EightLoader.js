@@ -1,7 +1,10 @@
 export class EightLoader extends HTMLElement {
   constructor() {
     super();
-    this.imagePathPrefix = document.title === 'Prodacity' ? '../' : '';
+    this.imagePathPrefix =
+      (document.title === 'Prodacity' || /[\/[b][l][o][g]\/[ -~]+/.test(document.documentURI))
+        ? '../'
+        : '';
     setTimeout(function () {
       document.getElementById('website-content').classList.remove('display-after-loading-screen');
       document.getElementById('loader-wrapper').classList.add('loaded');
