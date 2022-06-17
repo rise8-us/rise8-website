@@ -6,32 +6,17 @@
     document.getElementById('prodacity-banner').classList.add('hidden');
   })();
 </script>
-<div class="hero" style="padding-top: 40px">
-  <div class="left center">
-    <div></div>
-    <div>
-      <div class="title">
-        <img src="../images/logo-prodacity.svg" alt="">
-      </div>
-      <div style="margin-bottom: 24px" class="memo center">
-        sep 7-8 2022<br/>washington dc
-      </div>
-      <custom-button text="Register Now" link="/registration-link" mode="gradient" text-style="font-weight: 700"
-                     half no-chevron></custom-button>
-    </div>
-    <div>
-      <img src="../images/logo-wework.svg">
-    </div>
-  </div>
-  <div class="slanted-div"></div>
-  <div class="right">
-    <div style="width: 600px"></div>
-  </div>
-</div>
+<hero-header title-image="/images/logo-prodacity.svg"
+     memo="sep 7-8 2022<br>washington dc
+     <div class='register-button'>
+     <custom-button text='Register Now' link='/registration-link' mode='gradient'
+     text-style='font-weight: 700' half no-chevron></custom-button>
+     </div>"
+     caption="<img src='/images/logo-wework.svg' alt=''>" pad-top></hero-header>
 <section class="content-section dark with-8-mark">
   <div class="eight-mark-background dark">
     <div class="content-wrapper with-8-mark">
-      <div class="prodacity-wrapper">
+      <div class="two-column-wrapper">
         <div>
           <section-header header="Prodacity 2022" subheader="Sept 7-8, 2022 in Washington DC"
                           dark-mode secondary></section-header>
@@ -60,7 +45,7 @@
       <div class="subsection-wrapper">
         <section-header header="Syllabus" subheader="Why, what, and how"
                         dark-mode secondary></section-header>
-        <div class="syllabus-wrapper">
+        <div class="two-column-wrapper">
           <div class="section-body-text">
             <div class="agenda-header">Day 1: Why & What</div>
             <ul class="no-bullet-list">
@@ -100,7 +85,7 @@
       </div>
     </div>
     <div class="subsection-wrapper">
-      <div class="content-wrapper flex-between">
+      <div class="content-wrapper row">
         <div>
           <section-header header="Location" subheader="washington dc"
                           dark-mode secondary></section-header>

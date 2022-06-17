@@ -18,6 +18,10 @@
 
   &.with-8-mark {
     padding-top: 0;
+
+    @media only screen and (max-width: 600px) {
+      padding-top: 100px;
+    }
   }
 
   .content-wrapper {
@@ -30,7 +34,7 @@
     &.row {
       flex-direction: row;
 
-      @media only screen and (max-width: 1400px) {
+      @media only screen and (max-width: 1000px) {
         flex-direction: column;
       }
     }
@@ -91,7 +95,11 @@
   }
 
   @media only screen and (max-width: 600px) {
-    background: white;
+    background-image: none;
+
+    &.dark {
+      background-image: none;
+    }
   }
 }
 
@@ -540,3 +548,21 @@ a:hover {
   }
 }
 
+
+.image-container {
+  display: flex;
+  justify-content: center;
+
+  .image {
+    max-height: 400px;
+  }
+
+  @media only screen and (max-width: 1400px) {
+    margin-top: 32px;
+
+    .image {
+      height: 95%;
+      width: 95%;
+    }
+  }
+}

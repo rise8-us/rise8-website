@@ -1,5 +1,6 @@
 .hero {
   display: flex;
+  position: relative;
   background: #F2F2F2;
   height: 369px;
 
@@ -35,10 +36,6 @@
 
         .title {
           font-size: 40px;
-
-          &:after {
-            background: #131414;
-          }
         }
       }
     }
@@ -58,11 +55,11 @@
     min-width: min-content;
     z-index: 1;
 
-    &.center {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      min-width: 300px;
+    .title-image {
+      margin-top: 95px;
+      width: 100%;
+      max-width: 356px;
+      min-width: 200px;
     }
 
     .memo {
@@ -95,8 +92,9 @@
       max-width: 330px;
     }
 
-    .no-description {
-      display: none;
+    .caption {
+      width: fit-content;
+      margin: auto 0 24px;
     }
 
     &:after {
@@ -126,6 +124,19 @@
   @media only screen and (max-width: 600px) {
     flex-direction: column;
     height: fit-content;
+    padding-bottom: 16px;
+
+    &:after {
+      content: '';
+      width: 100%;
+      height: 50px;
+      position: absolute;
+      background: #F2F2F2;
+      bottom: -25px;
+      left: 0;
+      transform-origin: bottom;
+      transform: skewY(-4.5deg);
+    }
 
     .hero-slash-mobile {
       display: unset;
@@ -136,14 +147,52 @@
       margin: 0;
       padding-right: 0;
 
+      .title-image {
+        margin: 40px auto 0;
+        width: 80%;
+      }
+
       .memo {
         text-align: center;
       }
 
       .title {
         position: relative;
-        padding-bottom: 100px;
+        padding-bottom: 40px;
         text-align: center;
+      }
+
+      .description {
+        background: white;
+        max-width: 100%;
+        padding: 42px 32px;
+        font-size: 18px;
+        line-height: 32px;
+        color: #878787;
+      }
+
+      .caption {
+        margin: 16px auto 24px;
+      }
+
+      &:after {
+        display: none;
+      }
+    }
+
+    .right {
+      display: none;
+    }
+
+    &.title-slash {
+      padding-bottom: 0;
+
+      &:after {
+        display: none;
+      }
+
+      .title {
+        padding-bottom: 100px;
 
         &:after {
           content: '';
@@ -157,23 +206,6 @@
           transform: skewY(-5deg);
         }
       }
-
-      .description {
-        background: white;
-        max-width: 100%;
-        padding: 42px 32px;
-        font-size: 18px;
-        line-height: 32px;
-        color: #878787;
-      }
-
-      &:after {
-        display: none;
-      }
-    }
-
-    .right {
-      display: none;
     }
   }
 }

@@ -6,13 +6,25 @@
   margin: 0 auto 72px;
 
   @media only screen and (max-width: 600px) {
-    padding: 100px 95px 100px;
+    position: relative;
+    padding: 25px 95px 100px;
     background: #131414;
     color: #F2F2F2;
+
+    &:after {
+      content: "";
+      position: absolute;
+      height: 100px;
+      width: 100%;
+      background: #131414;
+      left: 0;
+      top: -99px;
+      z-index: -1;
+    }
   }
 
   @media only screen and (max-width: 400px) {
-    padding: 56px 84px 100px;
+    padding: 25px 60px 100px;
   }
 }
 
@@ -80,23 +92,6 @@
 
     .body-3 {
       grid-area: main3;
-    }
-  }
-}
-
-.image-container {
-  display: flex;
-  justify-content: center;
-
-  .image {
-    height: 400px;
-  }
-
-  @media only screen and (max-width: 1400px) {
-    margin-top: 32px;
-
-    .image {
-      width: 95%;
     }
   }
 }

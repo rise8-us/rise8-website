@@ -1,6 +1,21 @@
-.prodacity-wrapper {
+.register-button {
+  width: fit-content;
+  margin: 24px 0 0;
+
+  @media only screen and (max-width: 600px) {
+    margin: 24px auto 0;
+  }
+}
+
+.two-column-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  column-gap: 40px;
+
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: 1fr;
+    row-gap: 40px;
+  }
 }
 
 .subsection-wrapper {
@@ -11,11 +26,6 @@
   display: flex;
   justify-content: center;
   margin-top: 54px;
-}
-
-.syllabus-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
 }
 
 .agenda-header {
