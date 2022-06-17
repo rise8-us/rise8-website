@@ -1,6 +1,8 @@
 {% extends "layout.html" %}
 
 {% block main %}
+<hero-header id="blog-hero-header" title="The Slant" memo="A finger on the pulse. The finger to the status quo."
+             description=""></hero-header>
 <div class="blog">
   <section class="header">
     <span class="topic">{{data.piece._topic[0].title}}</span>
@@ -22,14 +24,14 @@
     <!--suppress HtmlDeprecatedAttribute, HtmlUnknownTarget -->
     <iframe class="banner" style="border-radius:12px" src="{{ data.piece.embedUrl }}?utm_source=generator"
             width="743" height="232" frameBorder="0" allowfullscreen=""
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+            allow="clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
     {% endif %}
 
     {% if data.piece.blogType === 'watch' %}
     <!--suppress HtmlDeprecatedAttribute, HtmlUnknownTarget -->
     <iframe class="banner" width="743" height="418" src="{{ data.piece.embedUrl }}" title="YouTube video player"
             frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen></iframe>
     {% endif %}
 
@@ -67,15 +69,17 @@
   </ul>
 
   <section class="body">
-    {% if data.piece.quote %}
-    <div class="quote">
-      <span class="open">“</span>
-      <span class="text">{{ data.piece.quote }}</span>
+    <div class="text">
+      {% if data.piece.quote %}
+      <div class="quote">
+        <span class="open">“</span>
+        <span class="text">{{ data.piece.quote }}</span>
+      </div>
+      {% endif %}
+      <p>
+        {% area data.piece, 'bodyText' %}
+      </p>
     </div>
-    {% endif %}
-    <p>
-      {% area data.piece, 'bodyText' %}
-    </p>
   </section>
 
   <ul class="social" style="clear: both">

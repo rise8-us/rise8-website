@@ -8,6 +8,7 @@
     height: 100%;
     width: 100%;
     position: absolute;
+    //noinspection CssUnknownTarget
     background-image: url(/images/binary.svg);
     background-size: 756px 260px;
     background-repeat: no-repeat;
@@ -146,14 +147,30 @@
   }
 }
 
+#blog-hero-header {
+  display: none;
+  @media only screen and (max-width: 600px) {
+    display: block;
+  }
+}
+
 .blog {
   font-family: 'DM Sans', serif;
   width: 1063px;
   margin: 48px auto 48px;
 
+  @media only screen and (max-width: 600px) {
+    width: 100%;
+    margin: 48px 0 0;
+  }
+
   .header {
     margin: 48px auto 22px;
     font-weight: 500;
+
+    @media only screen and (max-width: 600px) {
+      margin: 20px;
+    }
 
     .topic {
       text-transform: uppercase;
@@ -189,12 +206,19 @@
       font-family: 'DM Sans', serif;
       font-weight: 400;
       text-align: left;
+
+      @media only screen and (max-width: 600px) {
+        width: 100%;
+      }
     }
 
     .banner {
       float: left;
-      height: auto;
       width: 743px;
+
+      @media only screen and (max-width: 600px) {
+        width: 100%;
+      }
     }
 
     .get-to-know {
@@ -219,6 +243,11 @@
         font-weight: 400;
         font-size: 12px;
       }
+
+
+      @media only screen and (max-width: 600px) {
+        display: none;
+      }
     }
 
     .author {
@@ -237,40 +266,61 @@
     font-weight: normal;
     width: 742px;
 
-    a {
-      color: red;
+    @media only screen and (max-width: 600px) {
+      width: 100%;
+      box-sizing: content-box;
     }
 
-    blockquote {
-      font-family: 'Supply', serif;
-      font-weight: 400;
-    }
-
-    h2,
-    h3,
-    h4 {
-      font-family: 'Jagerlay', serif;
-      font-weight: 400;
-      text-align: left;
-    }
-
-    .quote {
-      float: right;
-      width: 396px;
-      font-family: "Supply", serif;
-      font-size: 32px;
-
-      .open {
-        float: left;
-        font-size: 120px;
-        margin-top: -22px;
+    .text {
+      @media only screen and (max-width: 600px) {
+        margin: 0 20px;
       }
 
-      .text {
+      a {
+        color: red;
+      }
+
+      blockquote {
+        font-family: 'Supply', serif;
+        font-weight: 400;
+      }
+
+      h2,
+      h3,
+      h4 {
+        font-family: 'Jagerlay', serif;
+        font-weight: 400;
+        text-align: left;
+      }
+
+      .quote {
         float: right;
-        width: 322px;
-      }
+        width: 396px;
+        font-family: "Supply", serif;
+        font-size: 32px;
 
+        @media only screen and (max-width: 600px) {
+          width: 100%;
+          display: flex;
+          margin-bottom: 20px;
+        }
+
+        .open {
+          float: left;
+          font-size: 120px;
+          margin-top: -22px;
+          width: 72px;
+        }
+
+        .text {
+          float: right;
+          width: 322px;
+          @media only screen and (max-width: 600px) {
+            flex-grow: 1;
+          }
+        }
+
+      }
     }
   }
 
@@ -278,6 +328,9 @@
     list-style: none;
     margin: 10px 0 0;
     padding-left: 0;
+    @media only screen and (max-width: 600px) {
+      margin: 10px 20px 0;
+    }
 
     li {
       display: inline-block;
@@ -304,6 +357,10 @@
 
 .more-in-topic {
   margin: 28px 0;
+
+  @media only screen and (max-width: 600px) {
+    margin: 28px 20px;
+  }
 
   h1 {
     font-family: "Jagerlay", serif;
@@ -357,6 +414,7 @@
   .post {
     height: 260px;
     width: 277px;
+    //noinspection CssUnknownTarget
     background-image: url("/images/background-default-blog.svg");
     color: white;
     display: flex;
