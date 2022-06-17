@@ -6,6 +6,7 @@ const find = async (self, req, count) => {
       title: 1,
       subtitle: 1,
       minutes: 1,
+      image: 1,
       _url: 1,
       _author: 1,
       publishedAt: 1,

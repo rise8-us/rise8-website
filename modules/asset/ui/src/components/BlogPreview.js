@@ -21,7 +21,7 @@ export class BlogPreview extends HTMLElement {
 
     for (let i = 0; i < this.blogs.length; i++) {
       html += `
-        <div class="post">
+        <div class="post" style="background-image: url(${this.blogs[i].image})">
           <div class="top">
             <div class="title">
               ${this.blogs[i].title}
