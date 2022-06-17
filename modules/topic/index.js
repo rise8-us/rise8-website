@@ -3,7 +3,6 @@ module.exports = {
   options: {
     label: 'Topic',
     pluralLabels: 'Topics',
-    searchable: false,
   },
   fields: {
     add: {

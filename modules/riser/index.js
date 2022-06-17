@@ -3,7 +3,6 @@ module.exports = {
   options: {
     label: 'Riser',
     pluralLabel: 'Risers',
-    searchable: false,
   },
   fields: {
     add: {

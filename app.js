@@ -7,7 +7,6 @@ require('apostrophe')({
         uri: `mongodb://rise8:${process.env.DB_PASSWORD}@${process.env.DB_IP_ADDRESS}:27017/rise8-${process.env.DEPLOY_ENV}?authSource=admin`,
       },
     },
-    '@apostrophecms/search': {},
     '@apostrophecms/seo': {},
     '@apostrophecms/sitemap': {},
     '@apostrophecms/global': {

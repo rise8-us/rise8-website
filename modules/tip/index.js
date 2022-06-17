@@ -3,7 +3,6 @@ module.exports = {
   options: {
     label: 'Tip',
     pluralLabels: 'Tips',
-    searchable: false,
   },
   fields: {
     add: {
