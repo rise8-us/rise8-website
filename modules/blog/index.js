@@ -118,11 +118,9 @@ module.exports = {
         max: 1,
       },
       _author: {
-        required: true,
         type: 'relationship',
         label: 'Blog Author',
         withType: 'riser',
-        max: 1,
       },
     },
     group: {

@@ -13,27 +13,45 @@
     <div class="subtitle">{{data.piece.subtitle}}</div>
 
     {% if data.piece.blogType === 'read' %}
-    <div class="banner">
+    <div class="banner" style="float: left">
     {% area data.piece, 'image' %}
     </div>
     {% endif %}
 
     {% if data.piece.blogType === 'listen' %}
     <!--suppress HtmlDeprecatedAttribute, HtmlUnknownTarget -->
-    <iframe style="border-radius:12px" src="{{ data.piece.embedUrl }}?utm_source=generator"
-            width="100%" height="232" frameBorder="0" allowfullscreen=""
+    <iframe class="banner" style="border-radius:12px" src="{{ data.piece.embedUrl }}?utm_source=generator"
+            width="743" height="232" frameBorder="0" allowfullscreen=""
             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
     {% endif %}
 
     {% if data.piece.blogType === 'watch' %}
     <!--suppress HtmlDeprecatedAttribute, HtmlUnknownTarget -->
-    <iframe width="743" height="418" src="{{ data.piece.embedUrl }}" title="YouTube video player"
+    <iframe class="banner" width="743" height="418" src="{{ data.piece.embedUrl }}" title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen></iframe>
     {% endif %}
-    <span class="author">
-      By <a href="/about">{{ data.piece._author[0].title }}</a>
+
+    <div class="get-to-know">
+      <h4>Have it all: sooner, faster, safer</h4>
+      <h3>We deliver software up to twenty-five times faster than other IT partners</h3>
+      <p>We are designers, product experts, and engineers of the highest caliber transforming how the DoD delivers software.</p>
+      <custom-button text="Get To Know Us" link="/about" mode="dark" text-style="font-family: 'DM sans', serif;font-weight: 400;"></custom-button>
+    </div>
+
+    <span class="author" style="clear: both">
+      {% if data.piece._author[0] %}
+        By
+        {% for author in data.piece._author %}
+          <a href="/about">{{ author.title }}</a>
+          {% if not loop.last %}
+          ,
+          {% endif %}
+        {% endfor %}
+      {% else %}
+        By <a href="/about">Rise8</a>
+      {% endif %}
     </span>
   </section>
 
