@@ -151,6 +151,7 @@
 
   .header {
     margin: 48px auto 22px;
+    font-weight: 500;
 
     .topic {
       text-transform: uppercase;
@@ -205,7 +206,25 @@
   }
 
   .body {
+    font-weight: normal;
     width: 742px;
+
+    a {
+      color: red;
+    }
+
+    blockquote {
+      font-family: 'Supply', serif;
+      font-weight: 400;
+    }
+
+    h2,
+    h3,
+    h4 {
+      font-family: 'Jagerlay', serif;
+      font-weight: 400;
+      text-align: left;
+    }
 
     .quote {
       float: right;
@@ -260,6 +279,7 @@
 
   h1 {
     font-family: "Jagerlay", serif;
+    font-weight: 500;
     font-size: 24px;
     text-align: left;
   }
