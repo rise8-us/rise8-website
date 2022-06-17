@@ -1,97 +1,3 @@
-.bp-welcome {
-  display: flex;
-  margin-left: auto;
-  margin-right: auto;
-
-  .hero-image {
-    width: 100%;
-  }
-
-  .hero-homepage {
-    display: flex;
-    flex-grow: 1;
-    background-color: #F2F2F2;
-    height: 550px;
-
-    .text-wrapper {
-      margin: auto;
-
-      .sub-text {
-        font-family: 'Supply', serif;
-        text-transform: uppercase;
-        font-size: 12px;
-      }
-
-      .main-text {
-        font-family: 'Jagerlay', serif;
-        font-size: 56px;
-        color: #FC0000;
-      }
-    }
-
-    .slash-wrapper {
-      position: relative;
-
-      .slash {
-        position: absolute;
-        left: 0;
-        right: 0;
-        margin: 0 auto;
-        z-index: 100;
-        height: 550px;
-      }
-    }
-
-    .clouds {
-      position: relative;
-      width: 55%;
-    }
-  }
-
-  .hero-homepage-mobile {
-    display: none;
-  }
-
-  @media only screen and (max-width: 600px) {
-    .hero-homepage {
-      display: none;
-    }
-
-    .hero-homepage-mobile {
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-      height: 300px;
-
-      .text-wrapper {
-        margin: auto;
-
-        .sub-text {
-          font-family: 'Supply', serif;
-          text-transform: uppercase;
-          font-size: 12px;
-        }
-
-        .main-text {
-          font-family: 'Jagerlay', serif;
-          font-size: 40px;
-          color: #FC0000;
-        }
-
-      }
-
-      .black-slash-wrapper {
-        position: relative;
-
-        .black-slash {
-          position: absolute;
-          width: 100%;
-        }
-      }
-    }
-  }
-}
-
 .transform-text {
   font-family: 'Jagerlay', serif;
   font-size: 30px;
@@ -112,7 +18,7 @@
 
 .content {
   position: relative;
-  margin: auto auto 90px auto;
+  margin-bottom: 90px;
 
   display: grid;
   grid-template-columns: 1fr 1fr;

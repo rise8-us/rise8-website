@@ -1,19 +1,61 @@
 .hero {
   display: flex;
   background: #F2F2F2;
-  max-height: 490px;
-  min-height: 362px;
+  height: 369px;
+
+  &.large {
+    height: 500px;
+
+    .left {
+      justify-content: center;
+      padding-right: 100px;
+
+      .memo {
+        padding-top: 0;
+        color: black;
+      }
+
+      .title {
+        font-size: 56px;
+        font-weight: normal;
+        color: #FC0000;
+      }
+
+      &:after {
+        width: 100px;
+        background: linear-gradient(#800031, #FC0000);
+      }
+    }
+
+    @media only screen and (max-width: 600px) {
+      height: fit-content;
+
+      .left {
+        padding: 50px 0 0 0;
+
+        .title {
+          font-size: 40px;
+
+          &:after {
+            background: #131414;
+          }
+        }
+      }
+    }
+  }
 
   .hero-slash-mobile {
     display: none;
   }
 
   .left {
+    display: flex;
+    flex-direction: column;
     position: relative;
     margin-left: 10%;
-    padding-right: 40px;
+    padding-right: 70px;
     width: 30%;
-    min-width: 175px;
+    min-width: min-content;
     z-index: 1;
 
     &.center {
@@ -42,7 +84,7 @@
       font-size: 48px;
       text-align: left;
       padding-top: 20px;
-      min-width: 200px;
+      min-width: min-content;
     }
 
     .description {
@@ -53,9 +95,13 @@
       max-width: 330px;
     }
 
+    .no-description {
+      display: none;
+    }
+
     &:after {
       content: '';
-      width: 50px;
+      width: 58px;
       height: 100%;
       position: absolute;
       background: #F2F2F2;
@@ -67,12 +113,19 @@
   }
 
   .right {
+    display: flex;
     width: 70%;
     background: #000000;
+
+    .image {
+      object-fit: cover;
+      width: 100%;
+    }
   }
 
   @media only screen and (max-width: 600px) {
     flex-direction: column;
+    height: fit-content;
 
     .hero-slash-mobile {
       display: unset;
@@ -81,7 +134,7 @@
     .left {
       width: 100%;
       margin: 0;
-      padding: 0;
+      padding-right: 0;
 
       .memo {
         text-align: center;
@@ -98,7 +151,7 @@
           height: 50px;
           position: absolute;
           background: white;
-          bottom: -25px;
+          bottom: -28px;
           left: 0;
           transform-origin: bottom;
           transform: skewY(-5deg);

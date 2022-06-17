@@ -6,28 +6,8 @@ that lives in the top-level views/ folder for convenience
 {% extends "layout.html" %}
 
 {% block main %}
-<section class="bp-welcome">
-  <div class="hero-homepage">
-    <div class="text-wrapper">
-      <div class="sub-text">Together, we create continuous impact.</div>
-      <div class="main-text">Your Audacity.<br/>Our Tenacity.</div>
-    </div>
-    <div class="slash-wrapper">
-      <img class="slash" src="/images/background-red-slash.svg" alt="">
-    </div>
-    <img class="clouds" src="/images/image-clouds.jpg" alt="">
-  </div>
-  <div class="hero-homepage-mobile">
-    <img src="/images/background-red-slash-mobile.svg" alt="">
-    <div class="text-wrapper">
-      <div class="sub-text">Together, we create continuous impact.</div>
-      <div class="main-text">Your Audacity.<br/>Our Tenacity.</div>
-    </div>
-    <div class="black-slash-wrapper">
-      <img src="/images/background-black-slash-mobile.svg" alt="" class="black-slash">
-    </div>
-  </div>
-</section>
+<hero-header title="Your Audacity.<br>Our Tenacity." memo="Together, we create continuous impact."
+   description="" image="/images/image-clouds.jpg" large></hero-header>
 <section class="content-section with-8-mark">
   <div class="eight-mark-background">
     <div class="content-wrapper with-8-mark">

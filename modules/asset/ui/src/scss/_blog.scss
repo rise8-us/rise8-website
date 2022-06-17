@@ -299,7 +299,7 @@
 
   .blog-background {
     position: absolute;
-    right: 2%;
+    right: 0;
     top: 15%;
     z-index: -1;
   }
@@ -308,6 +308,14 @@
     width: 277px;
 
     .blog-background {
+      transform: rotate(90deg);
+      left: -50%;
+      top: 25%;
+    }
+  }
+
+  @media only screen and (max-width: 800px) {
+    .blog-background {
       display: none;
     }
   }
@@ -315,8 +323,9 @@
 
 .blog-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 273px);
-  grid-gap: 16px;
+  justify-content: space-evenly;
+  grid-template-columns: repeat(auto-fill, max(280px, 27%));
+  row-gap: 16px;
   font-family: 'DM Sans', serif;
 
   .post {

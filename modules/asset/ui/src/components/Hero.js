@@ -1,6 +1,6 @@
 export class Hero extends HTMLElement {
   static get observedAttributes() {
-    return [ 'title', 'memo', 'description' ];
+    return [ 'title', 'memo', 'description', 'image', 'large' ];
   }
 
   constructor() {
@@ -8,19 +8,21 @@ export class Hero extends HTMLElement {
     this.title = this.getAttribute('title');
     this.memo = this.getAttribute('memo');
     this.description = this.getAttribute('description');
+    this.image = this.getAttribute('image');
+    this.large = this.getAttribute('large') !== null;
   }
 
   connectedCallback() {
     this.innerHTML = `
-      <div class="hero">
+      <div class="hero ${this.large ? 'large' : ''}">
         <img src="/images/background-red-slash-mobile.svg" alt="" class="hero-slash-mobile">
         <div class="left">
           <div class="memo">${this.memo}</div>
           <div class="title">${this.title}</div>
-          <div class="description">${this.description}</div>
+          <div class="${this.description !== '' ? 'description' : 'no-description'}">${this.description}</div>
         </div>
         <div class="right">
-          <div style="width: 50%"></div>
+          <img src="${this.image}" alt="" class="image">
         </div>
       </div>
     `;
