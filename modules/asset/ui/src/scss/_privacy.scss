@@ -1,4 +1,33 @@
 .privacy-policy {
-  white-space: pre-wrap;
   font-family: 'DM Sans', serif;
+  max-width: 600px;
+  line-height: 1.5;
+  align-self: center;
+
+  .bold {
+    font-weight: 800;
+  }
+
+  .italic {
+    font-style: italic;
+  }
+
+  .red {
+    color: #FF0000;
+  }
+
+  a {
+    color: #FF0000;
+    text-decoration: underline;
+  }
+
+  @media only screen and (max-width: 600px) {
+    margin: 18px;
+  }
+}
+
+.hide-on-mobile {
+  @media only screen and (max-width: 600px) {
+    display: none;
+  }
 }

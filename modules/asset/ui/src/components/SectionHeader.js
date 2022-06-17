@@ -1,3 +1,5 @@
+import { Hero } from './Hero';
+
 export class SectionHeader extends HTMLElement {
   static get observedAttributes() {
     return [ 'header', 'subheader', 'dark-mode', 'light-on-mobile', 'error', 'secondary' ];
@@ -21,7 +23,8 @@ export class SectionHeader extends HTMLElement {
           <div class="section-header secondary-main">
             ${this.header}
           </div>
-          <div class="section-subheader secondary-sub">${this.subheader}</div>
+          <div class="section-subheader secondary-sub" 
+               style="${Hero.isEmpty(this.subheader) ? 'display: none' : ''}">${this.subheader}</div>
         </div>
       `;
     } else {
@@ -29,7 +32,10 @@ export class SectionHeader extends HTMLElement {
         <div class="section-header-wrapper 
                     ${this.darkMode ? 'dark-border' : ''} 
                     ${this.error ? 'error-border' : ''}">
-          <div class="section-subheader">${this.subheader}</div>
+          <div class="section-subheader" 
+               style="${Hero.isEmpty(this.subheader) ? 'display: none' : ''}">
+            ${this.subheader}
+          </div>
           <div class="section-header ${this.darkMode ? 'dark' : ''}">
             ${this.header}
           </div>

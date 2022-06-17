@@ -15,7 +15,7 @@ export class Hero extends HTMLElement {
     this.padTop = this.getAttribute('pad-top') !== null;
   }
 
-  isEmpty(field) {
+  static isEmpty(field) {
     return (
       field === null ||
         field === 'null' ||
@@ -28,11 +28,11 @@ export class Hero extends HTMLElement {
       <div class="hero ${this.large ? 'large' : ''} ${this.description ? 'title-slash' : ''}" style="${this.padTop ? 'padding-top: 40px' : ''}">
         <img src="/images/background-red-slash-mobile.svg" alt="" class="hero-slash-mobile">
         <div class="left">
-          <img src="${this.titleImage}" alt="" class="title-image" style="${this.isEmpty(this.titleImage) ? 'display: none' : ''}">
-          <div class="memo" style="${this.isEmpty(this.titleImage) ? '' : 'padding-top: 0'}">${this.memo}</div>
-          <div class="title" style="${this.isEmpty(this.title) ? 'display: none' : ''}">${this.title}</div>
-          <div class="description" style="${this.isEmpty(this.description) ? 'display: none' : ''}">${this.description}</div>
-          <div class="caption" style="${this.isEmpty(this.caption) ? 'display: none' : ''}">${this.caption}</div>
+          <img src="${this.titleImage}" alt="" class="title-image" style="${Hero.isEmpty(this.titleImage) ? 'display: none' : ''}">
+          <div class="memo" style="${Hero.isEmpty(this.titleImage) ? '' : 'padding-top: 0'} ${Hero.isEmpty(this.memo) ? 'display: none' : ''}">${this.memo}</div>
+          <div class="title" style="${Hero.isEmpty(this.title) ? 'display: none' : ''}">${this.title}</div>
+          <div class="description" style="${Hero.isEmpty(this.description) ? 'display: none' : ''}">${this.description}</div>
+          <div class="caption" style="${Hero.isEmpty(this.caption) ? 'display: none' : ''}">${this.caption}</div>
         </div>
         <div class="right">
           <img src="${this.image}" alt="" class="image">
