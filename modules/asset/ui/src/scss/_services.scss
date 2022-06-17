@@ -1,6 +1,5 @@
 .service-section-wrapper {
-  width: 965px;
-  margin: auto;
+  flex-grow: 1;
   font-family: 'DM Sans', serif;
   font-size: 20px;
   color: #3D3D3D;
@@ -43,6 +42,47 @@
 
   .diagram-caption {
     margin-top: 63px;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .section-description {
+      display: none;
+    }
+
+    .cloud-wrapper {
+      flex-direction: column;
+    }
+
+    ul {
+      width: 80%;
+      margin: 20px auto 0;
+    }
+
+    .diagram-caption {
+      display: none;
+    }
+  }
+}
+
+.diagram {
+  @media only screen and (max-width: 600px) {
+    display: none;
+  }
+}
+
+.mobile-diagram {
+  display: none;
+
+  @media only screen and (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 32px;
+    margin-top: 32px;
+
+    img {
+      width: 90%;
+    }
   }
 }
 
