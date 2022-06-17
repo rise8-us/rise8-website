@@ -40,6 +40,17 @@ module.exports = {
           },
         },
       },
+      heroImage: {
+        label: 'Hero Banner',
+        type: 'area',
+        required: true,
+        options: {
+          max: 1,
+          widgets: {
+            '@apostrophecms/image': {},
+          },
+        },
+      },
       cloudPlatformsImage: {
         label: 'Cloud + Platforms',
         type: 'area',
@@ -85,6 +96,7 @@ module.exports = {
       images: {
         label: 'Images',
         fields: [
+          'heroImage',
           'cloudPlatformsImage',
           'pipelinesPathwaysImage',
           'appsDigitalProductsImage',

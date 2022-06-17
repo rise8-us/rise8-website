@@ -6,8 +6,9 @@ that lives in the top-level views/ folder for convenience
 {% extends "layout.html" %}
 
 {% block main %}
+{% set imgObj = apos.image.first(data.page.heroImage) %}
 <hero-header title="Your Audacity.<br>Our Tenacity." memo="Together, we create continuous impact."
-   description="" image="/images/image-clouds.jpg" large></hero-header>
+   description="" image="{{ apos.attachment.url(imgObj) }}" large></hero-header>
 <section class="content-section with-8-mark">
   <div class="eight-mark-background">
     <div class="content-wrapper with-8-mark">

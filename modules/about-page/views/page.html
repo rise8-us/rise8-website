@@ -1,10 +1,12 @@
 {% extends "layout.html" %}
 
 {% block main %}
+{% set imgObj = apos.image.first(data.page.heroImage) %}
 <hero-header title="We Are<br>Rise8" memo="We are your digital transformation partner"
              description="We have strong opinions (loosely held) because game-changing tech isn't
                          possible without an industry-changing mindset. We love what we do, and
-                         we're not shy about sharing our unfiltered thoughts on all of it."></hero-header>
+                         we're not shy about sharing our unfiltered thoughts on all of it."
+             image="{{ apos.attachment.url(imgObj) }}"></hero-header>
 <div class="content-section">
   <div class="content-wrapper">
     <section-header header="Beliefs in Action"
