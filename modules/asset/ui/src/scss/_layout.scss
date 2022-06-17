@@ -15,6 +15,18 @@
 
 @font-face {
   font-family: Supply;
+  font-weight: 200;
+  src: url('/fonts/Supply-Ultra-Light.otf') formate('opentype');
+}
+
+@font-face {
+  font-family: Supply;
+  font-weight: 300;
+  src: url('/fonts/Supply-Light.otf') formate('opentype');
+}
+
+@font-face {
+  font-family: Supply;
   font-weight: 400;
   src: url('/fonts/Supply-Regular.woff2');
 }
@@ -46,7 +58,7 @@
 @font-face {
   font-family: Telegraf;
   font-weight: 800;
-  src: url('/fonts/Telegraf-Bold.otf') format('opentype');
+  src: url('/fonts/Telegraf-Ultra-Bold.otf') format('opentype');
 }
 
 @font-face {
