@@ -98,7 +98,7 @@ export class BeliefSwitch extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
      <div class="list-wrapper">
-        <div class="list-options-wrapper">
+        <div class="list-options-wrapper hide-mobile">
           ${this.getBeliefList()}
         </div>
         <div class="list-partner">

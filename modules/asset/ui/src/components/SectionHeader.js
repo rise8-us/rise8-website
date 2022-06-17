@@ -1,13 +1,15 @@
 export class SectionHeader extends HTMLElement {
   static get observedAttributes() {
-    return [ 'header', 'subheader', 'dark-mode', 'error', 'secondary' ];
+    return [ 'header', 'subheader', 'dark-mode', 'light-on-mobile', 'error', 'secondary' ];
   }
 
   constructor() {
     super();
     this.header = this.getAttribute('header');
     this.subheader = this.getAttribute('subheader');
-    this.darkMode = this.getAttribute('dark-mode') !== null;
+    this.darkMode =
+      this.getAttribute('dark-mode') !== null &&
+      this.getAttribute('light-on-mobile') === null;
     this.error = this.getAttribute('error') !== null;
     this.secondary = this.getAttribute('secondary') !== null;
   }

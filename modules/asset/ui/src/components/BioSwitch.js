@@ -31,7 +31,7 @@ export class BioSwitch extends HTMLElement {
     this.innerHTML = `
      <img src=${this.imageUrl} alt="" 
           id="${this.department}-photo-${this.index}" 
-          class="riser-photo ${this.active}">
+          class="riser-photo ${this.department}-riser ${this.active}">
     `;
   }
 }

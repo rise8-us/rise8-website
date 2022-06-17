@@ -8,7 +8,9 @@ export class DepartmentSwitch extends HTMLElement {
     this.active = this.getAttribute('active');
     this.department = this.getAttribute('department');
     this.addEventListener('click', (e) => {
-      this.onDepartmentClick(e);
+      if (e.srcElement.classList.contains('department')) {
+        this.onDepartmentClick(e);
+      }
     });
   }
 

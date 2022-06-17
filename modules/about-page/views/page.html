@@ -2,6 +2,93 @@
 
 {% block main %}
 {% set imgObj = apos.image.first(data.page.heroImage) %}
+<script>
+  function onDepartmentArrowClick(e, left) {
+    const departments = document.getElementsByClassName('department');
+    const switches = document.getElementsByClassName('department-switch');
+    let index = 0;
+    for (let i = 0; i < departments.length; i++) {
+      if (departments[i].classList.contains('active')) {
+        departments[i].classList.remove('active');
+        switches[i].classList.remove('active');
+        index = i;
+        break;
+      }
+    }
+
+    const departmentBiosContainers = document.getElementsByClassName('department-bios-container');
+    for (let i = 0; i < departmentBiosContainers.length; i++) {
+      departmentBiosContainers[i].classList.remove('active');
+    }
+    const bios = document.getElementsByClassName('riser-bio-wrapper');
+    for (let i = 0; i < bios.length; i++) {
+      bios[i].classList.remove('active');
+    }
+
+    let element;
+    if (left) {
+      if (index === 0) {
+        element = departments[departments.length - 1];
+        switches[departments.length - 1].classList.add('active');
+      } else {
+        element = departments[index - 1];
+        switches[index - 1].classList.add('active');
+      }
+    } else {
+      if (index === departments.length - 1) {
+        element = departments[0];
+        switches[0].classList.add('active');
+      } else {
+        element = departments[index + 1];
+        switches[index + 1].classList.add('active');
+      }
+    }
+
+    element.classList.add('active');
+    document.getElementById(`${element.id}-bios-container`).classList.add('active');
+    document.getElementById(`${element.id}-photo-0`).classList.add('active');
+    document.getElementById(`${element.id}-bio-0`).classList.add('active');
+  }
+
+  function onPhotoArrowClick(e, left, department) {
+    const photoWrappers = document.getElementsByClassName(`${department}-photo`);
+    const bioPhotos = document.getElementsByClassName(`${department}-riser`);
+    const bios = document.getElementsByClassName(`${department}-bio`);
+    let index;
+    for (let i = 0; i < photoWrappers.length; i++) {
+      if (photoWrappers[i].classList.contains('active')) {
+        photoWrappers[i].classList.remove('active');
+        bioPhotos[i].classList.remove('active');
+        bios[i].classList.remove('active');
+        index = i;
+        break;
+      }
+    }
+
+    let element;
+    if (left) {
+      if (index === 0) {
+        element = bioPhotos[bioPhotos.length - 1];
+        photoWrappers[photoWrappers.length - 1].classList.add('active');
+      } else {
+        element = bioPhotos[index - 1];
+        photoWrappers[index - 1].classList.add('active');
+      }
+    } else {
+      if (index === bioPhotos.length - 1) {
+        element = bioPhotos[0];
+        photoWrappers[0].classList.add('active');
+      } else {
+        element = bioPhotos[index + 1];
+        photoWrappers[index + 1].classList.add('active');
+      }
+    }
+
+    element.classList.add('active');
+    document.getElementById(`${element.id.replace('photo', 'bio')}`).classList.add('active');
+  }
+</script>
+
 <hero-header title="We Are<br>Rise8" memo="We are your digital transformation partner"
              description="We have strong opinions (loosely held) because game-changing tech isn't
                          possible without an industry-changing mindset. We love what we do, and
@@ -16,22 +103,28 @@
     </div>
   </div>
 </div>
-<div class="content-section dark">
+<div class="content-section dark light-on-mobile">
   <div class="content-wrapper">
     <section-header header="Let's Make Some Intros"
                     subheader="Your future teammates"
-                    dark-mode></section-header>
+                    dark-mode light-on-mobile></section-header>
     <div class="section-body-wrapper">
       <div class="list-wrapper">
         <div class="list-options-wrapper">
+          <img src="images/icon-chevron-right-red.svg"
+               class="chevron left show-on-mobile active"
+               onclick="onDepartmentArrowClick(event, true)">
           {% for department in data.departments %}
           {% set active = "" %}
           {% if loop.first %}
           {% set active = "active" %}
           {% endif %}
-          <department-switch active="{{ active }}"
+          <department-switch class="department-switch {{ active }}" active="{{ active }}"
                              department="{{ department.title }}"></department-switch>
           {% endfor %}
+          <img src="images/icon-chevron-right-red.svg"
+               class="chevron show-on-mobile active"
+               onclick="onDepartmentArrowClick(event, false)">
         </div>
         <div class="list-partner">
           {% for department in data.departments %}
@@ -50,11 +143,21 @@
               {% set active = "active" %}
               {% endif %}
               {% set imgObj = apos.image.first(riser.photo) %}
-              <div class="riser-photo-wrapper">
+              <div class="riser-photo-wrapper {{ active }} {{ department.title }}-photo">
                 <bio-switch image-url="{{ apos.attachment.url(imgObj) }}"
                             department="{{ department.title }}"
                             index="{{ loop.index0 }}"
                             active="{{ active }}"></bio-switch>
+                <div class="chevron-wrapper">
+                  <div class="photo-chevrons">
+                    <img src="images/icon-chevron-right-light.svg"
+                         class="chevron left show-on-mobile active"
+                         onclick="onPhotoArrowClick(event, true, '{{department.title}}')">
+                    <img src="images/icon-chevron-right-light.svg"
+                         class="chevron show-on-mobile active"
+                         onclick="onPhotoArrowClick(event, false, '{{department.title}}')">
+                  </div>
+                </div>
                 <div class="photo-hover">Read Bio</div>
                 <div class="photo-info">
                   <div style="font-weight: 800">{{ riser.title }}</div>
@@ -72,7 +175,7 @@
               {% set active = "active" %}
               {% endif %}
               <div id="{{ department.title }}-bio-{{ loop.index0 }}"
-                   class="riser-bio-wrapper {{ active }}">
+                   class="riser-bio-wrapper {{ department.title }}-bio {{ active }}">
                 <div class="riser-bio-header">
                   <div class="bio-name">{{ riser.title }}</div>
                   <div class="bio-role">{{ riser.role }}</div>
