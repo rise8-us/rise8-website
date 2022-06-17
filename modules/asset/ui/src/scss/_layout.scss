@@ -9,7 +9,7 @@
 
 @font-face {
   font-family: Jagerlay;
-  font-weight: 500;
+  font-weight: 500 700;
   src: url('/fonts/Jagerlay-Medium.otf') format('opentype');
 }
 
@@ -21,7 +21,7 @@
 
 @font-face {
   font-family: Supply;
-  font-weight: 700;
+  font-weight: 500 700;
   src: url('/fonts/Supply-Medium.otf') format('opentype');
 }
 
@@ -41,6 +41,12 @@
   font-family: 'DM Sans';
   font-weight: 400;
   src: url('/fonts/DMSans-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  font-weight: 500 700;
+  src: url('/fonts/DMSans-Medium.ttf') format('truetype');
 }
 
 .apos-admin-bar-spacer {
