@@ -267,7 +267,7 @@ a:hover {
 .list-wrapper {
   display: flex;
 
-  & .list-options-wrapper {
+  .list-options-wrapper {
     padding: 0 120px 0 0;
     width: 116px;
     overflow: visible;
@@ -296,6 +296,16 @@ a:hover {
     display: flex;
     flex-grow: 1;
   }
+
+  @media only screen and (max-width: 600px) {
+    .list-options-wrapper {
+      display: none;
+    }
+
+    .list-partner {
+      flex-direction: column;
+    }
+  }
 }
 
 .belief-description {
@@ -313,21 +323,57 @@ a:hover {
 
   &.active {
     display: inline-flex;
+
+    @media only screen and (max-width: 600px) {
+      display: inline;
+    }
   }
 
-  & .frame {
-    position: absolute;
-    height: inherit;
-    left: 0;
-    top: 0;
+  img {
+    @media only screen and (max-width: 600px) {
+      display: none;
+    }
+
+    &.frame {
+      position: absolute;
+      height: inherit;
+      left: 0;
+      top: 0;
+    }
+
+    &.pixels {
+      position: absolute;
+      height: 80%;
+      left: 75px;
+      top: 100px;
+      z-index: -1;
+    }
   }
 
-  & .pixels {
-    position: absolute;
-    height: 80%;
-    left: 75px;
-    top: 100px;
-    z-index: -1;
+  .belief-header {
+    display: none;
+  }
+
+  @media only screen and (max-width: 600px) {
+    display: inline;
+    width: fit-content;
+    height: fit-content;
+    color: #878787;
+    line-height: 256%;
+    padding: 32px;
+    margin: 0;
+
+    &.odd {
+      background-color: #F2F2F2;
+    }
+
+    .belief-header {
+      display: block;
+      color: #3D3D3D;
+      font-family: Jagerlay, serif;
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
   }
 }
 
@@ -477,6 +523,7 @@ a:hover {
 
   @media only screen and (max-width: 600px) {
     padding-left: 16px;
+    border: none;
   }
 }
 
