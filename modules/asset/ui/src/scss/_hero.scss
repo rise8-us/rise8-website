@@ -2,6 +2,7 @@
   display: flex;
   background: #F2F2F2;
   max-height: 490px;
+  min-height: 362px;
 
   .hero-slash-mobile {
     display: none;
@@ -11,7 +12,7 @@
     position: relative;
     margin-left: 10%;
     padding-right: 40px;
-    width: 50%;
+    width: 30%;
     min-width: 175px;
     z-index: 1;
 
@@ -66,7 +67,7 @@
   }
 
   .right {
-    width: 50%;
+    width: 70%;
     background: #000000;
   }
 
