@@ -98,7 +98,7 @@
 <div class="content-section">
   <div class="content-wrapper">
     <div class="mobile-only">
-      <img src="{{ apos.attachment.url(imgObj) }}" style="height: 440px">
+      <img src="{{ apos.attachment.url(imgObj) }}" alt="" style="width: 100%">
     </div>
     <section-header header="Our Core Values" subheader="Tagline"></section-header>
     <div class="section-body-text large telegraf">
@@ -107,8 +107,7 @@
       you will thrive at Rise8.
     </div>
     <div class="values-body-wrapper">
-      <img class="values-img"/>
-      <div class="img-description padding-1">
+      <div class="img-description" style="background: #800031">
         <div class="img-description-header">Duty</div>
         <div class="img-description-subheader">DRIVEN WE RISE</div>
         <div class="img-description-content">
@@ -119,8 +118,7 @@
           foundation. And what drives us to reach higher.
         </div>
       </div>
-      <img class="values-img"/>
-      <div class="img-description padding-2">
+      <div class="img-description" style="background: #800031">
         <div class="img-description-header">Unity</div>
         <div class="img-description-subheader">TOGETHER WE RISE</div>
         <div class="img-description-content">
@@ -131,8 +129,7 @@
           and better deliver uncommon results.
         </div>
       </div>
-      <img class="values-img"/>
-      <div class="img-description padding-3">
+      <div class="img-description" style="background: #800031">
         <div class="img-description-header">Tenacity</div>
         <div class="img-description-subheader">FOREVER, WE RISE</div>
         <div class="img-description-content">
@@ -257,58 +254,38 @@
       employees. We offer competitive pay and benefits, invest in employee growth, and offer a
       culture you can’t find anywhere else.
     </div>
-    <div class="values-body-wrapper dark">
-      <div class="section-grid telegraf">
-        <div class="item-1">
-          <img class="grid-icon" src="images/icon-umbrella.svg" alt="">
-          <Div>Insurance | up to
-            100% Coverage for
-            Riser & dependents
-          </Div>
-        </div>
-        <div class="item-2">
-          <img class="grid-icon" src="images/icon-hand.svg" alt="">
-          <Div>Health Care Opt-Out</Div>
-        </div>
-        <div class="item-3">
-          <img class="grid-icon" src="images/icon-reverse-arrows.svg" alt="">
-          <Div>
-            401k Matching at
-            10%
-          </Div>
-        </div>
-        <div class="item-4">
-          <img class="grid-icon" src="images/icon-calendar.svg" alt="">
-          <Div>
-            4 Weeks PTO
-            Plus federal holidays
-          </Div>
-        </div>
-        <div class="item-5">
-          <img class="grid-icon" src="images/icon-cake.svg" alt="">
-          <Div>Birthday Off</Div>
-        </div>
-        <div class="item-6">
-          <img class="grid-icon" src="images/icon-grad-cap.svg" alt="">
-          <Div>
-            Education &
-            Training Budget
-          </Div>
-        </div>
-        <div class="item-7">
-          <img class="grid-icon" src="images/icon-bike.svg" alt="">
-          <Div>
-            Wellness Activities
-            Budget
-          </Div>
-        </div>
-        <div class="item-8">
-          <img class="grid-icon" src="images/icon-apple.svg" alt="">
-          <Div>
-            Awesome
-            Equipment
-          </Div>
-        </div>
+    <div class="section-grid telegraf">
+      <div>
+        <img class="grid-icon" src="images/icon-umbrella.svg" alt="">
+        <div class="benefit-description">Insurance | up to 100% Coverage for Riser & dependents</div>
+      </div>
+      <div>
+        <img class="grid-icon" src="images/icon-hand.svg" alt="">
+        <div class="benefit-description">Health Care Opt-Out</div>
+      </div>
+      <div>
+        <img class="grid-icon" src="images/icon-reverse-arrows.svg" alt="">
+        <div class="benefit-description">401k Matching at 10%</div>
+      </div>
+      <div>
+        <img class="grid-icon" src="images/icon-calendar.svg" alt="">
+        <div class="benefit-description">4 Weeks PTO Plus federal holidays</div>
+      </div>
+      <div>
+        <img class="grid-icon" src="images/icon-cake.svg" alt="">
+        <div class="benefit-description">Birthday Off</div>
+      </div>
+      <div>
+        <img class="grid-icon" src="images/icon-grad-cap.svg" alt="">
+        <div class="benefit-description">Education & Training Budget</div>
+      </div>
+      <div>
+        <img class="grid-icon" src="images/icon-bike.svg" alt="">
+        <div class="benefit-description">Wellness Activities Budget</div>
+      </div>
+      <div>
+        <img class="grid-icon" src="images/icon-apple.svg" alt="">
+        <div class="benefit-description">Awesome Equipment</div>
       </div>
     </div>
   </div>
@@ -318,7 +295,7 @@
   <div class="content-wrapper">
     <section-header header="Rise to the Opportunity"
                     subheader="Find Your Next Role"></section-header>
-    <div class="values-body-wrapper">
+    <div class="careers-wrapper">
       <div class="career-list-wrapper">
 
         {% if data.jobs.Administration %}
@@ -375,16 +352,16 @@
           </a>
           {% endfor %}
         </div>
-      </div>
-      {% endif %}
+        {% endif %}
 
+      </div>
       <div class="career-list-partner">
-        <img class="opportunity-image-1">
-        <img style="position: absolute;width: 399px;height: 199px;left: 25px;top: 42px;" class="non-mobile">
-        <img style="position: absolute;width: 399px;height: 199px;left: 230px;top: 260px;" class="non-mobile">
-        <img style="position: absolute;width: 199px;height: 199px;left: 77px;top: 336px;" class="non-mobile">
-        <img style="position: absolute;width: 264px;height: 199px;left: 466px;top: 68px;" class="non-mobile">
-        <img style="position:absolute;width: 199px;height: 199px;left: 524px;top: 376px;" class="non-mobile">
+        <img class="opportunity-image mobile-image">
+        <img class="opportunity-image non-mobile" style="top: 7%; left: 23%; height: 26%; width: 65%">
+        <img class="opportunity-image non-mobile" style="top: 12%; right: 0; height: 26%; width: 27%">
+        <img class="opportunity-image non-mobile" style="top: 65%; left: 15%; height: 25%; width: 25%">
+        <img class="opportunity-image non-mobile" style="top: 50%; left: 30%; height: 27%; width: 57%">
+        <img class="opportunity-image non-mobile" style="bottom: 0; right: 1%; height: 24%; width: 22%">
       </div>
     </div>
   </div>
@@ -395,24 +372,24 @@
     <div class="tips-header">
       Tips for Rise8 Candidates
     </div>
-    <div class="values-body-wrapper mobile-tip" style="align-self: center">
+    {% for tip in data.tips %}
+    {% set hidden = "hidden" %}
+    {% if loop.first %}
+    {% set hidden = "" %}
+    {% endif %}
+    <div class="tip-wrapper">
       <img src="images/icon-chevron-right-light.svg"
            class="chevron left mobile-chevron"
            onclick="onArrowClick(event, true)">
-      {% for tip in data.tips %}
-      {% set hidden = "hidden" %}
-      {% if loop.first %}
-      {% set hidden = "" %}
-      {% endif %}
       <div class="tip {{ hidden }}">
         <div class="quote">{{ tip.title }}</div>
         <div class="name telegraf bold">{{tip._riser[0].title}}</div>
         <div class="role telegraf">{{tip._riser[0].role}}</div>
       </div>
-      {% endfor %}
       <img src="images/icon-chevron-right-light.svg" class="chevron mobile-chevron"
            onclick="onArrowClick(event, false)">
     </div>
+    {% endfor %}
   </div>
 </div>
 {% endblock %}

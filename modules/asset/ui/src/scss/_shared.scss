@@ -56,18 +56,6 @@
     }
   }
 
-  @media only screen and (max-width: 1192px) {
-    .content-wrapper {
-      margin: 0 18%;
-    }
-  }
-
-  @media only screen and (max-width: 800px) {
-    .content-wrapper {
-      margin: 0 8%;
-    }
-  }
-
   @media only screen and (max-width: 600px) {
     &.light-on-mobile {
       background-color: #FFFFFF;
@@ -133,7 +121,7 @@
   font-family: 'DM Sans', sans-serif;
 
   &.large {
-    width: 600px;
+    max-width: 720px;
 
     @media only screen and (max-width: 600px) {
       width: auto;
@@ -314,20 +302,20 @@ a:hover {
     }
   }
 
-  & .list-partner {
+  .list-partner {
     display: flex;
     flex-grow: 1;
   }
 
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 1100px) {
     flex-direction: column;
-    width: 100%;
+    margin-right: 66px;
 
     .list-options-wrapper {
       display: flex;
       align-self: center;
       padding: 0;
-      width: 100%;
+      width: 260px;
       justify-content: space-between;
 
       &.hide-mobile {
@@ -346,12 +334,17 @@ a:hover {
         display: block;
         color: #FC0000;
         border-top: none;
+        padding-top: 10px;
       }
     }
 
     .list-partner {
       flex-direction: column;
     }
+  }
+
+  @media only screen and (max-width: 600px) {
+    margin-right: 0;
   }
 }
 
@@ -460,9 +453,10 @@ a:hover {
 
     .riser-photo-wrapper {
       position: relative;
+      display: flex;
       height: 322px;
       width: 264px;
-      justify-content: end;
+      justify-content: space-evenly;
       cursor: pointer;
 
       .riser-photo {
@@ -475,28 +469,21 @@ a:hover {
         &:hover, &.active {
           filter: grayscale(100%) brightness(40%) sepia(100%) hue-rotate(-50deg) saturate(600%) contrast(0.8);
         }
-
-        @media only screen and (max-width: 600px) {
-          height: fit-content;
-          width: 100%;
-
-          &:hover, &.active {
-            filter: none;
-          }
-        }
       }
 
       .chevron-wrapper {
         display: none;
 
-        @media only screen and (max-width: 600px) {
-          display: block;
+        @media only screen and (max-width: 920px) {
+          display: flex;
+          justify-content: center;
           position: absolute;
           bottom: 50%;
           width: 100%;
 
           .photo-chevrons {
             display: flex;
+            width: 262px;
             justify-content: space-between;
           }
         }
@@ -527,12 +514,26 @@ a:hover {
         font-size: 14px;
       }
 
-      @media only screen and (max-width: 600px) {
+      @media only screen and (max-width: 920px) {
         height: fit-content;
         width: 100%;
 
+        .riser-photo {
+          margin: 0 auto;
+          max-width: 264px;
+
+          &:hover, &.active {
+            filter: none;
+          }
+        }
+
         &:not(.active) {
           display: none;
+        }
+
+        .photo-info {
+          left: unset;
+          max-width: 240px;
         }
       }
     }
@@ -564,14 +565,14 @@ a:hover {
           font-family: Telegraf, serif;
           font-weight: 400;
           font-size: 14px;
-          color: #F2F2F2;
+          color: #131414;
 
           &.light {
             color: #000000;
           }
         }
 
-        @media only screen and (max-width: 600px) {
+        @media only screen and (max-width: 920px) {
           display: none;
         }
       }
@@ -596,8 +597,8 @@ a:hover {
 
           .riser-quote-name {
             padding: 4px 0 4px 8px;
-            border-top: 1px solid #F2F2F2;
-            color: #F2F2F2;
+            border-top: 1px solid #3D3D3D;
+            color: #3D3D3D;
             font-family: Telegraf, serif;
             font-size: 14px;
             font-weight: 800;
@@ -609,21 +610,22 @@ a:hover {
           }
 
           .riser-quote {
-            color: #F2F2F2;
+            color: #3D3D3D;
             font-family: "DM Sans", serif;
             font-size: 12px;
+            text-align: end;
 
             &.light {
               color: #000000;
             }
           }
 
-          @media only screen and (max-width: 600px) {
+          @media only screen and (max-width: 920px) {
             display: none;
           }
         }
 
-        @media only screen and (max-width: 600px) {
+        @media only screen and (max-width: 920px) {
           margin: 0 32px;
           justify-content: center;
 
@@ -722,7 +724,7 @@ a:hover {
 .show-on-mobile {
   display: none;
 
-  @media only screen and (max-width: 720px) {
+  @media only screen and (max-width: 1100px) {
     display: block;
   }
 }
