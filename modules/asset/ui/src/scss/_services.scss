@@ -44,7 +44,14 @@
     margin-top: 63px;
   }
 
+  @media only screen and (max-width: 1192px) {
+    width: 95%;
+    align-self: center;
+  }
+
   @media only screen and (max-width: 600px) {
+    width: 100%;
+
     .section-description {
       display: none;
     }

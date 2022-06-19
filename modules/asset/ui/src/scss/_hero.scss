@@ -2,7 +2,6 @@
   display: flex;
   position: relative;
   background: #F2F2F2;
-  height: 369px;
 
   &.large {
     height: 500px;
@@ -100,7 +99,7 @@
 
     &:after {
       content: '';
-      width: 58px;
+      width: 22%;
       height: 100%;
       position: absolute;
       background: #F2F2F2;
