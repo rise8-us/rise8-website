@@ -543,5 +543,30 @@
       align-items: center;
       justify-content: space-around;
     }
+
+    @media only screen and (max-width: 600px) {
+      width: 95vw;
+      height: 95vw;
+      background-repeat: no-repeat;
+      background-size: contain;
+
+      .top {
+        margin-top: -24px;
+      }
+
+      .title {
+        font-size: 24px;
+        width: 75%;
+      }
+
+      .subtitle {
+        font-size: 16px;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: none;
+    row-gap: 48px;
   }
 }

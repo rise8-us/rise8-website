@@ -205,19 +205,25 @@
 </div>
 <section class="content-section">
   <div class="content-wrapper">
+    {% set image0 = data.blogs[0].image.items[0]._image[0].attachment._urls['one-third'] %}
+    {% set image1 = data.blogs[1].image.items[0]._image[0].attachment._urls['one-third'] %}
+    {% set image2 = data.blogs[2].image.items[0]._image[0].attachment._urls['one-third'] %}
     <blog-preview
         blog1='{ "title": "{{ data.blogs[0].title }}",
         "subtitle": "{{ data.blogs[0].subtitle }}",
         "minutes": "{{ data.blogs[0].minutes }}",
-        "url": "{{ data.blogs[0]._url }}" }'
+        "url": "{{ data.blogs[0]._url }}",
+        "image": "{{ image0 }}" }'
         blog2='{ "title": "{{ data.blogs[1].title }}",
         "subtitle": "{{ data.blogs[1].subtitle }}",
         "minutes": "{{ data.blogs[1].minutes }}",
-        "url": "{{ data.blogs[1]._url }}" }'
+        "url": "{{ data.blogs[1]._url }}",
+        "image": "{{ image1 }}" }'
         blog3='{ "title": "{{ data.blogs[2].title }}",
         "subtitle": "{{ data.blogs[2].subtitle }}",
         "minutes": "{{ data.blogs[2].minutes }}",
-        "url": "{{ data.blogs[2]._url }}" }'>>
+        "url": "{{ data.blogs[2]._url }}",
+         "image": "{{ image2 }}" }'>
     </blog-preview>
   </div>
 </section>
