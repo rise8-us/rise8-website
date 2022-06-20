@@ -19,6 +19,10 @@ module.exports = {
             value: 'listen',
           },
           {
+            label: 'Listen SoundCloud',
+            value: 'listen-soundcloud',
+          },
+          {
             label: 'Watch',
             value: 'watch',
           },
@@ -53,6 +57,7 @@ module.exports = {
           $or: [
             { blogType: 'watch' },
             { blogType: 'listen' },
+            { blogType: 'listen-soundcloud' },
           ],
         },
       },

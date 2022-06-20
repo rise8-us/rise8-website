@@ -1,7 +1,8 @@
 {% extends "layout.html" %}
 
 {% block main %}
-<hero-header id="blog-hero-header" title="The Slant" memo="A finger on the pulse. The finger to the status quo."
+<hero-header id="blog-hero-header" title="The Slant"
+             memo="A finger on the pulse. The finger to the status quo."
              description=""></hero-header>
 <div class="blog">
   <section class="header">
@@ -16,20 +17,27 @@
 
     {% if data.piece.blogType === 'read' %}
     <div class="banner" style="float: left">
-    {% area data.piece, 'image' %}
+      {% area data.piece, 'image' %}
     </div>
     {% endif %}
 
     {% if data.piece.blogType === 'listen' %}
     <!--suppress HtmlDeprecatedAttribute, HtmlUnknownTarget -->
-    <iframe class="banner" style="border-radius:12px" src="{{ data.piece.embedUrl }}?utm_source=generator"
+    <iframe class="banner" style="border-radius:12px"
+            src="{{ data.piece.embedUrl }}?utm_source=generator"
             width="743" height="232" frameBorder="0" allowfullscreen=""
             allow="clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
     {% endif %}
 
+    {% if data.piece.blogType === 'listen-soundcloud' %}
+    <iframe class="banner" width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+            src="https://w.soundcloud.com/player/?url={{ data.piece.embedUrl }}&color=%23fd022c&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+    {% endif %}
+
     {% if data.piece.blogType === 'watch' %}
     <!--suppress HtmlDeprecatedAttribute, HtmlUnknownTarget -->
-    <iframe class="banner" width="743" height="418" src="{{ data.piece.embedUrl }}" title="YouTube video player"
+    <iframe class="banner" width="743" height="418" src="{{ data.piece.embedUrl }}"
+            title="YouTube video player"
             frameborder="0"
             allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen></iframe>
@@ -38,8 +46,10 @@
     <div class="get-to-know">
       <h4>Have it all: sooner, faster, safer</h4>
       <h3>We deliver software up to twenty-five times faster than other IT partners</h3>
-      <p>We are designers, product experts, and engineers of the highest caliber transforming how the DoD delivers software.</p>
-      <custom-button text="Get To Know Us" link="/about" mode="dark" text-style="font-family: 'DM sans', serif;font-weight: 400;"></custom-button>
+      <p>We are designers, product experts, and engineers of the highest caliber transforming how
+        the DoD delivers software.</p>
+      <custom-button text="Get To Know Us" link="/about" mode="dark"
+                     text-style="font-family: 'DM sans', serif;font-weight: 400;"></custom-button>
     </div>
 
     <span class="author" style="clear: both">
