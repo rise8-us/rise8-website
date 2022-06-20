@@ -61,6 +61,7 @@ module.exports = {
         type: 'area',
         options: {
           widgets: {
+            '@apostrophecms/image': {},
             '@apostrophecms/rich-text': {
               toolbar: [
                 'styles',
