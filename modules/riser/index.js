@@ -9,6 +9,7 @@ module.exports = {
       title: {
         label: 'Name',
         type: 'string',
+        required: true,
       },
       role: {
         type: 'string',
@@ -25,7 +26,6 @@ module.exports = {
       photo: {
         label: 'Bio Photo',
         type: 'area',
-        required: true,
         options: {
           max: 1,
           widgets: {
