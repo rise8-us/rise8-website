@@ -6,8 +6,8 @@ export class EightLoader extends HTMLElement {
         ? '../'
         : '';
     setTimeout(function () {
-      // document.getElementById('website-content').classList.remove('display-after-loading-screen');
-      // document.getElementById('loader-wrapper').classList.add('loaded');
+      document.getElementById('website-content').classList.remove('display-after-loading-screen');
+      document.getElementById('loader-wrapper').classList.add('loaded');
     }, 1000);
   }
 
