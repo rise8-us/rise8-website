@@ -16,6 +16,12 @@
     color: #FFFFFF;
   }
 
+  &.mobile-pb-0 {
+    @media only screen and (max-width: 600px) {
+      padding-bottom: 0;
+    }
+  }
+
   &.with-8-mark {
     padding-top: 0;
 
@@ -38,6 +44,10 @@
       @media only screen and (max-width: 1000px) {
         flex-direction: column;
       }
+    }
+
+    &.space-between {
+      place-content: space-between;
     }
 
     &.error {
@@ -94,10 +104,12 @@
 
 .eight-mark-background {
   flex-grow: 1;
+  //noinspection CssUnknownTarget
   background-image: url('/images/background-8-mark-light.svg');
   background-repeat: no-repeat;
 
   &.dark {
+    //noinspection CssUnknownTarget
     background-image: url('/images/background-8-mark-dark.svg');
   }
 
@@ -190,8 +202,7 @@
   max-width: 236px;
   min-width: fit-content;
   border: 1px solid #131414;
-  font-family: 'Bitter', serif;
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'DM Sans', 'Bitter', sans-serif;
   font-size: 16px;
 
   &.half {
