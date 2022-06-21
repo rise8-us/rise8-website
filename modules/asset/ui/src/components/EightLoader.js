@@ -2,7 +2,7 @@ export class EightLoader extends HTMLElement {
   constructor() {
     super();
     this.imagePathPrefix =
-      (document.title === 'Prodacity' || /[\/[b][l][o][g]\/[ -~]+/.test(document.documentURI))
+      (document.title === 'Prodacity - Rise8' || /[\/[b][l][o][g]\/[ -~]+/.test(document.documentURI))
         ? '../'
         : '';
     setTimeout(function () {

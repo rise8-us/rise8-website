@@ -95,6 +95,10 @@
     .caption {
       width: fit-content;
       margin: auto 0 24px;
+
+      &.null {
+        margin-bottom: 95px;
+      }
     }
 
     &:after {
@@ -173,6 +177,10 @@
 
       .caption {
         margin: 16px auto 24px;
+
+        &.null {
+          margin: 16px auto 0;
+        }
       }
 
       &:after {

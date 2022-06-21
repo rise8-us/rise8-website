@@ -8,40 +8,29 @@
 </script>
 {% set imgObj = apos.image.first(data.page.heroImage) %}
 <hero-header title-image="/images/logo-prodacity.svg"
-     memo="sep 7-8 2022<br>washington dc
+             memo="sep 7-8 2022<br>washington dc
      <div class='register-button'>
      <custom-button text='Register Now' link='/registration-link' mode='gradient'
      text-style='font-weight: 700' half no-chevron></custom-button>
      </div>"
-     caption="<img src='/images/logo-wework.svg' alt=''>"
-     image="{{ apos.attachment.url(imgObj) }}" pad-top></hero-header>
+             image="{{ apos.attachment.url(imgObj) }}" pad-top></hero-header>
 <section class="content-section dark with-8-mark">
   <div class="eight-mark-background dark">
     <div class="content-wrapper with-8-mark">
-      <div class="two-column-wrapper">
-        <div>
-          <section-header header="Prodacity 2022" subheader="Sept 7-8, 2022 in Washington DC"
-                          dark-mode secondary></section-header>
-          <div class="section-body-text">
-            Rise8's first annual Prodacity Symposium is about giving people in the government space
-            the audacity to get to prod.
-          </div>
-        </div>
-        <div>
-          <section-header header="Prod Academy" subheader="theme of the year"
-                          dark-mode secondary></section-header>
-          <div class="section-body-text">
-            Prod Academy is a Masterclass to set a baseline for how to do DevOps in government and
-            achieve mission outcomes.
-            <br/><br/>
-            <span style="font-weight: 700">Students will leave this masterclass knowing how to "do the Kessel Run" (and do it
-            better,
-              faster, and cheaper).</span>
-          </div>
+      <div>
+        <section-header header="Prodacity 2022" subheader="Sept 7-8, 2022 in Washington DC"
+                        dark-mode secondary></section-header>
+        <div class="section-body-text no-max">
+          This year's theme is Prod Academy, which will set a baseline for how to do DevOps in
+          government and achieve mission outcomes.
+          <br/><br/>
+          Attendees will leave knowing how to start and scale the next generation of government
+          software organizations with the lessons learned to do it better, faster, and cheaper.
         </div>
       </div>
       <div class="center-button">
-        <custom-button text="Register Now" link="/registration-link" mode="gradient" text-style="font-weight: 700"
+        <custom-button text="Register Now" link="/registration-link" mode="gradient"
+                       text-style="font-weight: 700"
                        half no-chevron></custom-button>
       </div>
       <div class="subsection-wrapper">
@@ -108,7 +97,8 @@
       </div>
     </div>
     <div class="center-button">
-      <custom-button text="Register Now" link="/registration-link" mode="gradient" text-style="font-weight: 700"
+      <custom-button text="Register Now" link="/registration-link" mode="gradient"
+                     text-style="font-weight: 700"
                      half no-chevron></custom-button>
     </div>
   </div>
