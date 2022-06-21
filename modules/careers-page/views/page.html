@@ -86,6 +86,19 @@
     element.classList.add('active');
     document.getElementById(`${element.id.replace('photo', 'bio')}`).classList.add('active');
   }
+
+  function onTipArrowClick(e, isLeft) {
+    const tipIndex = parseInt(e.target.id.split('-')[1]);
+    document.getElementById(`tip-${tipIndex}`).classList.add('hidden');
+
+    const tips = document.getElementsByClassName('tip-wrapper');
+
+    if (isLeft) {
+      document.getElementById(`tip-${tipIndex === 0 ? tips.length - 1 : tipIndex - 1}`).classList.remove('hidden');
+    } else {
+      document.getElementById(`tip-${tipIndex === tips.length - 1 ? 0 : tipIndex + 1}`).classList.remove('hidden');
+    }
+  }
 </script>
 {% set imgObj = apos.image.first(data.page.heroImage) %}
 <hero-header memo="Message from the CEO" title="Welcome Future Risers"
@@ -378,17 +391,20 @@
     {% if loop.first %}
     {% set hidden = "" %}
     {% endif %}
-    <div class="tip-wrapper">
+    <div id="tip-{{ loop.index0 }}" class="tip-wrapper {{ hidden }}">
       <img src="images/icon-chevron-right-light.svg"
+           id="tip-{{ loop.index0 }}-left"
            class="chevron left mobile-chevron"
-           onclick="onArrowClick(event, true)">
-      <div class="tip {{ hidden }}">
-        <div class="quote">{{ tip.title }}</div>
+           onclick="onTipArrowClick(event, true)">
+      <div class="tip">
+        <div class="quote">"{{ tip.title }}"</div>
         <div class="name telegraf bold">{{tip._riser[0].title}}</div>
         <div class="role telegraf">{{tip._riser[0].role}}</div>
       </div>
-      <img src="images/icon-chevron-right-light.svg" class="chevron mobile-chevron"
-           onclick="onArrowClick(event, false)">
+      <img src="images/icon-chevron-right-light.svg"
+           id="tip-{{ loop.index0 }}-right"
+           class="chevron mobile-chevron"
+           onclick="onTipArrowClick(event, false)">
     </div>
     {% endfor %}
   </div>
