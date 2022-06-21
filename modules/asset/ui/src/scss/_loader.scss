@@ -4,10 +4,7 @@
   overflow: auto;
   position: absolute;
   background-image: linear-gradient(#800031, #FC0000);
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1001;
+  z-index: 999;
 
   &.loaded {
     visibility: hidden;
@@ -16,31 +13,40 @@
   }
 
   .loader {
-    display: block;
     position: relative;
     height: 225px;
 
     &.left {
-      margin: -75px 85px 0 0;
+      width: 50%;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: -100px;
+      margin: auto 0;
 
-      -webkit-animation: slideright 1s ease-in-out 1 forwards; /* Chrome, Opera 15+, Safari 5+ */
-      animation: slideright 1s ease-in-out 1 forwards; /* Chrome, Firefox 16+, IE 10+, Opera */
+      -webkit-animation: slide-right 1s ease-in-out 1 forwards; /* Chrome, Opera 15+, Safari 5+ */
+      animation: slide-right 1s ease-in-out 1 forwards; /* Chrome, Firefox 16+, IE 10+, Opera */
     }
 
     &.right {
-      margin: -75px 115px 0 0;
+      width: 50%;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 16px;
+      margin: auto 0;
 
-      -webkit-animation: slideleft 1s ease-in-out 1 forwards; /* Chrome, Opera 15+, Safari 5+ */
-      animation: slideleft 1s ease-in-out 1 forwards; /* Chrome, Firefox 16+, IE 10+, Opera */
+      -webkit-animation: slide-left 1s ease-in-out 1 forwards; /* Chrome, Opera 15+, Safari 5+ */
+      animation: slide-left 1s ease-in-out 1 forwards; /* Chrome, Firefox 16+, IE 10+, Opera */
     }
 
     img {
       height: inherit;
     }
 
-    @-webkit-keyframes slideright {
+    @-webkit-keyframes slide-right {
       from {
-        transform: translateX(75%);
+        transform: translateX(0%);
         opacity: 0;
       }
 
@@ -50,9 +56,9 @@
       }
     }
 
-    @keyframes slideleft {
+    @keyframes slide-left {
       from {
-        transform: translateX(25%);
+        transform: translateX(100%);
         opacity: 0;
       }
 
