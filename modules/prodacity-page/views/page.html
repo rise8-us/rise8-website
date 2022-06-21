@@ -2,9 +2,11 @@
 
 {% block main %}
 <script type="text/javascript">
-  (function () {
-    document.getElementById('prodacity-banner').classList.add('hidden');
-  })();
+  document.addEventListener("DOMContentLoaded", function(event) {
+    (function () {
+      document.getElementById('prodacity-banner').classList.add('hidden');
+    })();
+  });
 </script>
 {% set imgObj = apos.image.first(data.page.heroImage) %}
 <hero-header title-image="/images/logo-prodacity.svg"
