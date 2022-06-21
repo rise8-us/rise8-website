@@ -12,6 +12,13 @@
     transition: visibility 0s 0.3s, opacity 0.3s linear;
   }
 
+  .loader-container {
+    position: relative;
+    width: 25%;
+    height: 100%;
+    margin: 0 auto;
+  }
+
   .loader {
     position: relative;
     height: 225px;
