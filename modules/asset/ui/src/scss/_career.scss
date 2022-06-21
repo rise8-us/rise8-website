@@ -6,6 +6,10 @@
   column-gap: 24px;
   padding-left: 66px;
 
+  @media only screen and (max-width: 600px) {
+    padding-left: 30px;
+  }
+
   &.dark {
     color: #FFFFFF;
   }
