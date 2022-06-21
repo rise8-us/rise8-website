@@ -1,14 +1,10 @@
 .contact-form {
   display: flex;
   flex-direction: column;
-  width: 550px;
+  margin: 20px 60px 0;
   font-family: "DM Sans", serif;
 
-  @media only screen and (max-width: 850px) {
-    width: fit-content;
-  }
-
-  & .field {
+  .field {
     margin-top: 14px;
 
     & .title {
@@ -27,14 +23,14 @@
     }
   }
 
-  & .contact-options {
+  .contact-options {
     display: flex;
     margin-top: 24px;
     margin-bottom: 32px;
     column-gap: 40px
   }
 
-  & .option {
+  .option {
     display: flex;
     align-items: center;
     column-gap: 8px;
@@ -65,7 +61,7 @@
     }
   }
 
-  & .submit-button {
+  .submit-button {
     background: #E5E5E5;
     border: 1px solid;
     border-image:  linear-gradient(to right, #800031, #FC0000) 1;
