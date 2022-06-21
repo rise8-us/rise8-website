@@ -656,9 +656,9 @@ a:hover {
             font-size: 14px;
             font-weight: 800;
 
-            &.light {
-              border-top: 1px solid #000000;
-              color: #000000;
+            &.light-text {
+              border-top: 1px solid #F2F2F2;
+              color: #F2F2F2;
             }
           }
 
@@ -668,8 +668,8 @@ a:hover {
             font-size: 12px;
             text-align: end;
 
-            &.light {
-              color: #000000;
+            &.light-text {
+              color: #F2F2F2;
             }
           }
 

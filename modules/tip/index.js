@@ -11,6 +11,7 @@ module.exports = {
         label: 'Quote',
         type: 'string',
         textarea: true,
+        help: 'Don\'t add quotation marks, we\'ll do that for you!',
       },
       _riser: {
         required: true,

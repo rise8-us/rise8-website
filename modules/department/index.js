@@ -10,6 +10,7 @@ module.exports = {
         type: 'relationship',
         label: 'Risers',
         withType: 'riser',
+        help: 'The top 3 risers in this list will be featured in the "Let\'s Make Some Intros" section',
       },
     },
     group: {

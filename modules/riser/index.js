@@ -22,6 +22,7 @@ module.exports = {
         type: 'string',
         textarea: true,
         max: 280,
+        help: 'Don\'t add quotation marks, we\'ll do that for you!',
       },
       photo: {
         label: 'Bio Photo',

@@ -181,12 +181,12 @@
                   <div class="bio-role">{{ riser.role }}</div>
                 </div>
                 <div id="bio" class="riser-bio">
-                  <div class="bio-bio">{{ riser.bio }}</div>
+                  <div class="bio-bio">{{ riser.bio | striptags(true) | escape | nl2br }}</div>
                   <div class="bio-quote">
-                    <div class="riser-quote-name">
+                    <div class="riser-quote-name light-text">
                       {{ riser.title.split(' ')[0] }}'s View
                     </div>
-                    <div id="quote" class="riser-quote">
+                    <div id="quote" class="riser-quote light-text">
                       "{{ riser.quote }}"
                     </div>
                   </div>

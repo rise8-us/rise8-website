@@ -416,7 +416,7 @@
            class="chevron left mobile-chevron"
            onclick="onTipArrowClick(event, true)">
       <div class="tip">
-        <div class="quote">"{{ tip.title }}"</div>
+        <div class="quote">"{{ tip.title | striptags(true) | escape | nl2br }}"</div>
         <div class="name telegraf bold">{{tip._riser[0].title}}</div>
         <div class="role telegraf">{{tip._riser[0].role}}</div>
       </div>
