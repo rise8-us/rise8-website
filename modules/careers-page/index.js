@@ -16,12 +16,25 @@ module.exports = {
           },
         },
       },
+      coreValues: {
+        label: 'Core Values',
+        type: 'area',
+        required: true,
+        options: {
+          min: 5,
+          max: 5,
+          widgets: {
+            '@apostrophecms/image': {},
+          },
+        },
+      },
     },
     group: {
       images: {
         label: 'Images',
         fields: [
           'heroImage',
+          'coreValues',
         ],
       },
     },
