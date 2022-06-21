@@ -28,6 +28,18 @@ module.exports = {
           },
         },
       },
+      riseToOpportunity: {
+        label: 'Rise to the Opportunity',
+        type: 'area',
+        required: true,
+        options: {
+          min: 6,
+          max: 6,
+          widgets: {
+            '@apostrophecms/image': {},
+          },
+        },
+      },
     },
     group: {
       images: {
@@ -35,6 +47,7 @@ module.exports = {
         fields: [
           'heroImage',
           'coreValues',
+          'riseToOpportunity',
         ],
       },
     },
