@@ -12,7 +12,7 @@ export class BlogPreview extends HTMLElement {
 
   connectedCallback() {
     let html = `
-    <section-header header="Blog"
+    <section-header header="Blog: The Slant"
                     subheader="A finger on the pulse. The finger to the status quo."></section-header>
     <div class="section-body-wrapper">
       <div class="blog-background-wrapper">
