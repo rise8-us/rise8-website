@@ -1,9 +1,10 @@
 .values-body-wrapper {
   margin-top: 24px;
   display: grid;
-  justify-content: space-evenly;
   grid-template-columns: repeat(auto-fill, 344px);
   row-gap: 16px;
+  column-gap: 24px;
+  padding-left: 66px;
 
   &.dark {
     color: #FFFFFF;
@@ -13,38 +14,34 @@
     color: white;
     width: 328px;
     height: 200px;
+    box-sizing: border-box;
+    padding-left: 8px;
 
     .img-description-header {
       background: #131414;
       width: fit-content;
       height: 30px;
       font-size: 24px;
-      padding: 4px 20px;
       font-family: Jagerlay, serif;
       font-weight: 500;
-      margin: 32px auto auto 8px;
-    }
-
-    .img-description-subheader {
-      background: #131414;
-      width: fit-content;
-      margin-top: 22px;
-      height: 11px;
-      font-size: 9px;
-      padding-left: 8px;
-      padding-right: 7px;
-      font-family: Supply, serif;
-      font-weight: 700;
+      margin: 32px auto 28px 8px;
+      padding-left: 18px;
+      padding-right: 18px;
     }
 
     .img-description-content {
       background: #131414;
       margin-top: 4px;
-      height: 80px;
       font-size: 13px;
-      padding-left: 8px;
       font-family: Telegraf, serif;
       font-weight: 400;
+      width: 230px;
+      line-height: 16px;
+      padding: 4px;
+      padding-inline: initial;
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
+      margin-left: 8px;
     }
   }
 
