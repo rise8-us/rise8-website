@@ -1,7 +1,9 @@
 {% extends "layout.html" %}
 
 {% block main %}
-<hero-header title="Privacy Policy"></hero-header>
+{% set imgObj = apos.image.first(data.page.heroImage) %}
+<hero-header title="Privacy Policy"
+             image="{{ apos.attachment.url(imgObj) }}"></hero-header>
 <section class="content-section">
   <div class="content-wrapper privacy">
     <span class="hide-on-mobile"><section-header header="Privacy Policy"></section-header></span>
