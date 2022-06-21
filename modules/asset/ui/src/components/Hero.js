@@ -25,9 +25,8 @@ export class Hero extends HTMLElement {
 
   connectedCallback() {
     this.innerHTML = `
-      <div class="hero ${this.large ? 'large' : ''} ${this.description ? 'title-slash' : ''}" style="${this.padTop ? 'padding-top: 40px' : ''}">
-        <img src="/images/background-red-slash-mobile.svg" alt="" class="hero-slash-mobile">
-        <div class="left">
+      <div class="hero ${this.large ? 'large' : ''} ${Hero.isEmpty(this.description) ? '' : 'title-slash'}" style="${this.padTop ? 'padding-top: 40px' : ''}">
+        <div class="left ${Hero.isEmpty(this.titleImage) ? '' : 'less-mobile-padding'}">
           <img src="${this.titleImage}" alt="" class="title-image" style="${Hero.isEmpty(this.titleImage) ? 'display: none' : ''}">
           <div class="memo" style="${Hero.isEmpty(this.titleImage) ? '' : 'padding-top: 20px'} ${Hero.isEmpty(this.memo) ? 'display: none' : ''}">${this.memo}</div>
           <div class="title" style="${Hero.isEmpty(this.title) ? 'display: none' : ''}">${this.title}</div>
