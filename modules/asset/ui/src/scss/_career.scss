@@ -113,7 +113,7 @@
   display: none;
 
   @media only screen and (max-width: 600px) {
-    display: flex;
+    //display: flex;
     height: 440px;
     max-width: 95%;
     object-fit: cover;
@@ -215,6 +215,10 @@
     position: relative;
     max-width: 500px;
 
+    @media only screen and (max-width: 600px) {
+      display: none;
+    }
+
     .opportunity-image {
       position: absolute;
       object-fit: cover;
@@ -249,4 +253,3 @@
     }
   }
 }
-
