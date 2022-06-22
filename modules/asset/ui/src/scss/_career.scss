@@ -1,3 +1,9 @@
+.core-values-section {
+  @media only screen and (max-width: 600px) {
+    padding-top: 72px;
+  }
+}
+
 .values-body-wrapper {
   margin-top: 24px;
   display: grid;
