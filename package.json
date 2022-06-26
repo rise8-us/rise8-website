@@ -46,7 +46,7 @@
   "dependencies": {
     "@apostrophecms/seo": "^1.1.1",
     "@apostrophecms/sitemap": "^1.0.1",
-    "apostrophe": "^3.22.0",
+    "apostrophe": "3.21.1",
     "normalize.css": "^8.0.1"
   },
   "devDependencies": {
