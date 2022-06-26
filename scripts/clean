@@ -1,0 +1,6 @@
+#!/bin/bash
+rm -rf ./apos-build
+rm -rf ./data
+rm -rf ./public/apos-frontend
+rm -rf ./public/uploads
+

@@ -1,3 +1,4 @@
 #!/bin/bash
 mongodump --uri="mongodb://rise8:${DB_PASSWORD}@${STAGING_DB_IP_ADDRESS}:27017/rise8-staging?authSource=admin"
 mongorestore -u rise8 -p ${DB_PASSWORD}
+rm -rf ./dump
