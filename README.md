@@ -28,6 +28,17 @@ See additional documentation [here](https://docs.microsoft.com/en-us/cli/azure/i
 brew install azure-cli
 az login
 ```
+
+### Add Custom domain to hosts file (optional)
+```shell
+./scripts/add-hosts-dev-domain
+```
+
+```.dotenv
+# .env.local
+BASE_URL=http://local.rise8.us:3000
+```
+
 ### Create local dotenv
 ```shell
 cp .env .env.local

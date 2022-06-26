@@ -1,0 +1,3 @@
+#!/bin/bash
+sudo -- sh -c "echo \"\n# Rise8 Website Development\n127.0.0.1  local.rise8.us\" >> /etc/hosts"
+sudo dscacheutil -flushcache
