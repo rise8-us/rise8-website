@@ -1,3 +1,4 @@
+const findPagePieces = require('./findPieces');
 const findAboutPagePieces = require('../../about-page/findPieces');
 const findHomePagePieces = require('../home-page/findPieces');
 const findBlogPagePieces = require('../../blog-page/findPieces');
@@ -13,6 +14,7 @@ module.exports = {
       beforeSend: {
         async handlerName(req) {
           const data = {
+            ...await findPagePieces(self, req),
             ...await findAboutPagePieces(self, req),
             ...await findBlogPagePieces(self, req),
             ...await findHomePagePieces(self, req, 3),

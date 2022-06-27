@@ -37,14 +37,18 @@ Page
       </div>
     </nav>
   </header>
-  <header id="prodacity-banner" class="prodacity-banner">
-    <div class="date-text">sep 7-8 2022<br/>washington dc</div>
-    <img src="/images/logo-prodacity-light.svg" alt="" class="prodacity-banner-logo">
-    <img src="/images/logo-prodacity-mobile.svg" alt="" class="prodacity-banner-logo-mobile">
-    <div class="date-text-mobile">september 7-8<br/>washington dc</div>
-    <custom-button text="Learn More" link="/events/prodacity" mode="light" mini no-chevron
-                   text-style="color: red"></custom-button>
-  </header>
+  {% for banner in data.banners %}
+    {% if (banner.title | lower) === "prodacity" %}
+      <header id="prodacity-banner" class="prodacity-banner">
+        <div class="date-text">sep 7-8 2022<br/>washington dc</div>
+        <img src="/images/logo-prodacity-light.svg" alt="" class="prodacity-banner-logo">
+        <img src="/images/logo-prodacity-mobile.svg" alt="" class="prodacity-banner-logo-mobile">
+        <div class="date-text-mobile">september 7-8<br/>washington dc</div>
+        <custom-button text="Learn More" link="/events/prodacity" mode="light" mini no-chevron
+                       text-style="color: red"></custom-button>
+      </header>
+    {% endif %}
+  {% endfor %}
   <main>
     {% endblock %}
 

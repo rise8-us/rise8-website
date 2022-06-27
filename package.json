@@ -13,7 +13,8 @@
     "clean": "./scripts/clean",
     "build": "NODE_ENV=production node app @apostrophecms/asset:build",
     "serve": "NODE_ENV=production node app",
-    "release": "npm install && npm run build && node app @apostrophecms/migration:migrate"
+    "release": "npm install && npm run build && node app @apostrophecms/migration:migrate",
+    "test": "jest --coverage"
   },
   "nodemonConfig": {
     "delay": 1000,
@@ -48,6 +49,7 @@
     "@apostrophecms/seo": "^1.1.1",
     "@apostrophecms/sitemap": "^1.0.1",
     "apostrophe": "3.21.1",
+    "jest": "^28.1.1",
     "normalize.css": "^8.0.1"
   },
   "devDependencies": {
