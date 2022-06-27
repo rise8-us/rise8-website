@@ -35,6 +35,7 @@ require('apostrophe')({
     banner: {},
     blog: {},
     department: {},
+    flag: {},
     riser: {},
     tip: {},
     topic: {},
