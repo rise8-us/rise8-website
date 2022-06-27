@@ -4,9 +4,9 @@ const findHomePagePieces = require('../home-page/findPieces');
 const findBlogPagePieces = require('../../blog-page/findPieces');
 const findTipPagePieces = require('../../careers-page/findPieces');
 const { shouldRedirectToBlog, redirectToBlog } = require('../../blog-page/redirectToBlog');
-
-// This configures the @apostrophecms/pages module to add a "home" page type to the
-// pages menu
+const { shouldRedirectToEvent, redirectToEvent } = require('../../event-page/redirectToEvent');
+const { isFeatured } = require('../../flag/flag');
+const { REDIRECT_EVENTS_TO_EVENT } = require('../../../lib/flags');
 
 module.exports = {
   handlers(self, options) {
@@ -30,7 +30,11 @@ module.exports = {
       notFound: {
         async handlerName(req) {
           if (shouldRedirectToBlog(req.url)) {
-            redirectToBlog(req);
+            return redirectToBlog(req);
+          }
+
+          if (await isFeatured(self, req, REDIRECT_EVENTS_TO_EVENT) && shouldRedirectToEvent(req.url)) {
+            return redirectToEvent(req);
           }
         },
       },
@@ -77,6 +81,13 @@ module.exports = {
         parkedId: 'contactId',
         title: 'Contact',
         type: 'contact-page',
+      },
+      {
+        slug: '/event',
+        parkedId: 'eventId',
+        title: 'Event',
+        type: 'event-page',
+        showBanner: false,
       },
       {
         slug: '/events/prodacity',
