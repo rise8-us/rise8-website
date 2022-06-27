@@ -43,6 +43,7 @@ require('apostrophe')({
     topic: {},
     'about-page': {},
     'blog-page': {},
+    'event-page': {},
     'careers-page': {},
     'contact-page': {},
     'default-page': {},

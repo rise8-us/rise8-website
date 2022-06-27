@@ -30,8 +30,8 @@ describe('find', () => {
 
     toArray.mockReturnValueOnce([ testFlag ]);
 
-    const pageBanners = await find(apostrophe, {});
+    const flags = await find(apostrophe, {});
 
-    expect(pageBanners).toEqual([ testFlag ]);
+    expect(flags).toEqual({ 'test-flag': true });
   });
 });
