@@ -1,13 +1,6 @@
 {% extends "layout.html" %}
 
 {% block main %}
-<script type="text/javascript">
-  document.addEventListener('DOMContentLoaded', function (event) {
-    (function () {
-      document.getElementById('prodacity-banner').classList.add('hidden');
-    })();
-  });
-</script>
 {% set imgObj = apos.image.first(data.page.heroImage) %}
 <hero-header title-image="/images/logo-prodacity.svg"
              memo="sep 7-8 2022<br>washington dc

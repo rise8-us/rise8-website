@@ -32,6 +32,7 @@ require('apostrophe')({
     },
     // `asset` supports the project's webpack build for client-side assets.
     asset: {},
+    banner: {},
     blog: {},
     department: {},
     riser: {},
