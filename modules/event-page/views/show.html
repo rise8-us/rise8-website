@@ -35,25 +35,31 @@
         <section-header header="Speakers"
                         subheader="The incredible experts & panelists"
                         dark-mode secondary></section-header>
-        <div class="grid">
-          <div class="speaker-container">
-            <ul class="speaker-list">
-              {% for presenter in data.piece._presenters %}
-              {% set imgObj = apos.image.first(presenter.photo) %}
-              {% set index = loop.index %}
-              <li class="tab">
-                <input type="radio" name="tab-radio" id="tab-{{ index }}" {{'checked' if index == 1 else ''}}>
-                <label class="tab-label" for="tab-{{ index }}">
-                  <div>{{ presenter.title }}</div>
-                </label>
-                <div class="tab-content">
-<!--                  <img src="{{ apos.attachment.url(imgObj) }}" alt="{{ presenter.name }}">-->
-                  {{ presenter.bio }}
+        <div class="speaker-container">
+          <ul class="speaker-list">
+            {% for presenter in data.piece._presenters %}
+            {% set imgObj = apos.image.first(presenter.photo) %}
+            {% set index = loop.index %}
+            <li class="tab">
+              <input type="radio" name="tab-radio" id="tab-{{ index }}" {{'checked' if index == 1
+              else ''}}>
+              <label class="tab-label" for="tab-{{ index }}">
+                <div>{{ presenter.title }}</div>
+              </label>
+              <div class="tab-content">
+                <div class="speaker-image-container">
+                  <img src="{{ apos.attachment.url(imgObj) }}" alt="{{ presenter.name }}">
+                  <div class="gradient"></div>
+                  <div class="photo-info">
+                    <div>{{ presenter.title }}</div>
+                    <div>{{ presenter.role }}</div>
+                  </div>
                 </div>
-              </li>
-              {% endfor %}
-            </ul>
-          </div>
+                <div class="bio">{{ presenter.bio }}</div>
+              </div>
+            </li>
+            {% endfor %}
+          </ul>
         </div>
       </div>
       {% endif %}
