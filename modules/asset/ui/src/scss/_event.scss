@@ -43,6 +43,10 @@
           text-align: center;
           transition: all .35s;
         }
+
+        @media only screen and (min-width: 1440px) {
+          display: none;
+        }
       }
 
       &-content {
@@ -108,6 +112,10 @@
         @media only screen and (min-width: 688px) {
           text-align: center;
         }
+
+        @media only screen and (min-width: 1440px) {
+          max-height: max-content;
+        }
       }
 
       &-close {
@@ -116,6 +124,10 @@
         padding: 1em;
         font-size: 0.75em;
         cursor: pointer;
+      }
+
+      @media only screen and (min-width: 1440px) {
+        border: none;
       }
     }
 
