@@ -32,26 +32,28 @@
       </div>
       {% if data.piece._presenters|length > 0 %}
       <div class="subsection-wrapper flex">
-        <section-header header="Speakers & Panelists"
-                        subheader="The incredible experts &ldquo;Teaching&rdquo; prod academy"
+        <section-header header="Speakers"
+                        subheader="The incredible experts & panelists"
                         dark-mode secondary></section-header>
         <div class="grid">
-          {% for presenter in data.piece._presenters %}
-          {% set imgObj = apos.image.first(presenter.photo) %}
-          <div class="grid-item">
-            <div class="user-profile {{'featured' if presenter._fields.featured else ''}}">
-              {% if imgObj %}
-              <img src="{{ apos.attachment.url(imgObj) }}" alt="{{ presenter.name }}">
-              {% endif %}
-              <span class="title">
-                {{ presenter.title }}
-              </span>
-              <span>
-                {{ presenter.role }}
-              </span>
-            </div>
+          <div class="speaker-container">
+            <ul class="speaker-list">
+              {% for presenter in data.piece._presenters %}
+              {% set imgObj = apos.image.first(presenter.photo) %}
+              {% set index = loop.index %}
+              <li class="tab">
+                <input type="radio" name="tab-radio" id="tab-{{ index }}" {{'checked' if index == 1 else ''}}>
+                <label class="tab-label" for="tab-{{ index }}">
+                  <div>{{ presenter.title }}</div>
+                </label>
+                <div class="tab-content">
+<!--                  <img src="{{ apos.attachment.url(imgObj) }}" alt="{{ presenter.name }}">-->
+                  {{ presenter.bio }}
+                </div>
+              </li>
+              {% endfor %}
+            </ul>
           </div>
-          {% endfor %}
         </div>
       </div>
       {% endif %}

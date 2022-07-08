@@ -16,6 +16,12 @@ module.exports = {
         label: 'Role',
         type: 'string',
       },
+      bio: {
+        label: 'Bio',
+        type: 'string',
+        textarea: true,
+        def: 'More to come...',
+      },
       photo: {
         label: 'Photo',
         type: 'area',
@@ -32,7 +38,7 @@ module.exports = {
     group: {
       basics: {
         label: 'Basics',
-        fields: [ 'title', 'role', 'photo' ],
+        fields: [ 'title', 'role', 'bio', 'photo' ],
       },
     },
   },
