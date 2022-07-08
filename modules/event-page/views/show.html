@@ -55,7 +55,10 @@
                     <div>{{ presenter.role }}</div>
                   </div>
                 </div>
-                <div class="bio">{{ presenter.bio }}</div>
+                <div class="bio">
+                  <div class="bio-name">{{ presenter.title }}</div>
+                  {{ presenter.bio }}
+                </div>
               </div>
             </li>
             {% endfor %}

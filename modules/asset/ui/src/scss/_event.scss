@@ -52,6 +52,13 @@
         .speaker-image-container {
           position: relative;
           padding-top: 24px;
+          max-width: 322px;
+          max-height: 322px;
+          margin: auto;
+
+          @media only screen and (min-width: 688px) {
+            display: inline-block;
+          }
 
           img {
             width: 100%;
@@ -66,11 +73,40 @@
           }
         }
 
+        .bio-name {
+
+        }
+
         .bio {
           font-family: "DM Sans", sans-serif;
           font-size: 14px;
           font-weight: 400;
           padding: 16px 0 24px 0;
+          line-height: 18px;
+          text-align: left;
+
+          .bio-name {
+            display: none;
+          }
+
+          @media only screen and (min-width: 688px) {
+            display: inline-block;
+            max-width: 275px;
+            margin-left: 16px;
+            vertical-align: top;
+
+            .bio-name {
+              display: block;
+              font-family: Jagerlay, serif;
+              font-size: 18px;
+              font-weight: 500;
+              line-height: 24px;
+            }
+          }
+        }
+
+        @media only screen and (min-width: 688px) {
+          text-align: center;
         }
       }
 
