@@ -42,7 +42,7 @@
             {% set index = loop.index %}
             <li class="tab">
               <input type="radio" name="tab-radio" id="tab-{{ index }}" {{'checked' if index == 1
-              else ''}}>
+              else ''}} {{'disabled' if presenter._fields.disabled else ''}}>
               <label class="tab-label" for="tab-{{ index }}">
                 <div>{{ presenter.title }}</div>
               </label>
