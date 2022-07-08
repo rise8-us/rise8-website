@@ -32,6 +32,11 @@ module.exports = {
               label: 'Featured',
               def: false,
             },
+            disabled: {
+              type: 'boolean',
+              label: 'Disabled',
+              def: false,
+            },
           },
         },
       },

@@ -92,6 +92,12 @@
     .tab:last-child {
       color: #FFFFFFA9;
       border-bottom: none;
+
+      .tab-label {
+        &::after {
+          content: none;
+        }
+      }
     }
   }
 }
