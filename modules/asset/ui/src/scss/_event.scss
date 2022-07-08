@@ -1,6 +1,7 @@
 .speaker-container {
   box-sizing: border-box;
   padding: 0 35px;
+  position: relative;
 
   .speaker-list {
     list-style: none;
@@ -56,13 +57,12 @@
         .speaker-image-container {
           position: relative;
           padding-top: 24px;
-          max-width: 322px;
+          max-width: 264px;
           max-height: 322px;
           margin: auto;
 
-          @media only screen and (min-width: 688px) {
-            display: inline-block;
-          }
+          //
+          //float: left;
 
           img {
             width: 100%;
@@ -75,10 +75,14 @@
             width: 100%;
             bottom: 0;
           }
-        }
 
-        .bio-name {
+          @media only screen and (min-width: 688px) {
+            display: inline-block;
+          }
 
+          @media only screen and (min-width: 1440px) {
+            padding-top: 0;
+          }
         }
 
         .bio {
@@ -88,6 +92,10 @@
           padding: 16px 0 24px 0;
           line-height: 18px;
           text-align: left;
+
+          &.desktop {
+            display: none;
+          }
 
           .bio-name {
             display: none;
@@ -107,6 +115,19 @@
               line-height: 24px;
             }
           }
+
+          @media only screen and (min-width: 1440px) {
+            padding: 0;
+            width: 275px;
+
+            &.mobile {
+              display: none;
+            }
+
+            &.desktop {
+              display: inline-block;
+            }
+          }
         }
 
         @media only screen and (min-width: 688px) {
@@ -115,6 +136,7 @@
 
         @media only screen and (min-width: 1440px) {
           max-height: max-content;
+          padding: 16px;
         }
       }
 
@@ -147,6 +169,38 @@
         }
       }
     }
+
+    .tab:hover {
+
+      .tab-content {
+        background-color: #3D3D3D;
+        height: max-content;
+        position: absolute;
+        z-index: 2;
+        width: 50%;
+
+        .bio {
+          &.mobile {
+            display: inline-block;
+            //text-align: justify;
+          }
+          &.desktop {
+            display: none;
+          }
+        }
+      }
+    }
+
+    @media only screen and (min-width: 1440px) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 8px;
+      row-gap: 32px;
+    }
+  }
+
+  @media only screen and (min-width: 1440px) {
+    padding: 0;
   }
 }
 

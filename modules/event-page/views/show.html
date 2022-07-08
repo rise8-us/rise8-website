@@ -40,6 +40,7 @@
             {% for presenter in data.piece._presenters %}
             {% set imgObj = apos.image.first(presenter.photo) %}
             {% set index = loop.index %}
+            {% set bio = presenter.bio %}
             <li class="tab">
               <input type="radio" name="tab-radio" id="tab-{{ index }}" {{'checked' if index == 1
               else ''}} {{'disabled' if presenter._fields.disabled else ''}}>
@@ -55,9 +56,13 @@
                     <div>{{ presenter.role }}</div>
                   </div>
                 </div>
-                <div class="bio">
-                  <div class="bio-name">{{ presenter.title }}</div>
+                <p class="bio mobile">
+                  <span class="bio-name">{{ presenter.title }}</span>
                   {{ presenter.bio }}
+                </p>
+                <div class="bio desktop">
+                  <div class="bio-name">{{ presenter.title }}</div>
+                  {{ bio | truncate(550, false, "...   + Read More") | striptags(true) | escape | nl2br }}
                 </div>
               </div>
             </li>
