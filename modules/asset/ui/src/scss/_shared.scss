@@ -552,15 +552,6 @@ a:hover {
         opacity: 1;
       }
 
-      .photo-info {
-        position: absolute;
-        bottom: 16px;
-        left: 16px;
-        color: #F2F2F2;
-        font-family: Telegraf, serif;
-        font-size: 14px;
-      }
-
       @media only screen and (max-width: 920px) {
         height: fit-content;
         width: 60%;
@@ -578,10 +569,6 @@ a:hover {
 
         &:not(.active) {
           display: none;
-        }
-
-        .photo-info {
-          max-width: 240px;
         }
       }
 
@@ -879,5 +866,27 @@ a:hover {
 
   .title {
     font-weight: 600;
+  }
+}
+
+.photo-info {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  color: #F2F2F2;
+  font-family: Telegraf, serif;
+  font-size: 14px;
+
+  div:first-child {
+    font-weight: 800;
+    font-size: 18px;
+  }
+
+  div:last-child {
+    font-size: 14px;
+  }
+
+  @media only screen and (max-width: 920px) {
+    max-width: 240px;
   }
 }
