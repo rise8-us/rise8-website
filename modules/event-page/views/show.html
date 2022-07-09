@@ -41,28 +41,35 @@
             {% set imgObj = apos.image.first(presenter.photo) %}
             {% set index = loop.index %}
             {% set bio = presenter.bio %}
+            {% set shortBio = bio | safe | replace(r/(\n.*)/g, '') %}
             <li class="tab">
-              <input type="radio" name="tab-radio" id="tab-{{ index }}" {{'checked' if index == 1
-              else ''}} {{'disabled' if presenter._fields.disabled else ''}}>
+              <input type="radio" name="tab-radio" id="tab-{{ index }}" {{'checked' if index == 1 else ''}} {{'disabled' if presenter._fields.disabled else ''}}>
               <label class="tab-label" for="tab-{{ index }}">
                 <div>{{ presenter.title }}</div>
               </label>
               <div class="tab-content">
                 <div class="speaker-image-container">
-                  <img src="{{ apos.attachment.url(imgObj) }}" alt="{{ presenter.name }}">
+                  <img
+                      src="{{ apos.attachment.url(imgObj) }}"
+                      style="object-position: {{ apos.attachment.focalPointToObjectPosition(presenter.photo) }}"
+                      alt="{{ presenter.title }}"/>
+
                   <div class="gradient"></div>
                   <div class="photo-info">
                     <div>{{ presenter.title }}</div>
                     <div>{{ presenter.role }}</div>
                   </div>
                 </div>
-                <p class="bio mobile">
+                <div class="bio">
                   <span class="bio-name">{{ presenter.title }}</span>
-                  {{ presenter.bio }}
-                </p>
-                <div class="bio desktop">
-                  <div class="bio-name">{{ presenter.title }}</div>
-                  {{ bio | truncate(550, false, "...   + Read More") | striptags(true) | escape | nl2br }}
+                  {% if shortBio !== '' %}
+                    {% set truncatedBio = shortBio | safe | truncate(340, false, "...") %}
+                    {{ truncatedBio | striptags(true) | escape | nlp }}
+                    {% if truncatedBio != shortBio or (bio != '' and bio != shortBio) %}
+                      <span class="bio-more">+ Read More</span>
+                    {% endif %}
+                    {{ bio | safe | striptags(true) | escape | nl2br | nlp }}
+                  {% endif %}
                 </div>
               </div>
             </li>
@@ -71,7 +78,7 @@
         </div>
       </div>
       {% endif %}
-      <div>
+      <div class="subsection-wrapper flex">
         <section-header header="Syllabus" subheader="Why, what, and how"
                         dark-mode secondary></section-header>
         <div class="two-column-wrapper">
