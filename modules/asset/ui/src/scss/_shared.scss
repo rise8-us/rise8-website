@@ -869,6 +869,15 @@ a:hover {
   }
 }
 
+.photo-gradient {
+  position: absolute;
+  background: linear-gradient(2.54deg, rgba(19, 20, 20, 0.8) 21.1%, rgba(19, 20, 20, 0) 92.9%);
+  height: 50%;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+
 .photo-info {
   position: absolute;
   bottom: 16px;

@@ -175,6 +175,7 @@
     }
 
     .banner {
+      position: relative;
       height: 305px;
       padding: 10px;
       width: 340px;
@@ -191,9 +192,8 @@
       }
 
       span {
-        display: table-cell;
-        height: 305px;
-        vertical-align: bottom;
+        position: absolute;
+        bottom: 10px;
         font-family: 'DM Sans', serif;
         font-size: 20px;
         color: #FFFFFF;
