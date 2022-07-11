@@ -207,7 +207,8 @@
         }
       }
 
-      .tab:hover {
+      .tab:hover:not(.no-hover) {
+
         position: relative;
         overflow: unset;
 
@@ -215,9 +216,9 @@
           z-index: 2;
           background-color: #3D3D3D;
           position: absolute;
-          box-shadow: 0 0 8px rgba(255, 255, 255, 0.2)  ;
-          -webkit-box-shadow: 0 0 8px rgba(255, 255, 255, 0.1)  ;
-          -moz-box-shadow: 0 0 8px rgba(255, 255, 255, 0.1)  ;
+          box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+          -webkit-box-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
+          -moz-box-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
 
           .bio-more {
             display: none;
