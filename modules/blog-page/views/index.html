@@ -30,7 +30,10 @@
       {% for blog in data.pieces %}
       <a href="/blog/{{blog.slug}}" class="card">
         {% if blog.image %}
-        <div class="banner" style="background-image: url({{blog.image.items[0]._image[0].attachment._urls['two-thirds']}})"><span class="title">{{ blog.title}}</span></div>
+        <div class="banner" style="background-image: url({{blog.image.items[0]._image[0].attachment._urls['two-thirds']}})">
+          <div class="photo-gradient"></div>
+          <span class="title">{{ blog.title}}</span>
+        </div>
         {% else %}
         <div class="banner"><span class="title">{{ blog.title}}</span></div>
         {% endif %}
