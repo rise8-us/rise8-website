@@ -335,11 +335,10 @@
                     subheader="Find Your Next Role"></section-header>
     <div class="careers-wrapper">
       <div class="career-list-wrapper">
-
-        {% if data.jobs.Administration %}
+        {% for category, jobs in data.jobs %}
         <div class="career-section-wrapper">
-          <div class="career-list-header">ADMINISTRATION</div>
-          {% for job in data.jobs.Administration %}
+          <div class="career-list-header">{{ category }}</div>
+          {% for job in jobs %}
           <a href={{ job.url }}>
             <div class="job-info">
               <div class="job-title">{{ job.name }}</div>
@@ -348,49 +347,7 @@
           </a>
           {% endfor %}
         </div>
-        {% endif %}
-
-        {% if data.jobs.Engineering %}
-        <div class="career-section-wrapper">
-          <div class="career-list-header">ENGINEERING</div>
-          {% for job in data.jobs.Engineering %}
-          <a href={{ job.url }}>
-            <div class="job-info">
-              <div class="job-title">{{ job.name }}</div>
-              <div class="job-location">{{ job.display_location }}</div>
-            </div>
-          </a>
-          {% endfor %}
-        </div>
-        {% endif %}
-
-        {% if data.jobs.Design %}
-        <div class="career-section-wrapper">
-          <div class="career-list-header">DESIGN</div>
-          {% for job in data.jobs.Design %}
-          <a href={{ job.url }}>
-            <div class="job-info">
-              <div class="job-title">{{ job.name }}</div>
-              <div class="job-location">{{ job.display_location }}</div>
-            </div>
-          </a>
-          {% endfor %}
-        </div>
-        {% endif %}
-
-        {% if data.jobs.Product_Management %}
-        <div class="career-section-wrapper">
-          <div class="career-list-header">PRODUCT MANAGEMENT</div>
-          {% for job in data.jobs.Product_Management %}
-          <a href={{ job.url }}>
-            <div class="job-info">
-              <div class="job-title">{{ job.name }}</div>
-              <div class="job-location">{{ job.display_location }}</div>
-            </div>
-          </a>
-          {% endfor %}
-        </div>
-        {% endif %}
+        {% endfor %}
 
       </div>
       <div class="career-list-partner">
