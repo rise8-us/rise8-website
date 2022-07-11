@@ -147,6 +147,8 @@
                             department="{{ department.title }}"
                             index="{{ loop.index0 }}"
                             active="{{ active }}"
+                            name="{{ riser.title }}"
+                            role="{{ riser.role }}"
                             style="width: 100%"></bio-switch>
                 <div class="chevron-wrapper">
                   <div class="photo-chevrons">
@@ -157,12 +159,6 @@
                          class="chevron show-on-mobile active"
                          onclick="onPhotoArrowClick(event, false, '{{department.title}}')">
                   </div>
-                </div>
-                <div class="photo-gradient"></div>
-                <div class="photo-hover">Read Bio</div>
-                <div class="photo-info">
-                  <div>{{ riser.title }}</div>
-                  <div>{{ riser.role }}</div>
                 </div>
               </div>
               {% endif %}

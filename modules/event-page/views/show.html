@@ -43,7 +43,8 @@
             {% set bio = presenter.bio %}
             {% set shortBio = bio | safe | replace(r/(\n.*)/g, '') %}
             <li class="tab {{ 'no-hover' if presenter._fields.disabled else '' }}">
-              <input type="radio" name="tab-radio" id="tab-{{ index }}" {{'checked' if index == 1 else ''}} {{'disabled' if presenter._fields.disabled else ''}}>
+              <input type="radio" name="tab-radio" id="tab-{{ index }}" {{'checked' if index == 1
+              else ''}} {{'disabled' if presenter._fields.disabled else ''}}>
               <label class="tab-label" for="tab-{{ index }}">
                 <div>{{ presenter.title }}</div>
               </label>
@@ -54,21 +55,18 @@
                       style="object-position: {{ apos.attachment.focalPointToObjectPosition(presenter.photo) }}"
                       alt="{{ presenter.title }}"/>
 
-                  <div class="photo-gradient"></div>
-                  <div class="photo-info">
-                    <div>{{ presenter.title }}</div>
-                    <div>{{ presenter.role }}</div>
-                  </div>
+                  <photo-effects name="{{ presenter.title }}"
+                                 role="{{ presenter.role }}"></photo-effects>
                 </div>
                 <div class="bio">
                   <span class="bio-name">{{ presenter.title }}</span>
                   {% if shortBio !== '' %}
-                    {% set truncatedBio = shortBio | safe | truncate(340, false, "...") %}
-                    {{ truncatedBio | striptags(true) | escape | nlp }}
-                    {% if truncatedBio != shortBio or (bio != '' and bio != shortBio) %}
-                      <span class="bio-more">+ Read More</span>
-                    {% endif %}
-                    {{ bio | safe | striptags(true) | escape | nl2br | nlp }}
+                  {% set truncatedBio = shortBio | safe | truncate(340, false, "...") %}
+                  {{ truncatedBio | striptags(true) | escape | nlp }}
+                  {% if truncatedBio != shortBio or (bio != '' and bio != shortBio) %}
+                  <span class="bio-more">+ Read More</span>
+                  {% endif %}
+                  {{ bio | safe | striptags(true) | escape | nl2br | nlp }}
                   {% endif %}
                 </div>
               </div>

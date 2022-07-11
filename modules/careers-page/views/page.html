@@ -94,9 +94,11 @@
     const tips = document.getElementsByClassName('tip-wrapper');
 
     if (isLeft) {
-      document.getElementById(`tip-${tipIndex === 0 ? tips.length - 1 : tipIndex - 1}`).classList.remove('hidden');
+      document.getElementById(
+        `tip-${tipIndex === 0 ? tips.length - 1 : tipIndex - 1}`).classList.remove('hidden');
     } else {
-      document.getElementById(`tip-${tipIndex === tips.length - 1 ? 0 : tipIndex + 1}`).classList.remove('hidden');
+      document.getElementById(
+        `tip-${tipIndex === tips.length - 1 ? 0 : tipIndex + 1}`).classList.remove('hidden');
     }
   }
 </script>
@@ -121,7 +123,8 @@
     </div>
     <div class="values-body-wrapper">
       <div class="img-description">
-        <img src="{{ data.page.coreValues.items[0]._image[0].attachment._urls['two-thirds'] }}" alt="" class="values-img">
+        <img src="{{ data.page.coreValues.items[0]._image[0].attachment._urls['two-thirds'] }}"
+             alt="" class="values-img">
         <div class="img-description-header">Outcomes or Bust</div>
         <span class="img-description-content">
           Output is meaningless without delivering<br>
@@ -132,7 +135,8 @@
         </span>
       </div>
       <div class="img-description">
-        <img src="{{ data.page.coreValues.items[1]._image[0].attachment._urls['two-thirds'] }}" alt="" class="values-img">
+        <img src="{{ data.page.coreValues.items[1]._image[0].attachment._urls['two-thirds'] }}"
+             alt="" class="values-img">
         <div class="img-description-header">Keep it Real</div>
         <span class="img-description-content">
           Real working software, rapidly deployed | to<br>
@@ -142,7 +146,8 @@
         </span>
       </div>
       <div class="img-description">
-        <img src="{{ data.page.coreValues.items[2]._image[0].attachment._urls['two-thirds'] }}" alt="" class="values-img">
+        <img src="{{ data.page.coreValues.items[2]._image[0].attachment._urls['two-thirds'] }}"
+             alt="" class="values-img">
         <div class="img-description-header">Learn the Fastest</div>
         <span class="img-description-content">
           We move fast so we can innovate<br>
@@ -153,9 +158,10 @@
         </span>
       </div>
       <div class="img-description">
-        <img src="{{ data.page.coreValues.items[3]._image[0].attachment._urls['two-thirds'] }}" alt="" class="values-img">
+        <img src="{{ data.page.coreValues.items[3]._image[0].attachment._urls['two-thirds'] }}"
+             alt="" class="values-img">
         <div class="img-description-header">Be Less Certain</div>
-          <span class="img-description-content">
+        <span class="img-description-content">
             You can’t learn the fastest if you listen the<br>
             slowest. Prod is the ultimate arbiter of truth,<br>
             not your resume. Step outside your ego and<br>
@@ -163,7 +169,8 @@
           </span>
       </div>
       <div class="img-description">
-        <img src="{{ data.page.coreValues.items[4]._image[0].attachment._urls['two-thirds'] }}" alt="" class="values-img">
+        <img src="{{ data.page.coreValues.items[4]._image[0].attachment._urls['two-thirds'] }}"
+             alt="" class="values-img">
         <div class="img-description-header">Prodacity</div>
         <span class="img-description-content">
           Be willing to take bold risks to get to prod and<br>
@@ -220,6 +227,8 @@
                             department="{{ department.title }}"
                             index="{{ loop.index0 }}"
                             active="{{ active }}"
+                            name="{{ riser.title }}"
+                            role="{{ riser.role }}"
                             style="width: 100%"></bio-switch>
                 <div class="chevron-wrapper">
                   <div class="photo-chevrons">
@@ -230,12 +239,6 @@
                          class="chevron show-on-mobile active"
                          onclick="onPhotoArrowClick(event, false, '{{department.title}}')">
                   </div>
-                </div>
-                <div class="photo-gradient"></div>
-                <div class="photo-hover">Read Bio</div>
-                <div class="photo-info">
-                  <div>{{ riser.title }}</div>
-                  <div>{{ riser.role }}</div>
                 </div>
               </div>
               {% endif %}
@@ -291,7 +294,8 @@
     <div class="section-grid telegraf">
       <div>
         <img class="grid-icon" src="images/icon-umbrella.svg" alt="">
-        <div class="benefit-description">Insurance | up to 100% Coverage for Riser & dependents</div>
+        <div class="benefit-description">Insurance | up to 100% Coverage for Riser & dependents
+        </div>
       </div>
       <div>
         <img class="grid-icon" src="images/icon-hand.svg" alt="">
@@ -390,12 +394,23 @@
 
       </div>
       <div class="career-list-partner">
-        <img class="opportunity-image mobile-image" src="{{ data.page.riseToOpportunity.items[0]._image[0].attachment._urls['two-thirds'] }}">
-        <img class="opportunity-image non-mobile" src="{{ data.page.riseToOpportunity.items[1]._image[0].attachment._urls['two-thirds'] }}" style="top: 7%; left: 23%; height: 35%; width: 65%">
-        <img class="opportunity-image non-mobile" src="{{ data.page.riseToOpportunity.items[4]._image[0].attachment._urls['two-thirds'] }}" style="top: 50%; left: 30%; height: 35%; width: 57%">
-        <img class="opportunity-image non-mobile" src="{{ data.page.riseToOpportunity.items[2]._image[0].attachment._urls['two-thirds'] }}" style="top: 12%; right: 0; height: 40%; width: 35%">
-        <img class="opportunity-image non-mobile" src="{{ data.page.riseToOpportunity.items[3]._image[0].attachment._urls['two-thirds'] }}" style="top: 65%; left: 15%; height: 40%; width: 25%">
-        <img class="opportunity-image non-mobile" src="{{ data.page.riseToOpportunity.items[5]._image[0].attachment._urls['two-thirds'] }}" style="bottom: 0; right: 1%; height: 35%; width: 22%">
+        <img class="opportunity-image mobile-image"
+             src="{{ data.page.riseToOpportunity.items[0]._image[0].attachment._urls['two-thirds'] }}">
+        <img class="opportunity-image non-mobile"
+             src="{{ data.page.riseToOpportunity.items[1]._image[0].attachment._urls['two-thirds'] }}"
+             style="top: 7%; left: 23%; height: 35%; width: 65%">
+        <img class="opportunity-image non-mobile"
+             src="{{ data.page.riseToOpportunity.items[4]._image[0].attachment._urls['two-thirds'] }}"
+             style="top: 50%; left: 30%; height: 35%; width: 57%">
+        <img class="opportunity-image non-mobile"
+             src="{{ data.page.riseToOpportunity.items[2]._image[0].attachment._urls['two-thirds'] }}"
+             style="top: 12%; right: 0; height: 40%; width: 35%">
+        <img class="opportunity-image non-mobile"
+             src="{{ data.page.riseToOpportunity.items[3]._image[0].attachment._urls['two-thirds'] }}"
+             style="top: 65%; left: 15%; height: 40%; width: 25%">
+        <img class="opportunity-image non-mobile"
+             src="{{ data.page.riseToOpportunity.items[5]._image[0].attachment._urls['two-thirds'] }}"
+             style="bottom: 0; right: 1%; height: 35%; width: 22%">
       </div>
     </div>
   </div>
