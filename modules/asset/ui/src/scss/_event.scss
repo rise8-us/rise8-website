@@ -30,6 +30,17 @@
       font-size: 18px;
       border-bottom: 1px solid white;
 
+      &.disabled {
+        border: none;
+        color: #FFFFFFA9;
+
+        .tab-label {
+          &::after {
+            content: none;
+          }
+        }
+      }
+
       &-label {
         display: flex;
         justify-content: space-between;
@@ -44,7 +55,6 @@
           text-align: center;
           transition: all .35s;
         }
-
       }
 
       &-content {
@@ -199,8 +209,7 @@
         }
       }
 
-      .tab:hover:not(.no-hover) {
-
+      .tab:hover:not(.disabled) {
         position: relative;
         overflow: unset;
 

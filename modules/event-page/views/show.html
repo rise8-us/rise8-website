@@ -42,7 +42,7 @@
             {% set index = loop.index %}
             {% set bio = presenter.bio %}
             {% set shortBio = bio | safe | replace(r/(\n.*)/g, '') %}
-            <li class="tab {{ 'no-hover' if presenter._fields.disabled else '' }}">
+            <li class="tab {{ 'disabled' if presenter._fields.disabled else '' }}">
               <input type="radio" name="tab-radio" id="tab-{{ index }}" {{'checked' if index == 1
               else ''}} {{'disabled' if presenter._fields.disabled else ''}}>
               <label class="tab-label" for="tab-{{ index }}">
@@ -56,7 +56,8 @@
                       alt="{{ presenter.title }}"/>
 
                   <photo-effects name="{{ presenter.title }}"
-                                 role="{{ presenter.role }}"></photo-effects>
+                                 role="{{ presenter.role }}"
+                                 {{'hidden' if presenter._fields.disabled else ''}}></photo-effects>
                 </div>
                 <div class="bio">
                   <span class="bio-name">{{ presenter.title }}</span>
