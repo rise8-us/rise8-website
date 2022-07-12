@@ -348,26 +348,32 @@
           {% endfor %}
         </div>
         {% endfor %}
-
       </div>
       <div class="career-list-partner">
+        {% set attachment0 = apos.image.first(data.page.riseToOpportunity.items[0]._image) %}
+        {% set attachment1 = apos.image.first(data.page.riseToOpportunity.items[1]._image) %}
+        {% set attachment2 = apos.image.first(data.page.riseToOpportunity.items[2]._image) %}
+        {% set attachment3 = apos.image.first(data.page.riseToOpportunity.items[3]._image) %}
+        {% set attachment4 = apos.image.first(data.page.riseToOpportunity.items[4]._image) %}
+        {% set attachment5 = apos.image.first(data.page.riseToOpportunity.items[5]._image) %}
         <img class="opportunity-image mobile-image"
-             src="{{ data.page.riseToOpportunity.items[0]._image[0].attachment._urls['two-thirds'] }}">
+             src="{{ apos.attachment.url(attachment0) }}"
+             style="object-position: {{ apos.attachment.focalPointToObjectPosition(attachment0) }}">
         <img class="opportunity-image non-mobile"
-             src="{{ data.page.riseToOpportunity.items[1]._image[0].attachment._urls['two-thirds'] }}"
-             style="top: 7%; left: 23%; height: 35%; width: 65%">
+             src="{{ apos.attachment.url(attachment1) }}"
+             style="top: 40px; left: 33%; height: 38%; width: 72%; max-height: 230px; object-position: {{ apos.attachment.focalPointToObjectPosition(attachment1) }}">
         <img class="opportunity-image non-mobile"
-             src="{{ data.page.riseToOpportunity.items[4]._image[0].attachment._urls['two-thirds'] }}"
-             style="top: 50%; left: 30%; height: 35%; width: 57%">
+             src="{{ apos.attachment.url(attachment4) }}"
+             style="top: 290px; left: 46%; height: 35%; width: 75%; max-height: 210px;; object-position: {{ apos.attachment.focalPointToObjectPosition(attachment4) }}">
         <img class="opportunity-image non-mobile"
-             src="{{ data.page.riseToOpportunity.items[2]._image[0].attachment._urls['two-thirds'] }}"
-             style="top: 12%; right: 0; height: 40%; width: 35%">
+             src="{{ apos.attachment.url(attachment2) }}"
+             style="top: 90px; left: 85%; height: 35%; width: 50%; max-height: 210px;; object-position: {{ apos.attachment.focalPointToObjectPosition(attachment2) }}">
         <img class="opportunity-image non-mobile"
-             src="{{ data.page.riseToOpportunity.items[3]._image[0].attachment._urls['two-thirds'] }}"
-             style="top: 65%; left: 15%; height: 40%; width: 25%">
+             src="{{ apos.attachment.url(attachment3) }}"
+             style="top: 390px; left: 15%; height: 36%; width: 45%; max-height: 210px;; object-position: {{ apos.attachment.focalPointToObjectPosition(attachment3) }}">
         <img class="opportunity-image non-mobile"
-             src="{{ data.page.riseToOpportunity.items[5]._image[0].attachment._urls['two-thirds'] }}"
-             style="bottom: 0; right: 1%; height: 35%; width: 22%">
+             src="{{ apos.attachment.url(attachment5) }}"
+             style="top: 400px; left: 90%; height: 35%; width: 39%; max-height: 210px;; object-position: {{ apos.attachment.focalPointToObjectPosition(attachment5) }}">
       </div>
     </div>
   </div>
