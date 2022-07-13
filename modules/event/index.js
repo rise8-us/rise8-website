@@ -11,6 +11,64 @@ module.exports = {
         type: 'string',
         required: true,
       },
+      displayTitle: {
+        label: 'Display Title',
+        type: 'string',
+        help: 'Will default to the title above if unspecified',
+      },
+      subtitle: {
+        label: 'Subtitle',
+        type: 'string',
+        help: 'Will default to event dates if unspecified',
+      },
+      description: {
+        label: 'Description',
+        required: true,
+        type: 'area',
+        options: {
+          max: 1,
+          widgets: {
+            '@apostrophecms/rich-text': {
+              toolbar: [
+                'styles',
+                '|',
+                'bold',
+                'italic',
+                'strike',
+                'link',
+                'horizontalRule',
+                '|',
+                'bulletList',
+                'orderedList',
+                '|',
+                'blockquote',
+                'codeBlock',
+                '|',
+                'undo',
+                'redo',
+              ],
+              styles: [
+                {
+                  tag: 'p',
+                  label: 'Paragraph (P)',
+                },
+                {
+                  tag: 'h2',
+                  label: 'Heading 2 (H2)',
+                },
+                {
+                  tag: 'h3',
+                  label: 'Heading 3 (H3)',
+                },
+                {
+                  tag: 'h4',
+                  label: 'Heading 4 (H4)',
+                },
+              ],
+            },
+          },
+        },
+      },
       startDate: {
         label: 'Start Date',
         type: 'dateAndTime',
@@ -55,7 +113,7 @@ module.exports = {
     group: {
       basics: {
         label: 'Basics',
-        fields: [ 'title', 'startDate', 'endDate', '_presenters' ],
+        fields: [ 'title', 'displayTitle', 'subtitle', 'description', 'startDate', 'endDate', '_presenters' ],
       },
       page: {
         label: 'Page',

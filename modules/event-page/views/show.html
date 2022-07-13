@@ -13,15 +13,18 @@
   <div class="eight-mark-background dark">
     <div class="content-wrapper with-8-mark">
       <div>
-        <section-header header="Prodacity 2022" subheader="Sept 7-8, 2022 in Washington DC"
+        {% set header = data.piece.displayTitle if data.piece.displayTitle else data.piece.title %}
+        {% if data.piece.subtitle %}
+        {% set subheader = data.piece.subtitle %}
+        {% elif data.piece.startDate | date('M') == data.piece.endDate | date('M') %}
+        {% set subheader = data.piece.startDate | date('MMM D') + '-' + data.piece.endDate | date('D, YYYY') %}
+        {% else %}
+        {% set subheader = data.piece.startDate | date('MMM D') + ' - ' + data.piece.endDate | date('MMM D, YYYY') %}
+        {% endif %}
+        <section-header header="{{ header }}" subheader="{{ subheader }}"
                         dark-mode secondary></section-header>
         <div class="section-body-text no-max">
-          This year's theme is Prod Academy, which will set a baseline for how to do DevOps in
-          government and achieve mission outcomes.
-          <br/><br/>
-          <strong>Attendees will learn how to launch, scale, and continuously improve the next
-            generation of government software organizations with the lessons learned to do it
-            better, faster, and cheaper.</strong>
+          {% area data.piece, 'description' %}
         </div>
       </div>
       <div class="center-button">
