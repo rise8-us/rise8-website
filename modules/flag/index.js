@@ -16,11 +16,16 @@ module.exports = {
         type: 'boolean',
         def: false,
       },
+      _users: {
+        type: 'relationship',
+        label: 'Users',
+        withType: '@apostrophecms/user',
+      },
     },
     group: {
       basics: {
         label: 'Basics',
-        fields: [ 'title', 'enabled' ],
+        fields: [ 'title', 'enabled', '_users' ],
       },
     },
   },

@@ -3,12 +3,13 @@ module.exports = async (self, req) => {
     .project({
       slug: 1,
       enabled: 1,
+      _users: 1,
     })
     .toArray();
 
   const flagsBySlug = {};
   for (const flag of flags) {
-    flagsBySlug[flag.slug] = flag.enabled;
+    flagsBySlug[flag.slug] = flag.enabled || flag.usersIds.includes(req.user._id);
   }
 
   return flagsBySlug;
