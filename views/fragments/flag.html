@@ -1,0 +1,5 @@
+{% fragment isFeatured(slug) %}
+  {% if data.flags[slug] %}
+    {{ rendercaller() }}
+  {% endif %}
+{% endfragment %}
