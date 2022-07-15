@@ -5,7 +5,7 @@ There are two steps. First add a flag to `lib/flags.js`. Ensure the format as fo
 ```js
 // lib/flags.js
 module.exports = {
-  // The flag name of the is the key and the slug is the value.
+  // The flag name is the key and the slug is the value.
   MY_NEW_FLAG: 'my-new-flag'
 }
 ```
