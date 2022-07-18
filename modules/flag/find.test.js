@@ -42,7 +42,7 @@ describe('find', () => {
     expect(flags).toEqual({ 'test-flag': true });
   });
 
-  it('should be find flag true when user added and enabled false', async () => {
+  it('should find flag true when user added and enabled false', async () => {
     const testFlag = {
       title: 'Test Flag',
       slug: 'test-flag',
@@ -57,13 +57,29 @@ describe('find', () => {
     expect(flags).toEqual({ 'test-flag': true });
   });
 
-  it('should not find when disabled and empty users', async () => {
+  it('should not find flag true when disabled and empty users', async () => {
     const testFlag = {
       title: 'Test Flag',
       slug: 'test-flag',
       enabled: false,
       usersIds: [],
     };
+
+    toArray.mockReturnValueOnce([ testFlag ]);
+
+    const flags = await find(apostrophe, req);
+
+    expect(flags).toEqual({ 'test-flag': false });
+  });
+
+  it('should not find flag true when non-user', async () => {
+    const testFlag = {
+      title: 'Test Flag',
+      slug: 'test-flag',
+      enabled: false,
+      usersIds: [ 'user_id' ],
+    };
+    const req = {};
 
     toArray.mockReturnValueOnce([ testFlag ]);
 
