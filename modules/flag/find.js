@@ -1,3 +1,7 @@
+const hasFlagEnabledUser = (flag, req) => {
+  return req.user ? flag.usersIds.includes(req.user._id) : false;
+};
+
 module.exports = async (self, req) => {
   const flags = await self.apos.modules.flag.find(req)
     .project({
@@ -9,7 +13,7 @@ module.exports = async (self, req) => {
 
   const flagsBySlug = {};
   for (const flag of flags) {
-    flagsBySlug[flag.slug] = flag.enabled || flag.usersIds.includes(req.user._id);
+    flagsBySlug[flag.slug] = flag.enabled || hasFlagEnabledUser(flag, req);
   }
 
   return flagsBySlug;
