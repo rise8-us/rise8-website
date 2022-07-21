@@ -20,7 +20,7 @@ jobs:
       uses: aws-actions/amazon-ecr-login@v1
 
     - name: Build and push
-        uses: docker/build-push-action@v3
-        with:
-          push: true
-          tags: ${{ secrets.ECR_URL }}/rise8/website:latest
+      uses: docker/build-push-action@v3
+      with:
+        push: true
+        tags: ${{ secrets.ECR_URL }}/rise8/website:latest
