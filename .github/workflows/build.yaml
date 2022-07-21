@@ -25,3 +25,4 @@ jobs:
         context: .
         push: true
         tags: ${{ secrets.ECR_URL }}/rise8/website:latest
+        
