@@ -1,0 +1,31 @@
+name: Deploy MongoDB
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to deploy in'
+        type: environment
+        required: true
+jobs:
+  build:
+    environment: ${{ inputs.environment }}
+    env:
+      AWS_SESSION_TOKEN: ${{ secrets.AWS_SESSION_TOKEN }}
+      AWS_ACCESS_KEY_ID:  ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      AWS_REGION: us-gov-west-1
+    runs-on: ubuntu-latest
+    steps:
+    - name: Get Kubeconfig
+      run: |
+        aws eks update-kubeconfig --region $AWS_REGION --name ${{ secrets.CLUSTER_NAME }}
+    - name: Deploy Database
+      run: |
+        helm repo add bitnami https://charts.bitnami.com/bitnami
+        helm repo update
+        helm upgrade --install database bitnami/mongodb -n website-${{ inputs.environment }}   \
+          --set "persistence.existingClaim=database-mongodb-${{ inputs.environment }}"         \
+          --set "auth.rootUser=${{ secrets.DB_USER }}"
+
+        kubectl wait deployment -n website-${{ inputs.environment }} database-mongodb --for condition=Available=True --timeout=300s
