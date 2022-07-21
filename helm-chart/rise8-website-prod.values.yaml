@@ -1,0 +1,29 @@
+image:
+  repository: 367210624078.dkr.ecr.us-gov-west-1.amazonaws.com/rise8/website
+  pullPolicy: Always
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: latest
+
+imagePullSecrets:
+- name: regcred
+
+database:
+  server: database-mongodb
+  passwordSecret: database-mongodb
+
+baseUrl: http://ac6b7ba48aeee4637af82be2064515e8-7003eaaaab851200.elb.us-gov-west-1.amazonaws.com
+
+deploymentEnvironment: PROD
+
+ingress:
+  enabled: true
+  className: nginx
+  annotations: {}
+  hosts:
+    - paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local

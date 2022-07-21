@@ -1,4 +1,4 @@
-name: Deploy MongoDB
+name: Deploy Website
 
 on:
   workflow_dispatch:
@@ -17,15 +17,13 @@ jobs:
       AWS_REGION: us-gov-west-1
     runs-on: ubuntu-latest
     steps:
+    - name: Checkout
+      uses: actions/checkout@v3
     - name: Get Kubeconfig
       run: |
         aws eks update-kubeconfig --region $AWS_REGION --name ${{ secrets.CLUSTER_NAME }}
-    - name: Deploy Database
+    - name: Deploy Website
       run: |
-        helm repo add bitnami https://charts.bitnami.com/bitnami
-        helm repo update
-        helm upgrade --install database bitnami/mongodb -n website-${{ inputs.environment }}   \
-          --set "persistence.existingClaim=database-mongodb-${{ inputs.environment }}"         \
-          --set "auth.rootUser=${{ secrets.DB_USER }}"
-
-        kubectl wait deployment -n website-${{ inputs.environment }} database-mongodb --for condition=Available=True --timeout=300s
+        helm upgrade --install rise8-website helm-chart                      \
+          -f helm-chart/rise8-website-${{ inputs.environment }}.values.yaml  \
+          --set "existingClaim=rise8-website-${{ inputs.environment }}"
