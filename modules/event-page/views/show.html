@@ -1,4 +1,5 @@
 {% extends "layout.html" %}
+{% import "fragments/flag.html" as flag %}
 
 {% block main %}
 {% set imgObj = apos.image.first(data.piece.heroImage) %}
@@ -9,6 +10,9 @@
      text-style='font-weight: 700' half no-chevron></custom-button>
      </div>"
              image="{{ apos.attachment.url(imgObj) }}" pad-top></hero-header>
+{% rendercall flag.isFeatured("hero-banner-widget") %}
+  {% area data.piece, "content" %}
+{% endrendercall %}
 <section class="content-section dark with-8-mark">
   <div class="eight-mark-background dark">
     <div class="content-wrapper with-8-mark">

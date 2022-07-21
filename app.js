@@ -50,5 +50,6 @@ require('apostrophe')({
     'prodacity-page': {},
     'privacy-page': {},
     'services-page': {},
+    'hero-banner-widget': {},
   },
 });

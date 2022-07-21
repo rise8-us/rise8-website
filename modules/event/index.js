@@ -40,6 +40,15 @@ module.exports = {
           },
         },
       },
+      content: {
+        label: 'Content',
+        type: 'area',
+        options: {
+          widgets: {
+            'hero-banner': {},
+          },
+        },
+      },
       heroImage: {
         label: 'Hero Banner',
         type: 'area',
@@ -59,7 +68,7 @@ module.exports = {
       },
       page: {
         label: 'Page',
-        fields: [ 'heroImage' ],
+        fields: [ 'content', 'heroImage' ],
       },
     },
   },
