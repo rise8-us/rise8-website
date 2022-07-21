@@ -24,6 +24,8 @@ jobs:
         aws eks update-kubeconfig --region $AWS_REGION --name ${{ secrets.CLUSTER_NAME }}
     - name: Deploy Website
       run: |
+        EXPRESS_SECRET=$(openssl rand -hex 24)
         helm upgrade --install rise8-website helm-chart                      \
           -f helm-chart/rise8-website-${{ inputs.environment }}.values.yaml  \
+          --set "express.secret=$EXPRESS_SECRET"                             \
           --set "existingClaim=rise8-website-${{ inputs.environment }}"

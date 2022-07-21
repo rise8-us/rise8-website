@@ -14,6 +14,9 @@ imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
+express:
+  secret: t3stS3cr3t!
+
 database:
   server: database
   passwordSecret: database
@@ -23,7 +26,7 @@ baseUrl: http://localhost:3000
 
 # Persistent storage for uploads and backups
 # Leave empty for ephemeral
-existingClaim: 
+existingClaim:
 
 serviceAccount:
   # Specifies whether a service account should be created

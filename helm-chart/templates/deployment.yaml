@@ -42,6 +42,8 @@ spec:
               value: {{ .Values.database.server }}
             - name: DB_USERNAME
               value: rise8
+            - name: EXPRESS_SECRET
+              value: {{ .Values.express.secret }}
             - name: DB_PASSWORD
               valueFrom:
                 secretKeyRef:
