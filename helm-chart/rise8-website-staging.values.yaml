@@ -11,7 +11,7 @@ database:
   server: database-mongodb
   passwordSecret: database-mongodb
 
-baseUrl: http://ac6b7ba48aeee4637af82be2064515e8-7003eaaaab851200.elb.us-gov-west-1.amazonaws.com
+baseUrl: http://a291f2706124f43ca8c2a92b3882efdb-cd747e120df9e7c3.elb.us-gov-west-1.amazonaws.com
 
 deploymentEnvironment: staging
 
