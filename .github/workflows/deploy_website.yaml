@@ -8,7 +8,7 @@ on:
         type: environment
         required: true
 jobs:
-  build:
+  deploy:
     environment: ${{ inputs.environment }}
     env:
       AWS_SESSION_TOKEN: ${{ secrets.AWS_SESSION_TOKEN }}
@@ -26,6 +26,7 @@ jobs:
       run: |
         EXPRESS_SECRET=$(openssl rand -hex 24)
         helm upgrade --install rise8-website helm-chart                      \
+          -n website-${{ inputs.environment }}                               \
           -f helm-chart/rise8-website-${{ inputs.environment }}.values.yaml  \
           --set "express.secret=$EXPRESS_SECRET"                             \
           --set "existingClaim=rise8-website-${{ inputs.environment }}"

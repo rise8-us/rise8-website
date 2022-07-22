@@ -8,7 +8,7 @@ on:
         type: environment
         required: true
 jobs:
-  build:
+  deploy:
     environment: ${{ inputs.environment }}
     env:
       AWS_SESSION_TOKEN: ${{ secrets.AWS_SESSION_TOKEN }}
